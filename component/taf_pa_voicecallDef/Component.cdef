@@ -1,0 +1,12 @@
+
+sources:
+{
+    taf_pa_voicecall.cpp
+}
+
+cxxflags:
+{
+    -I$TELAF_ROOT/include
+    -I$TELAF_PA_DEFAULT/include
+    -DTAF_PA_DEFAULT
+}
