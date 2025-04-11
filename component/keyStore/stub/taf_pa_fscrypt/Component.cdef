@@ -1,0 +1,18 @@
+sources:
+{
+    $CURDIR/../../taf_pa_fscrypt_default/taf_pa_fscrypt_default.c
+}
+
+requires:
+{
+    api:
+    {
+        le_appInfo.api
+    }
+}
+
+cflags:
+{
+    -I$LEGATO_ROOT/framework/liblegato/
+    -I$TELAF_PA_DEFAULT/include/keyStore
+}
