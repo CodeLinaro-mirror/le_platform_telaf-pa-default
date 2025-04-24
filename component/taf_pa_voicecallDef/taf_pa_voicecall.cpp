@@ -112,6 +112,12 @@ le_result_t taf_pa_voicecall_RegisterEventListener
     return LE_NOT_IMPLEMENTED;
 }
 
+le_result_t taf_pa_voicecall_GetCallTermination(taf_pa_voicecall_Ref_t reference, taf_pa_voicecall_termination_t *termination)
+{
+    LE_INFO("Default platform adatper implementation");
+    return LE_NOT_IMPLEMENTED;
+}
+
 COMPONENT_INIT
 {
     LE_INFO("Default platform adatper initialization done");

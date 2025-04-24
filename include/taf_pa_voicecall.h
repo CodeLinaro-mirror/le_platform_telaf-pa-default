@@ -34,6 +34,19 @@ typedef enum
 
 typedef enum
 {
+    TAF_PA_VOICECALL_TERM_NORMAL = 1,
+    TAF_PA_VOICECALL_TERM_NETWORK_FAIL = 2 ,
+    TAF_PA_VOICECALL_TERM_UNOBTAINABLE_NUMBER = 3 ,
+    TAF_PA_VOICECALL_TERM_BUSY = 4 ,
+    TAF_PA_VOICECALL_TERM_LOCAL = 5,
+    TAF_PA_VOICECALL_TERM_REMOTE = 6,
+    TAF_PA_VOICECALL_TERM_UNDEFINED = 7,
+    TAF_PA_VOICECALL_TERM_REJECTED = 8,
+    TAF_PA_VOICECALL_TERM_NORESPONSE = 9,
+} taf_pa_voicecall_termination_t;
+
+typedef enum
+{
     TAF_PA_VOICECALL_DIR_NONE = 0,
     TAF_PA_VOICECALL_DIR_INCOMING = 1,
     TAF_PA_VOICECALL_DIR_OUTGOING = 2
@@ -70,6 +83,8 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_voicecall_Answer(taf_pa_voicecall_Ref_t
 LE_SHARED TAF_PA_WEAK le_result_t taf_pa_voicecall_Swap(taf_pa_voicecall_Ref_t reference, taf_pa_voicecall_CallCb callback, void* contextPtr);
 
 LE_SHARED TAF_PA_WEAK le_result_t taf_pa_voicecall_RegisterEventListener(taf_pa_voicecall_EventListener listener, void* contextPtr);
+
+LE_SHARED TAF_PA_WEAK le_result_t taf_pa_voicecall_GetCallTermination(taf_pa_voicecall_Ref_t reference, taf_pa_voicecall_termination_t *termination);
 
 #endif /* TAF_PA_VOICECALL_H */
 
