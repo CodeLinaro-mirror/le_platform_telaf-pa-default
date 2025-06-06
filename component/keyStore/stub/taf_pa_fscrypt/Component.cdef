@@ -1,6 +1,6 @@
 sources:
 {
-    $CURDIR/../../taf_pa_fscrypt_default/taf_pa_fscrypt_default.c
+    taf_pa_fscrypt.c
 }
 
 requires:
