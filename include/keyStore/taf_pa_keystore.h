@@ -13,7 +13,12 @@
 #endif
 
 #include "legato.h"
+
+#ifdef USE_CMAKE_BUILD
+#include "taf_ks_interface.h"
+#else
 #include "interfaces.h"
+#endif
 
 //--------------------------------------------------------------------------------------------------
 /**
