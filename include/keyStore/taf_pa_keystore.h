@@ -13,7 +13,12 @@
 #endif
 
 #include "legato.h"
+
+#ifdef USE_CMAKE_BUILD
+#include "taf_ks_interface.h"
+#else
 #include "interfaces.h"
+#endif
 
 //--------------------------------------------------------------------------------------------------
 /**
@@ -82,7 +87,8 @@ typedef enum
 {
     TAF_PA_KS_PARAM_NONCE = 0,                     ///< Nonce or Initialization Vector.
     TAF_PA_KS_PARAM_APPLICATION_DATA = 1,          ///< Data identifying the authorized application.
-    TAF_PA_KS_PARAM_MAX_IDS = 2,
+    TAF_PA_KS_PARAM_RSA_PADDING_TYPE = 2,          ///< RSA padding type.
+    TAF_PA_KS_PARAM_MAX_IDS = 3,
 }
 taf_pa_ks_ParamId_t;
 
@@ -185,6 +191,7 @@ typedef struct
     {
         taf_pa_ks_Nonce_t* nonceDataPtr;          ///< TAF_PA_KS_PARAM_NONCE
         taf_pa_ks_Data_t* appDataPtr;             ///< TAF_PA_KS_PARAM_APPLICATION_DATA
+        taf_ks_RsaPaddingType_t rsaPaddingType;   ///< Padding type for RSA signing/verification
     };
 }
 taf_pa_ks_Param_t;
