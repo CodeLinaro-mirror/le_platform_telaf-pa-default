@@ -7,4 +7,3 @@
 #define TAF_PA_COMMON_HPP
 
 #endif /* TAF_PA_COMMON_HPP */
-
