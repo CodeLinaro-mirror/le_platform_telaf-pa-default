@@ -10,7 +10,7 @@
 #ifndef __TAF_PA_DATA_TYPES_HPP__
 #define __TAF_PA_DATA_TYPES_HPP__
 
-#include "taf_pa_common.hpp"
+#include "taf_pa_common.h"
 #include <vector>
 #include <functional>
 #include <memory>
