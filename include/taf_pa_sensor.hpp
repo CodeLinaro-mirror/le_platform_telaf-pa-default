@@ -4,69 +4,54 @@
  */
 
 #ifndef __TAF_PA_SENSOR_HPP__
-
 #define __TAF_PA_SENSOR_HPP__
 
-#ifndef TAF_PA_WEAK
-#define TAF_PA_WEAK __attribute__((weak))
-#endif
+#include <functional>
+#include <any>
+#include <vector>
+#include <memory>
+#include <string>
+#include "taf_pa_common.h"
 
-#define PA_MAX_LEN_BYTE 50
+namespace tafpa::sensor {
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Sensor Type.
- */
-//--------------------------------------------------------------------------------------------------
-typedef enum{
-    TAF_PA_SENSOR_ACCELEROMETER = 1,
-    TAF_PA_SENSOR_GYROSCOPE = 2,
-    TAF_PA_SENSOR_INVALID = 0xFF
-}taf_pa_sensor_type_t;
+// Alias for sensor instance identifiers.
+// This ID uniquely identifies an active sensor instance.
+using taf_pa_sensor_SensorId = uint64_t;
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Sensor basic information.
- */
-//--------------------------------------------------------------------------------------------------
-struct taf_pa_sensor_basicInfo_t{
-    int id;
-    int version;
-    taf_pa_sensor_type_t sensorType;
-    char sensorName[PA_MAX_LEN_BYTE];
-    char vendorName[PA_MAX_LEN_BYTE];
+// Defines types of sensors.
+enum class taf_pa_sensor_SensorType : uint8_t {
+    ACCELEROMETER = 1,
+    GYROSCOPE = 2,
+    INVALID = 0xFF
 };
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Sensor configuration information.
- */
-//--------------------------------------------------------------------------------------------------
-struct taf_pa_sensor_configInfo_t{
-    uint32_t sampleRateListSize;
-    double samplingRate[PA_MAX_LEN_BYTE];
+// Basic information about a sensor.
+struct taf_pa_sensor_BasicInfo {
+    int id;
+    int version;
+    taf_pa_sensor_SensorType sensorType;
+    std::string sensorName;
+    std::string vendorName;
+};
+
+// Configuration capabilities for a sensor.
+struct taf_pa_sensor_ConfigInfo {
+    std::vector<float> samplingRateList;
     double maxSamplingRate;
     uint32_t maxBatchCount;
     uint32_t minBatchCount;
 };
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Sensor Capabilities.
- */
-//--------------------------------------------------------------------------------------------------
-struct taf_pa_sensor_capabilities_t{
+// Physical capabilities of a sensor.
+struct taf_pa_sensor_Capabilities {
     int range;
     double resolution;
     double maxRange;
 };
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Sensor Event Information
- */
-//--------------------------------------------------------------------------------------------------
-struct taf_pa_sensor_event_t{
+// A single sensor event measurement.
+struct taf_pa_sensor_Event {
     uint64_t timestamp;
     double x;
     double y;
@@ -76,118 +61,92 @@ struct taf_pa_sensor_event_t{
     double zb;
 };
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Self Test Mode.
- */
-//--------------------------------------------------------------------------------------------------
-typedef enum{
-    TAF_PA_SENSOR_POSITIVE = 1,
-    TAF_PA_SENSOR_NEGATIVE = 2,
-    TAF_PA_SENSOR_BOTH = 3
-}taf_pa_sensor_testmode_t;
-
-//--------------------------------------------------------------------------------------------------
-/**
- * Sensor Reference.
- */
-//--------------------------------------------------------------------------------------------------
-typedef struct taf_pa_sensor_Ref* taf_pa_sensor_Ref_t;
-
-//--------------------------------------------------------------------------------------------------
-/**
- * Sensor Event Callback.
- */
-//--------------------------------------------------------------------------------------------------
-typedef void (*taf_pa_sensor_OnEvent)(taf_pa_sensor_Ref_t reference,taf_pa_sensor_event_t* events,int count,void *contextPtr);
-
-//--------------------------------------------------------------------------------------------------
-/**
- * Voluntary Self Test Failed Callback.
- */
-//--------------------------------------------------------------------------------------------------
-typedef void (*taf_pa_sensor_SelfTestFailed)(taf_pa_sensor_Ref_t reference,uint64_t timestamp,void *contextPtr);
-
-//--------------------------------------------------------------------------------------------------
-/**
- * Self Test Result Callback.
- */
-//--------------------------------------------------------------------------------------------------
-typedef void (*taf_pa_sensor_SelfTestResultCb)(taf_pa_sensor_Ref_t ref,le_result_t result,uint64_t timestamp,void *contextPtr);
-
-//--------------------------------------------------------------------------------------------------
-/**
- * Sensor Event Listener.
- */
-//--------------------------------------------------------------------------------------------------
-struct taf_pa_sensor_EventListener{
-    taf_pa_sensor_OnEvent onEvent;
-    taf_pa_sensor_SelfTestFailed onSelfTestFailed;
+// Defines modes for sensor self-testing.
+enum class taf_pa_sensor_SelfTestMode : uint8_t {
+    POSITIVE = 1,
+    NEGATIVE = 2,
+    BOTH = 3
 };
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Intialize Sensor Subsystem and output number of available sensors.
- */
-//--------------------------------------------------------------------------------------------------
-LE_SHARED le_result_t taf_pa_sensor_Init(int8_t& listSize);
+// Callback for sensor event notifications.
+using taf_pa_sensor_OnEventCb = std::function<void(
+    taf_pa_sensor_SensorId sensorId,
+    std::shared_ptr<const std::vector<taf_pa_sensor_Event>> events,
+    std::any context
+)>;
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Return the infomation of the sensor.
- */
-//--------------------------------------------------------------------------------------------------
-LE_SHARED le_result_t taf_pa_sensor_GetSensorInfo(int8_t index,taf_pa_sensor_basicInfo_t &basicInfo,
-    taf_pa_sensor_configInfo_t &configInfo,taf_pa_sensor_capabilities_t &Capabilities);
+// Callback for voluntary self-test failures.
+using taf_pa_sensor_SelfTestFailedCb = std::function<void(
+    taf_pa_sensor_SensorId sensorId,
+    uint64_t timestamp,
+    std::any context
+)>;
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Create reference for the sensor.
- */
-//--------------------------------------------------------------------------------------------------
-LE_SHARED taf_pa_sensor_Ref_t taf_pa_sensor_CreateReference(const char* sensorName);
+// Callback for self-test operation results.
+using taf_pa_sensor_SelfTestResultCb = std::function<void(
+    taf_pa_sensor_SensorId sensorId,
+    pa_result_t result,
+    uint64_t timestamp,
+    std::any context
+)>;
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Sensor Event Listener.
- */
-//--------------------------------------------------------------------------------------------------
-// Delete the reference of the sensor
-LE_SHARED le_result_t taf_pa_sensor_DeleteReference(taf_pa_sensor_Ref_t reference);
+// Collection of event callbacks for a sensor.
+struct taf_pa_sensor_EventListener {
+    taf_pa_sensor_OnEventCb onEvent;
+    taf_pa_sensor_SelfTestFailedCb onSelfTestFailed;
+};
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Activate the sensor.
- */
-//--------------------------------------------------------------------------------------------------
-LE_SHARED le_result_t taf_pa_sensor_Activate(taf_pa_sensor_Ref_t reference,double sampleRate,uint32_t batchCount,bool isRotated);
+// Initializes the Sensor subsystem.
+PA_SHARED PA_WEAK pa_result_t taf_pa_sensor_Init(int8_t& listSize);
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Set the new ref coordinate by euler angle.
- */
-//--------------------------------------------------------------------------------------------------
-LE_SHARED le_result_t taf_pa_sensor_SetEulerAngle(taf_pa_sensor_Ref_t reference,double pitch,double roll, double yaw);
+// Retrieves information about a specific sensor.
+PA_SHARED PA_WEAK pa_result_t taf_pa_sensor_GetSensorInfo(
+    int8_t index,
+    taf_pa_sensor_BasicInfo &basicInfo,
+    taf_pa_sensor_ConfigInfo &configInfo,
+    taf_pa_sensor_Capabilities &Capabilities
+);
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Deactivate the sensor.
- */
-//--------------------------------------------------------------------------------------------------
-LE_SHARED le_result_t taf_pa_sensor_Deactivate(taf_pa_sensor_Ref_t reference);
+// Gets a client ID for a sensor instance by its name.
+PA_SHARED PA_WEAK taf_pa_sensor_SensorId taf_pa_sensor_GetSensorClient(const std::string& sensorName);
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Perform self test for given sensor.
- */
-//--------------------------------------------------------------------------------------------------
-LE_SHARED le_result_t taf_pa_sensor_SelfTest(taf_pa_sensor_Ref_t reference,taf_pa_sensor_testmode_t mode,taf_pa_sensor_SelfTestResultCb callback,void* contextPtr);
+// Releases a sensor client associated with the given ID.
+PA_SHARED PA_WEAK pa_result_t taf_pa_sensor_ReleaseSensorClient(taf_pa_sensor_SensorId sensorId);
 
-//--------------------------------------------------------------------------------------------------
-/**
- * Register the listener for events to get notified.
- */
-//--------------------------------------------------------------------------------------------------
-LE_SHARED le_result_t taf_pa_sensor_RegisterListener(taf_pa_sensor_Ref_t reference,taf_pa_sensor_EventListener* eventListener,void *contextPtr);
+// Activates a sensor with specified parameters.
+PA_SHARED PA_WEAK pa_result_t taf_pa_sensor_Activate(
+    taf_pa_sensor_SensorId sensorId,
+    double sampleRate,
+    uint32_t batchCount,
+    bool isRotated
+);
 
-#endif
+// Sets a new reference coordinate system using Euler angles.
+PA_SHARED PA_WEAK pa_result_t taf_pa_sensor_SetEulerAngle(
+    taf_pa_sensor_SensorId sensorId,
+    double pitch,
+    double roll,
+    double yaw
+);
+
+// Deactivates a sensor.
+PA_SHARED PA_WEAK pa_result_t taf_pa_sensor_Deactivate(taf_pa_sensor_SensorId sensorId);
+
+// Performs a self-test on the specified sensor.
+PA_SHARED PA_WEAK pa_result_t taf_pa_sensor_SelfTest(
+    taf_pa_sensor_SensorId sensorId,
+    taf_pa_sensor_SelfTestMode mode,
+    taf_pa_sensor_SelfTestResultCb callback,
+    std::any context
+);
+
+// Registers an event listener.
+PA_SHARED PA_WEAK pa_result_t taf_pa_sensor_RegisterListener(
+    taf_pa_sensor_SensorId sensorId,
+    taf_pa_sensor_EventListener* eventListener,
+    std::any context
+);
+
+} // End namespace tafpa::sensor
+
+#endif // __TAF_PA_SENSOR_HPP__
