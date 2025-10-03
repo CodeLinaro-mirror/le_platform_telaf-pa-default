@@ -12,31 +12,30 @@
  *
  */
 
-#include "legato.h"
 #include "taf_pa_data.hpp"
 
-#define TAF_PA_WEAK __attribute__((weak))
+#define PA_UNUSED(x) (void)(x)
 
 //--------------------------------------------------------------------------------------------------
 /**
  * Get the Telux data PA state.
  *
  * @return
- *  - LE_OK              PA completely initialized
- *  - LE_UNAVAILABLE     PA not completely initialized. A part of the PA maybe usable. Check state.
- *  - LE_FAULT           PA is not usable due to fatal failure.
- *  - LE_NOT_IMPLEMENTED API is not implemented.
+ *  - PA_OK              PA completely initialized
+ *  - PA_UNAVAILABLE     PA not completely initialized. A part of the PA maybe usable. Check state.
+ *  - PA_FAULT           PA is not usable due to fatal failure.
+ *  - PA_NOT_IMPLEMENTED API is not implemented.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::Init
+pa_result_t PA_WEAK taf::pa::data::Init
 (
-    taf::pa::data::InitState_e &state
+    SubsystemState_e &state
         ///< [OUT] The Telux data PA initialization state.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(state);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(state);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -44,13 +43,13 @@ le_result_t TAF_PA_WEAK taf::pa::data::Init
  * Deinitialize the Telux data PA state.
  *
  * @return
- *  - LE_OK              PA completely initialized
+ *  - PA_OK              PA completely initialized
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::Deinit()
+pa_result_t PA_WEAK taf::pa::data::Deinit()
 {
-    LE_DEBUG("Default PA implementation.");
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -58,14 +57,21 @@ le_result_t TAF_PA_WEAK taf::pa::data::Deinit()
  * Get the Telux data PA initialization state.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::GetInitState
+pa_result_t PA_WEAK taf::pa::data::GetSubsystemState
 (
-    taf::pa::data::InitState_e &state///< [OUT] The Telux data PA initialization state.
+    taf::pa::data::PhoneId_e phoneId,
+    ///< [IN] The phone ID.
+    taf::pa::data::Subsystem_e subsystem,
+    ///< [IN] The subsystem.
+    taf::pa::data::SubsystemState_e &state
+    ///< [OUT] The subsystem initialization state.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(state);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(subsystem);
+    PA_UNUSED(state);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -73,15 +79,15 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetInitState
  * Get the phone Ids.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::GetPhoneIds
+pa_result_t PA_WEAK taf::pa::data::GetPhoneIds
 (
     std::vector<taf::pa::data::PhoneId_e> &phoneIds
         ///< [OUT] The phone IDs.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneIds);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneIds);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -89,15 +95,15 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetPhoneIds
  * Get the SIM slot count.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::GetSimSlotCount
+pa_result_t PA_WEAK taf::pa::data::GetSimSlotCount
 (
     taf::pa::data::SlotCount_e &slotCount
         ///< [OUT] The number of SIM slots.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(slotCount);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(slotCount);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -105,7 +111,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetSimSlotCount
  * Get the SIM slot count.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::GetPhoneIdFromSimSlotId
+pa_result_t PA_WEAK taf::pa::data::GetPhoneIdFromSimSlotId
 (
     taf::pa::data::SlotId_e slotID,
         ///< [IN] The SIM slot ID.
@@ -113,10 +119,10 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetPhoneIdFromSimSlotId
         ///< [OUT] The phone ID.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(slotID);
-    LE_UNUSED(phoneID);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(slotID);
+    PA_UNUSED(phoneID);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -124,7 +130,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetPhoneIdFromSimSlotId
  * Get the SIM slot count.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::GetSimSlotIdFromPhoneId
+pa_result_t PA_WEAK taf::pa::data::GetSimSlotIdFromPhoneId
 (
     taf::pa::data::PhoneId_e phoneID,
         ///< [IN] The phone ID.
@@ -132,10 +138,10 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetSimSlotIdFromPhoneId
         ///< [OUT] The SIM slot ID.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneID);
-    LE_UNUSED(slotID);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneID);
+    PA_UNUSED(slotID);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -146,18 +152,41 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetSimSlotIdFromPhoneId
  *
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::GetProfilesAsync
+pa_result_t PA_WEAK taf::pa::data::GetProfilesAsync
 (
     taf::pa::data::PhoneId_e phoneId,
     taf_pa_data_profile_GetAllAsyncCb callback,
     void* contextPtr
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneId);
-    LE_UNUSED(callback);
-    LE_UNUSED(contextPtr);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(callback);
+    PA_UNUSED(contextPtr);
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Get details of the specified profile.
+ *
+ * Set ProfileInfo_t::profileId to the desired profile ID.
+ * Set ProfileInfo_t::techPref to 3GPP or 3GPP2. If unspecified, 3GPP will be used.
+ *
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::GetProfileInfo
+(
+    PhoneId_e phoneId,
+    ///< [IN] The phone id.
+    ProfileInfo_t &profileInfo
+    ///< [IN/OUT] The profile information.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(profileInfo);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -168,7 +197,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetProfilesAsync
  *
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::CreateProfile
+pa_result_t PA_WEAK taf::pa::data::CreateProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The phone id.
@@ -178,11 +207,11 @@ le_result_t TAF_PA_WEAK taf::pa::data::CreateProfile
     ///< [OUT] The profile id on success.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneId);
-    LE_UNUSED(profileInfo);
-    LE_UNUSED(profileId);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(profileInfo);
+    PA_UNUSED(profileId);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -192,7 +221,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::CreateProfile
  *
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::UpdateProfile
+pa_result_t PA_WEAK taf::pa::data::UpdateProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The phone id.
@@ -200,10 +229,10 @@ le_result_t TAF_PA_WEAK taf::pa::data::UpdateProfile
     ///< [IN] The profile information.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneId);
-    LE_UNUSED(profileInfo);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(profileInfo);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -214,7 +243,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::UpdateProfile
  *
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::DeleteProfile
+pa_result_t PA_WEAK taf::pa::data::DeleteProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The phone id.
@@ -222,10 +251,10 @@ le_result_t TAF_PA_WEAK taf::pa::data::DeleteProfile
     ///< [IN] The profile information.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneId);
-    LE_UNUSED(profileInfo);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(profileInfo);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -234,7 +263,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::DeleteProfile
  *
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::GetDefaultProfile
+pa_result_t PA_WEAK taf::pa::data::GetDefaultProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The profile information.
@@ -242,10 +271,10 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetDefaultProfile
     ///< [OUT] The default profile ID.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneId);
-    LE_UNUSED(profileId);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(profileId);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -254,7 +283,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetDefaultProfile
  *
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::SetDefaultProfile
+pa_result_t PA_WEAK taf::pa::data::SetDefaultProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The profile information.
@@ -262,10 +291,10 @@ le_result_t TAF_PA_WEAK taf::pa::data::SetDefaultProfile
     ///< [IN] The default profile ID.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneId);
-    LE_UNUSED(profileId);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(profileId);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -273,7 +302,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::SetDefaultProfile
  * Register for data call events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::AddDataCallEventsCallback
+pa_result_t PA_WEAK taf::pa::data::AddDataCallEventsCallback
 (
     taf_pa_data_CallEventsCb callBack,
         ///< [IN] The callback function.
@@ -283,11 +312,11 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddDataCallEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(callBack);
-    LE_UNUSED(context);
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(callBack);
+    PA_UNUSED(context);
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -295,15 +324,15 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddDataCallEventsCallback
  * Removed a previously registered data call events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::RemoveDataCallEventsCallback
+pa_result_t PA_WEAK taf::pa::data::RemoveDataCallEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -311,14 +340,14 @@ le_result_t TAF_PA_WEAK taf::pa::data::RemoveDataCallEventsCallback
  * Start a data session
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::StartDataSessionAsync
+pa_result_t PA_WEAK taf::pa::data::StartDataSessionAsync
 (
     const taf::pa::data::DataCallStartStopParams_t& params ///< [IN] The IP type.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(params);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(params);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -326,14 +355,38 @@ le_result_t TAF_PA_WEAK taf::pa::data::StartDataSessionAsync
  * Stop a data session
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::StopDataSessionAsync
+pa_result_t PA_WEAK taf::pa::data::StopDataSessionAsync
 (
     const taf::pa::data::DataCallStartStopParams_t& params ///< [IN] The IP type.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(params);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(params);
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Request list of all active data calls. Events will be provided via taf_pa_data_RequestCallListCb.
+ *
+ * @return LE_OK on success. Wait for callback for final status.
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::RequestDataCallsListAsync
+(
+    PhoneId_e phoneId,
+                ///< [IN] The phone ID.
+    taf_pa_data_RequestCallListCb callBack,
+                ///< [IN] The callback function.
+    std::shared_ptr<void> context
+                ///< [IN] The context pointer.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(callBack);
+    PA_UNUSED(context);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -341,7 +394,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::StopDataSessionAsync
  * Register roaming events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::AddRoamingEventsCallback
+pa_result_t PA_WEAK taf::pa::data::AddRoamingEventsCallback
 (
     taf_pa_data_RoamingEventsCb callBack,
         ///< [IN] The callback function.
@@ -351,11 +404,11 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddRoamingEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(callBack);
-    LE_UNUSED(context);
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(callBack);
+    PA_UNUSED(context);
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -363,15 +416,15 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddRoamingEventsCallback
  * Removed a previously registered roaming events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::RemoveRoamingEventsCallback
+pa_result_t PA_WEAK taf::pa::data::RemoveRoamingEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -379,19 +432,19 @@ le_result_t TAF_PA_WEAK taf::pa::data::RemoveRoamingEventsCallback
  * Get roaming status. Events will be provided via taf_pa_data_RoamingEventsCb that is registered
  * via AddRoamingEventsCallback()
  *
- * @return LE_OK on success. Wait for callback for final status.
+ * @return PA_OK on success. Wait for callback for final status.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::GetRoamingStatus
+pa_result_t PA_WEAK taf::pa::data::GetRoamingStatus
 (
     const taf::pa::data::PhoneId_e phoneId,
     RoamingStatus_t &roamingStatus
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneId);
-    LE_UNUSED(roamingStatus);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(roamingStatus);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -399,7 +452,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetRoamingStatus
  * Register throttled APN events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::AddThrottledApnEventsCallback
+pa_result_t PA_WEAK taf::pa::data::AddThrottledApnEventsCallback
 (
     taf_pa_data_ThrottledApnEventsCb callBack,
         ///< [IN] The callback function.
@@ -409,11 +462,11 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddThrottledApnEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(callBack);
-    LE_UNUSED(context);
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(callBack);
+    PA_UNUSED(context);
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -421,15 +474,15 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddThrottledApnEventsCallback
  * Removed a previously registered throttled APN events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::RemoveThrottledApnEventsCallback
+pa_result_t PA_WEAK taf::pa::data::RemoveThrottledApnEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -437,7 +490,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::RemoveThrottledApnEventsCallback
  * Get throttled APNs information.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::GetThrottledApnInfo
+pa_result_t PA_WEAK taf::pa::data::GetThrottledApnInfo
 (
     const taf::pa::data::PhoneId_e phoneId,
         ///< [IN] The phone ID.
@@ -445,10 +498,10 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetThrottledApnInfo
         ///< [OUT] The list of throttled APNs info.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(phoneId);
-    LE_UNUSED(throttledApnEventInfoList);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(throttledApnEventInfoList);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -456,7 +509,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::GetThrottledApnInfo
  * Register QoS TFT events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::AddQosTftEventsCallback
+pa_result_t PA_WEAK taf::pa::data::AddQosTftEventsCallback
 (
     taf_pa_data_QosTftEventsCb callBack,
         ///< [IN] The callback function.
@@ -466,11 +519,11 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddQosTftEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(callBack);
-    LE_UNUSED(context);
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(callBack);
+    PA_UNUSED(context);
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -478,15 +531,15 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddQosTftEventsCallback
  * Removed a previously registered QoS TFT events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::RemoveQosTftEventsCallback
+pa_result_t PA_WEAK taf::pa::data::RemoveQosTftEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -494,7 +547,7 @@ le_result_t TAF_PA_WEAK taf::pa::data::RemoveQosTftEventsCallback
  * Register HW acceleration change events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::AddHwAccelerationChangeEventsCallback
+pa_result_t PA_WEAK taf::pa::data::AddHwAccelerationChangeEventsCallback
 (
     taf_pa_data_HwAccelerationEventsCb callBack,
     ///< [IN] The callback function.
@@ -504,11 +557,11 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddHwAccelerationChangeEventsCallback
     ///< [OUT] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(callBack);
-    LE_UNUSED(context);
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(callBack);
+    PA_UNUSED(context);
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -516,15 +569,91 @@ le_result_t TAF_PA_WEAK taf::pa::data::AddHwAccelerationChangeEventsCallback
  * Removed a previously registered HW acceleration change events callback
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::RemoveHwAccelerationChangeEventsCallback
+pa_result_t PA_WEAK taf::pa::data::RemoveHwAccelerationChangeEventsCallback
 (
     uint16_t id
     ///< [IN] The ID of the registered callback.
 )
 {
-    LE_DEBUG("Default PA implementation.");
-    LE_UNUSED(id);
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Register profile change events callback
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::AddProfileEventsCallback
+(
+    taf_pa_data_ProfileEventsCb callBack,
+        ///< [IN] The callback function.
+    std::shared_ptr<void> context,
+        ///< [IN] The context pointer.
+    uint16_t &id
+        ///< [OUT] The ID of the registered callback.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(callBack);
+    PA_UNUSED(context);
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Removed a previously registered profile  events callback
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::RemoveProfileEventsCallback
+(
+    uint16_t id
+        ///< [IN] The ID of the registered callback.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Register roaming events callback
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::AddSubsystemStateChangeCallback
+(
+    taf_pa_data_SubsystemStateChangeCb callBack,
+    ///< [IN] The callback function.
+    std::shared_ptr<void> context,
+    ///< [IN] The context pointer.
+    uint16_t &id
+    ///< [OUT] The ID of the registered callback.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(callBack);
+    PA_UNUSED(context);
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Removed a previously registered subsystem state change callback
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::RemoveSubsystemStateChangeCallback
+(
+    uint16_t id
+        ///< [IN] The ID of the registered callback.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -533,10 +662,10 @@ le_result_t TAF_PA_WEAK taf::pa::data::RemoveHwAccelerationChangeEventsCallback
  * initialization.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::RegisterSDKCallbacks()
+pa_result_t PA_WEAK taf::pa::data::RegisterSDKCallbacks()
 {
-    LE_DEBUG("Default PA implementation.");
-    return LE_NOT_IMPLEMENTED;
+    PA_DEBUG("Default PA implementation.");
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -544,13 +673,8 @@ le_result_t TAF_PA_WEAK taf::pa::data::RegisterSDKCallbacks()
  * Deregister SDK callbacks. This is to support the service manage suspend/resume scenarios.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t TAF_PA_WEAK taf::pa::data::DeregisterSDKCallbacks()
+pa_result_t PA_WEAK taf::pa::data::DeregisterSDKCallbacks()
 {
-    LE_DEBUG("Default PA implementation.");
-    return LE_NOT_IMPLEMENTED;
-}
-
-COMPONENT_INIT
-{
-    LE_INFO("Default Data PA Component Init");
+    PA_DEBUG("Default PA implementation.");
+    return PA_NOT_IMPLEMENTED;
 }

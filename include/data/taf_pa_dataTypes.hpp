@@ -24,32 +24,38 @@ namespace pa
 
 //--------------------------------------------------------------------------------------------------
 /**
- * The timeout for subsystem initialization.
- */
-//--------------------------------------------------------------------------------------------------
-static const int SUBSYSTEM_INIT_TIMEOUT = 30;
-
-//--------------------------------------------------------------------------------------------------
-/**
  * The max length of a name string (including the terminating null character)
  */
 //--------------------------------------------------------------------------------------------------
 static const int MAX_NAME_LEN = 65;
 
+
+
 namespace data
 {
+//--------------------------------------------------------------------------------------------------
+/**
+ * The data subsystems.
+ */
+//--------------------------------------------------------------------------------------------------
+enum class Subsystem_e
+{
+    PHONE_MANAGER,           ///< Phone manager.
+    PROFILE_MANAGER,         ///< Profile manager.
+    DATACALL_MANAGER,        ///< Data call manager.
+    SERVING_SYSTEM_MANAGER   ///< Serving system manager.
+};
 
 //--------------------------------------------------------------------------------------------------
 /**
  * The PA initialization state.
  */
 //--------------------------------------------------------------------------------------------------
-enum class InitState_e
+enum class SubsystemState_e
 {
-    INIT_FAILED,                  ///< PA initialization failed.
-    INIT_PROFILE_MANAGEMENT_DONE, ///< PA for profile management is ready.
-    INIT_CALL_MANAGEMENT_DONE,    ///< PA for call management is ready.
-    INIT_DONE                     ///< PA is ready.
+    AVAILABLE,   ///< PA initialization failed.
+    UNAVAILABLE, ///< PA for profile management is ready.
+    FAILED       ///< PA for call management is ready.
 };
 
 //--------------------------------------------------------------------------------------------------
@@ -59,7 +65,7 @@ enum class InitState_e
  * Sync this with the max supported by DCS, TAF_DCS_PROFILE_LIST_MAX_ENTRY
  */
 //--------------------------------------------------------------------------------------------------
-static const int MAX_PROFILES = 10;
+static const int MAX_PROFILES = 32;
 
 //--------------------------------------------------------------------------------------------------
 /**
@@ -401,6 +407,7 @@ enum class IpType_e : uint8_t
 //--------------------------------------------------------------------------------------------------
 enum class ApnTypeBitmask_e : uint16_t
 {
+    UNKNOWN   = 0x0,    ///< 0x000. No APN type.
     DEFAULT   = 0x1,    ///< 0x001. APN type for default/internet traffic.
     IMS       = 0x2,    ///< 0x002. APN type for the IP multimedia subsystem.
     MMS       = 0x4,    ///< 0x004. APN type for the multimedia messaging service.
@@ -1021,6 +1028,31 @@ enum class QosFlowMaskValues_e
 
 //--------------------------------------------------------------------------------------------------
 /**
+ * The profile event type.
+ */
+//--------------------------------------------------------------------------------------------------
+enum class ProfileEvent_e
+{
+    UNKNOWN  = 0, ///< Unknown event.
+    CREATED  = 1, ///< A profile has been created.
+    DELETED  = 2, ///< A profile has been deleted.
+    MODIFIED = 3  ///< A profile has been modified.
+};
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * The 5G N79 and WLAN 5G band interference priority.
+ */
+//--------------------------------------------------------------------------------------------------
+enum class BandIntPriority_e
+{
+    UNKNOWN = 0,  ///< Unknown band priority.
+    N79_5G  = 1,  ///< The 5G N79 band.
+    WLAN_5G = 2   ///< The Wifi 5 GHz band.
+};
+
+//--------------------------------------------------------------------------------------------------
+/**
  * 32 bit mask that denotes which of the flow paramaters are available. The mask is defined in
  * QosFlowMaskValues_e enum.
  */
@@ -1075,16 +1107,17 @@ struct RoamingStatus_t
 //--------------------------------------------------------------------------------------------------
 struct ProfileInfo_t
 {
-    ProfileId_e           profileId;                  ///< The profile id.
-    char                  apn[MAX_APN_LEN];           ///< The access point name.
-    char                  name[MAX_NAME_LEN];         ///< The profile name.
-    char                  userName[MAX_USERNAME_LEN]; ///< The user name.
-    char                  password[MAX_PASSWORD_LEN]; ///< The password.
-    TechPref_e            techPref;                   ///< The technology preference.
-    AuthType_e            authType;                   ///< The authentication type.
-    IpType_e              ipType;                     ///< The IP type.
-    ApnTypeBitmask_e      apnTypeMask;                ///< The APN type bitmask.
-    EmergencyCapability_e emergencyCallSupport;       ///< Emergency call support.
+    ProfileId_e profileId{ProfileId_e::INVALID};             ///< The profile id.
+    char apn[MAX_APN_LEN]{};                                 ///< The access point name.
+    char name[MAX_NAME_LEN]{};                               ///< The profile name.
+    char userName[MAX_USERNAME_LEN]{};                       ///< The user name.
+    char password[MAX_PASSWORD_LEN]{};                       ///< The password.
+    TechPref_e techPref{TechPref_e::TP_UNKNOWN};             ///< The technology preference.
+    AuthType_e authType{AuthType_e::NONE};                   ///< The authentication type.
+    IpType_e ipType{IpType_e::IPV4};                         ///< The IP type.
+    ApnTypeBitmask_e apnTypeMask{ApnTypeBitmask_e::UNKNOWN}; ///< The APN type bitmask.
+    EmergencyCapability_e emergencyCallSupport{EmergencyCapability_e::UNSPECIFIED};
+                                                             ///< Emergency call support.
 };
 
 //--------------------------------------------------------------------------------------------------
@@ -1196,9 +1229,7 @@ struct HwAccelerationChangeEvent_t
 };
 
 } // data
-
 } // pa
-
 } // taf
 
 #endif // __TAF_PA_DATA_TYPES_HPP__
