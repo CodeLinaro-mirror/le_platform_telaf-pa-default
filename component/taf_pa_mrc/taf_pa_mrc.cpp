@@ -79,3 +79,13 @@ pa_result_t taf_pa_mrc_SetTimerPeriod
 
     return -ENOSYS;
 }
+
+pa_result_t taf_pa_mrc_PerformABSync
+(
+    void
+)
+{
+    PA_INFO("Function is not implemented in default PA.");
+
+    return -ENOSYS;
+}
