@@ -6,19 +6,7 @@
 #ifndef TAF_PA_FSCRYPT_H
 #define TAF_PA_FSCRYPT_H
 
-#ifdef TAF_PA_DEFAULT
-#define TAF_PA_WEAK __attribute__((weak))
-#else
-#define TAF_PA_WEAK
-#endif
-
-#include "legato.h"
-
-#ifdef USE_CMAKE_BUILD
-#include "taf_ks_interface.h"
-#else
-#include "interfaces.h"
-#endif
+#include "taf_pa_common.h"
 
 //--------------------------------------------------------------------------------------------------
 /**
@@ -39,7 +27,7 @@ typedef void* KeyMgt_KeyFileRef_t;
  * PA initialization.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK void taf_pa_fsc_Init
+PA_SHARED PA_WEAK void taf_pa_fsc_Init
 (
     void* cryptoFunc
 );
@@ -49,9 +37,9 @@ LE_SHARED TAF_PA_WEAK void taf_pa_fsc_Init
  * Get a key file reference by key name.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_fsc_GetKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_fsc_GetKey
 (
-    le_msg_SessionRef_t clientSessionRef,   ///< [IN] Client session reference
+    int clientSessionFd,                    ///< [IN] Client session Fd
     const char* dirName,                    ///< [IN] dir Name
     KeyMgt_KeyFileRef_t* keyFileRefPtr,     ///< [OUT] Key file reference.
     uint8_t* key,                           ///< [OUT] Raw key
@@ -63,9 +51,9 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_fsc_GetKey
  * Create AES key and return a key file reference.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_fsc_GenerateAesKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_fsc_GenerateAesKey
 (
-    le_msg_SessionRef_t clientSessionRef,   ///< [IN] Client session reference
+    int clientSessionFd,                    ///< [IN] Client session Fd
     const char* dirName,                    ///< [IN] dir Name
     KeyMgt_KeyFileRef_t* keyFileRefPtr,     ///< [OUT] Key file reference
     uint8_t* key,                           ///< [OUT] Raw key
@@ -77,10 +65,10 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_fsc_GenerateAesKey
  * Delete a key file.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_fsc_DeleteKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_fsc_DeleteKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
-    KeyMgt_KeyFileRef_t keyFileRef        ///< [IN] Key file reference
+    int clientSessionFd,                    ///< [IN] Client session Fd
+    KeyMgt_KeyFileRef_t keyFileRef          ///< [IN] Key file reference
 );
 
 #endif // TAF_PA_FSCRYPT_H
