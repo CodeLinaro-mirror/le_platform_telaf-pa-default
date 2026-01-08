@@ -214,3 +214,20 @@ pa_result_t tafpa::location::taf_pa_location_requestXtraStatus(taf_pa_location_R
     (void)context;
     return PA_NOT_IMPLEMENTED;
 }
+
+pa_result_t tafpa::location::taf_pa_location_injectMerkleTreeInformation(const std::string merkleTreeInfo, taf_pa_location_GeneralCb callback, std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter taf_pa_location_injectMerkleTreeInformation() called ");
+    (void)merkleTreeInfo;
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+pa_result_t tafpa::location::taf_pa_location_configureOsnma(bool enableOsnma, taf_pa_location_GeneralCb callback, std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter taf_pa_location_configureOsnma() called ");
+    (void)enableOsnma;
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
