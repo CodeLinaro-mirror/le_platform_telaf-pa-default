@@ -90,3 +90,42 @@ pa_result_t taf_pa_sim_Init
     PA_INFO("Function is not implemented in stub PA");
     return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
 }
+
+uint8_t taf_pa_sim_GetProfileNum
+(
+    taf_pa_sim_SlotId_t slot
+)
+{
+    PA_INFO("Function is not implemented in stub PA.");
+    (void)slot;  // suppress unused warning
+    return 0;
+}
+
+taf_pa_sim_ProfileInfo_t taf_pa_sim_GetProfile
+(
+    taf_pa_sim_SlotId_t slot,
+    uint8_t index
+)
+{
+    PA_INFO("Function is not implemented in stub PA.");
+    (void)slot;
+    (void)index;
+
+    taf_pa_sim_ProfileInfo_t info;
+    info.profileId = TAF_PA_SIM_PROFILE_ID_UNKNOWN;
+    info.type      = TAF_PA_SIM_PROFILE_TYPE_UNKNOWN;
+    info.state     = TAF_PA_SIM_PROFILE_STATE_UNKNOWN;
+    return info;
+}
+
+pa_result_t taf_pa_sim_SetActiveProfile
+(
+    taf_pa_sim_SlotId_t slot,
+    taf_pa_sim_ProfileId_t profileId
+)
+{
+    PA_INFO("Function is not implemented in stub PA.");
+    (void)slot;
+    (void)profileId;
+    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+}
