@@ -33,6 +33,27 @@ static const int MAX_NAME_LEN = 65;
 
 namespace data
 {
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Data connection indication types that can be enabled/disabled.
+ */
+//--------------------------------------------------------------------------------------------------
+enum class DataConnectionIndicationType_e : uint8_t
+{
+    DEFAULT = 0,      ///< Default indications (always enabled)
+    THROUGHPUT = 1    ///< Throughput indications (optional)
+};
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Bitset for managing data connection indications.
+ * Bit 0: DEFAULT indications
+ * Bit 1: THROUGHPUT indications
+ */
+//--------------------------------------------------------------------------------------------------
+using DataConnectionIndications_t = std::bitset<32>;
+
 //--------------------------------------------------------------------------------------------------
 /**
  * The data subsystems.
@@ -1226,6 +1247,46 @@ struct HwAccelerationChangeEvent_t
 {
     PhoneId_e             phoneId;        ///< The phone id.
     HwAccelerationState_e state;          ///< The HW acceleration state.
+};
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Uplink throughput information for a data profile.
+ */
+//--------------------------------------------------------------------------------------------------
+struct UplinkThroughputInfo_t
+{
+    uint32_t throughput = 0;        ///< Current uplink throughput in kbps.
+    uint32_t maxThroughput = 0;     ///< Maximum allowed uplink throughput in kbps.
+    uint32_t queueSize = 0;         ///< Number of bytes pending in the uplink queue.
+};
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Downlink throughput information for a data profile.
+ */
+//--------------------------------------------------------------------------------------------------
+struct DownlinkThroughputInfo_t
+{
+    uint32_t throughput = 0;        ///< Current downlink throughput in kbps.
+};
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Combined uplink and downlink throughput information for a data profile.
+ *
+ * This structure contains comprehensive throughput metrics for a specific data profile,
+ * including both uplink and downlink information. It is used in periodic throughput
+ * reports and on-demand queries.
+ */
+//--------------------------------------------------------------------------------------------------
+struct ThroughputInfo_t
+{
+    PhoneId_e                 phoneId{PhoneId_e::INVALID};    ///< The phone ID.
+    SlotId_e                  slotId{SlotId_e::INVALID};      ///< The slot ID.
+    ProfileId_e               profileId{ProfileId_e::INVALID};///< The profile ID.
+    UplinkThroughputInfo_t    ulThroughput;                   ///< Uplink throughput details.
+    DownlinkThroughputInfo_t  dlThroughput;                   ///< Downlink throughput details.
 };
 
 } // data
