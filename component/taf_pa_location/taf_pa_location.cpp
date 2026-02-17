@@ -231,3 +231,76 @@ pa_result_t tafpa::location::taf_pa_location_configureOsnma(bool enableOsnma, ta
     (void)context;
     return PA_NOT_IMPLEMENTED;
 }
+
+pa_result_t tafpa::location::taf_pa_location_configureEngineIntegrityRisk(taf_pa_location_EngineType_t engineType,uint32_t integrityRisk, taf_pa_location_GeneralCb callback, std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter ConfigureEngineIntegrityRisk() called ");
+    (void)engineType;
+    (void)integrityRisk;
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t tafpa::location::taf_pa_location_injectCorrectionData(const uint8_t *injectionData, uint32_t
+injectionDataSize, taf_pa_location_GeneralCb callback,std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter taf_pa_location_injectCorrectionData() called ");
+    (void)injectionData;
+    (void)injectionDataSize;
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t tafpa::location::taf_pa_location_createDgnssSource(taf_pa_location_DgnssDataFormat_t dgnssFormat,taf_pa_location_GeneralCb callback,std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter taf_pa_location_createDgnssSource() called ");
+    (void)dgnssFormat;
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t tafpa::location::taf_pa_location_releaseDgnssSource(taf_pa_location_GeneralCb callback,std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter taf_pa_location_releaseSource() called ");
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t tafpa::location::taf_pa_location_registerDgnssEventListener(
+taf_pa_location_DgnssEventListener* eventListener, std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter RegisterDgnssEventListener() called ");
+    (void)eventListener;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t tafpa::location::taf_pa_location_initializeDgnss(taf_pa_location_DgnssDataFormat_t dataFormat,
+taf_pa_location_GeneralCb callback,std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter taf_pa_location_initializeDgnss() called ");
+    (void)dataFormat;
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t tafpa::location::taf_pa_location_deregisterDgnssEventListener(std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter DeregisterDgnssEventListener() called ");
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t tafpa::location::taf_pa_location_deInitializeDgnss(taf_pa_location_GeneralCb callback,
+std::any context)
+{
+    PA_INFO("Location PA: Default platform adapter taf_pa_location_deInitializeDgnss() called ");
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
