@@ -1,9 +1,8 @@
 /*
- *  Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
- *  SPDX-License-Identifier: BSD-3-Clause-Clear
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
-#include "legato.h"
-#include "interfaces.h"
+
 #include "taf_pa_fscrypt.h"
 
 //--------------------------------------------------------------------------------------------------
@@ -16,6 +15,7 @@ void taf_pa_fsc_Init
     void* cryptoFunc
 )
 {
+    PA_INFO("Telaf fscrypt default PA initialized.");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -23,16 +23,16 @@ void taf_pa_fsc_Init
  * Get a key file reference by directory name.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t taf_pa_fsc_GetKey
+pa_result_t taf_pa_fsc_GetKey
 (
-    le_msg_SessionRef_t clientSessionRef,   ///< [IN] Client session reference
+    int clientSessionFd,                    ///< [IN] Client session Fd
     const char* dirName,                    ///< [IN] dir Name
     KeyMgt_KeyFileRef_t* keyFileRefPtr,     ///< [OUT] Key file reference.
     uint8_t* key,                           ///< [OUT] Raw key
     size_t keyLen                           ///< [OUT] Length of raw key
 )
 {
-    return LE_OK;
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -40,16 +40,16 @@ le_result_t taf_pa_fsc_GetKey
  * Create AES key and return a key file reference.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t taf_pa_fsc_GenerateAesKey
+pa_result_t taf_pa_fsc_GenerateAesKey
 (
-    le_msg_SessionRef_t clientSessionRef,   ///< [IN] Client session reference
+    int clientSessionFd,                    ///< [IN] Client session Fd
     const char* dirName,                    ///< [IN] dir Name
     KeyMgt_KeyFileRef_t* keyFileRefPtr,     ///< [OUT] Key file reference
     uint8_t* key,                           ///< [OUT] Raw key
     size_t keyLen                           ///< [OUT] Length of raw key
 )
 {
-    return LE_OK;
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -57,21 +57,11 @@ le_result_t taf_pa_fsc_GenerateAesKey
  * Delete a key file.
  */
 //--------------------------------------------------------------------------------------------------
-le_result_t taf_pa_fsc_DeleteKey
+pa_result_t taf_pa_fsc_DeleteKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
-    KeyMgt_KeyFileRef_t keyFileRef        ///< [IN] Key file reference
+    int clientSessionFd,                    ///< [IN] Client session Fd
+    KeyMgt_KeyFileRef_t keyFileRef          ///< [IN] Key file reference
 )
 {
-    return LE_OK;
-}
-
-//--------------------------------------------------------------------------------------------------
-/**
- * The PA initialization function.
- */
-//--------------------------------------------------------------------------------------------------
-COMPONENT_INIT
-{
-    LE_INFO("Telaf fscrypt stub PA initialized.");
+    return PA_NOT_IMPLEMENTED;
 }
