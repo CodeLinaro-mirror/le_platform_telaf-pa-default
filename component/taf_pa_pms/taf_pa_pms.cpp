@@ -5,79 +5,73 @@
 
 #include "taf_pa_pms.hpp"
 
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-/* -------------------( PaFn - Fcall ) ------------------ */
-/* ------------------------------------------------------ */
-/* ------------------------------------------------------ */
-
-PaType(Result) PaFn(Init)
+pa_result_t taf_pa_pms_Init
 (
-    PaType(Reference)  *paRefPtr,
-    SendEventFunc_t     fnSendEvent,
-    uint32_t            timeoutMs
+    taf_pa_pms_Reference_t  *paRefPtr,
+    SendEventFunc_t          fnSendEvent,
+    uint32_t                 timeoutMs
 )
 {
     PA_INFO("[DEF PA] NOT implemented");
-    return PaResult(NOT_IMPLEMENTED);
+    return PA_NOT_IMPLEMENTED;
 }
 
-void PaFn(Deinit)
+void taf_pa_pms_Deinit
 (
-    PaType(Reference) *paRefPtr
+    taf_pa_pms_Reference_t   *paRefPtr
 )
 {
     PA_INFO("[DEF PA] NOT implemented");
 }
 
-PaType(Result) PaFn(SetPowerStateAsMaster)
+pa_result_t taf_pa_pms_SetPowerStateAsMaster
 (
-    PaType(Reference)         paRef,
-    PaType(PowerState)        state,
+    taf_pa_pms_Reference_t    paRef,
+    taf_pa_pms_PowerState_t   state,
     const char               *name
 )
 {
     PA_INFO("[DEF PA] NOT implemented");
-    return PaResult(NOT_IMPLEMENTED);
+    return PA_NOT_IMPLEMENTED;
 }
 
-PaType(Result) PaFn(SendAckForStateUpdate)
+pa_result_t taf_pa_pms_SendAckForStateUpdate
 (
-    PaType(Reference)  paRef,
-    PaType(PowerState) state,
-    PaType(Ack)        ack
+    taf_pa_pms_Reference_t    paRef,
+    taf_pa_pms_PowerState_t   state,
+    taf_pa_pms_Ack_t          ack
 )
 {
     PA_INFO("[DEF PA] NOT implemented");
-    return PaResult(NOT_IMPLEMENTED);
+    return PA_NOT_IMPLEMENTED;
 }
 
-PaType(Result) PaFn(GetAllMachineNames)
+pa_result_t taf_pa_pms_GetAllMachineNames
 (
-    PaType(Reference)  paRef,
-    std::vector<std::string> & machineNames
+    taf_pa_pms_Reference_t    paRef,
+    std::vector<std::string> &machineNames
 )
 {
     PA_INFO("[DEF PA] NOT implemented");
-    return PaResult(NOT_IMPLEMENTED);
+    return PA_NOT_IMPLEMENTED;
 }
 
-PaType(Result) PaFn(SetModemWakeupFilter)
+pa_result_t taf_pa_pms_SetModemWakeupFilter
 (
-    PaType(Reference)         paRef,
+    taf_pa_pms_Reference_t    paRef,
     uint32_t                  wsBitmask
 )
 {
     PA_INFO("[DEF PA] NOT implemented");
-    return PaResult(NOT_IMPLEMENTED);
+    return PA_NOT_IMPLEMENTED;
 }
 
-PaType(Result) PaFn(GetModemWakeupFilter)
+pa_result_t taf_pa_pms_GetModemWakeupFilter
 (
-    PaType(Reference)         paRef,
+    taf_pa_pms_Reference_t    paRef,
     uint32_t                 *wsBitmaskPtr
 )
 {
     PA_INFO("[DEF PA] NOT implemented");
-    return PaResult(NOT_IMPLEMENTED);
+    return PA_NOT_IMPLEMENTED;
 }
