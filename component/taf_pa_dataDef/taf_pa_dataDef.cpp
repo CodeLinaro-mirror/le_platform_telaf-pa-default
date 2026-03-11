@@ -678,3 +678,117 @@ pa_result_t PA_WEAK taf::pa::data::DeregisterSDKCallbacks()
     PA_DEBUG("Default PA implementation.");
     return PA_NOT_IMPLEMENTED;
 }
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Set the throughput report interval.
+ *
+ * Configure the interval for generating periodic uplink and downlink throughput reports.
+ * The minimum allowed interval is 50 ms. Passing a value of 0 disables generation
+ * of throughput reports. The application of this interval is a global setting.
+ *
+ * @return
+ *  - PA_OK              Successfully set the interval
+ *  - PA_BAD_PARAMETER   Invalid parameters
+ *  - PA_FAULT           Failed to set the interval
+ *  - PA_TIMEOUT         Operation timed out
+ *  - PA_NOT_IMPLEMENTED API is not implemented
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::SetThroughputReportInterval
+(
+    PhoneId_e phoneId,
+        ///< [IN] The phone ID.
+    uint32_t reportInterval
+        ///< [IN] The throughput report interval in milliseconds (min 50ms, 0 to disable).
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(reportInterval);
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Get the last throughput information for all active profiles.
+ *
+ * Retrieves the most recent uplink and downlink throughput information for all active data
+ * profiles on the specified phone.
+ *
+ * @return
+ *  - PA_OK              Successfully retrieved throughput information
+ *  - PA_BAD_PARAMETER   Invalid parameters
+ *  - PA_FAULT           Failed to retrieve throughput information
+ *  - PA_TIMEOUT         Operation timed out
+ *  - PA_NOT_IMPLEMENTED API is not implemented
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::GetLastThroughputInfo
+(
+    PhoneId_e phoneId,
+        ///< [IN] The phone ID.
+    std::vector<ThroughputInfo_t> &throughputInfoList
+        ///< [OUT] The list of throughput information for all active profiles.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(phoneId);
+    PA_UNUSED(throughputInfoList);
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Register throughput events callback.
+ *
+ * Register a callback to receive periodic throughput information updates. The callback will be
+ * invoked at the interval configured via SetThroughputReportInterval().
+ *
+ * @return
+ *  - PA_OK              Successfully registered callback
+ *  - PA_BAD_PARAMETER   Invalid parameters (e.g., null callback)
+ *  - PA_FAULT           Failed to register with TelSDK
+ *  - PA_NOT_IMPLEMENTED API is not implemented
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::AddThroughputEventsCallback
+(
+    taf_pa_data_ThroughputEventsCb callBack,
+        ///< [IN] The callback function.
+    std::shared_ptr<void> context,
+        ///< [IN] The context pointer.
+    uint16_t &id
+        ///< [OUT] The ID of the registered callback.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(callBack);
+    PA_UNUSED(context);
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Remove a previously registered throughput events callback.
+ *
+ * Unregister a callback that was previously registered via AddThroughputEventsCallback().
+ *
+ * @return
+ *  - PA_OK              Successfully removed callback
+ *  - PA_NOT_FOUND       Callback with specified ID not found
+ *  - PA_FAULT           Failed to deregister from TelSDK
+ *  - PA_NOT_IMPLEMENTED API is not implemented
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::RemoveThroughputEventsCallback
+(
+    uint16_t id
+        ///< [IN] The ID of the registered callback.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(id);
+    return PA_NOT_IMPLEMENTED;
+}
