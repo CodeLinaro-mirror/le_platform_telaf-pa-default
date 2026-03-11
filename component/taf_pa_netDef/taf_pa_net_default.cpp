@@ -3,7 +3,7 @@
  *  SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
-
+#include <vector>
 #include "taf_pa_net.hpp"
 
 /* Implementation */
@@ -46,6 +46,24 @@ pa_result_t taf_pa_net_GetSlotIdFromPhoneId
 (
     uint8_t phoneId,     ///< [IN] Phone ID
     uint8_t *slotIdPtr   ///< [OUT] Slot ID
+)
+{
+    PA_INFO("Default platform adatper implementation");
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Get supported slot IDs
+ *
+ * @return PA_OK            Success
+ *         PA_BAD_PARAMETER Invalid parameter
+ *         PA_FAULT         Failure
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t taf_pa_net_GetSupportedSlotIds
+(
+    std::vector<uint8_t> &slotIds   ///< [OUT] Slot IDs
 )
 {
     PA_INFO("Default platform adatper implementation");
