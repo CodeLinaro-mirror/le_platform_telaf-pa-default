@@ -71,7 +71,7 @@ typedef struct {
     taf_pa_sim_RefreshStage_t refreshStage;
 }taf_pa_sim_RefreshChangeInd_t;
 
-typedef enum States
+typedef enum
 {
     TAF_PA_SIM_PRESENT,
     TAF_PA_SIM_ABSENT,
@@ -94,7 +94,7 @@ typedef enum
     TAF_PA_SIM_ID_MAX
 }taf_pa_sim_Id_t;
 
-typedef enum Command
+typedef enum
 {
     TAF_PA_SIM_READ_BINARY = 0xb0,
     TAF_PA_SIM_READ_RECORD = 0xb2,
@@ -136,7 +136,8 @@ typedef enum
    TAF_PA_SIM_FDN  = 4
 }taf_pa_sim_LockType_t;
 
-typedef enum AppType {
+typedef enum
+{
    TAF_PA_APPTYPE_UNKNOWN = 0,
    TAF_PA_APPTYPE_SIM = 1,
    TAF_PA_APPTYPE_USIM = 2,
@@ -145,7 +146,7 @@ typedef enum AppType {
    TAF_PA_APPTYPE_ISIM = 5
 }taf_pa_sim_AppType_t;
 
-typedef enum LockResponse
+typedef enum
 {
     TAF_PA_CHANGE_PIN,
     TAF_PA_UNLOCK_BY_PIN,
@@ -195,7 +196,7 @@ struct taf_pa_sim_CardLockResponseInfo_t
     pa_result_t    result;
 };
 
-using taf_pa_sim_GeneralCb = std::function<void(pa_result_t result, std::any context)>;//lsc
+using taf_pa_sim_GeneralCb = std::function<void(pa_result_t result, std::any context)>;
 
 using taf_pa_sim_onSubscriptionInfoChanged =
       std::function<void(const std::shared_ptr<taf_pa_sim_Iccid_t>& iccidDataInfo)>;
@@ -242,28 +243,28 @@ typedef enum
 {
     TAF_PA_SIM_PROFILE_TYPE_UNKNOWN   = -1,
     TAF_PA_SIM_PROFILE_TYPE_REGULAR   = 0,
-    TAF_PA_SIM_PROFILE_TYPE_EMERGENCY = 1,
+    TAF_PA_SIM_PROFILE_TYPE_EMERGENCY = 1
 } taf_pa_sim_ProfileType_t;
 
 typedef enum
 {
     TAF_PA_SIM_PROFILE_STATE_UNKNOWN  = -1,
     TAF_PA_SIM_PROFILE_STATE_INACTIVE = 0,
-    TAF_PA_SIM_PROFILE_STATE_ACTIVE   = 1,
+    TAF_PA_SIM_PROFILE_STATE_ACTIVE   = 1
 } taf_pa_sim_ProfileState_t;
 
 typedef enum
 {
     TAF_PA_SIM_SLOT_UNKNOWN = -1,
     TAF_PA_SIM_SLOT_1       = 0,
-    TAF_PA_SIM_SLOT_2       = 1,
+    TAF_PA_SIM_SLOT_2       = 1
 } taf_pa_sim_SlotId_t;
 
 typedef enum
 {
     TAF_PA_SIM_PROFILE_ID_UNKNOWN = -1,
     TAF_PA_SIM_PROFILE_ID_1       = 0,
-    TAF_PA_SIM_PROFILE_ID_2       = 1,
+    TAF_PA_SIM_PROFILE_ID_2       = 1
 } taf_pa_sim_ProfileId_t;
 
 typedef struct
