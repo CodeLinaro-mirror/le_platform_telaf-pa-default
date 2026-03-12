@@ -5,7 +5,8 @@
 
 #include "taf_pa_common.h"
 
-#define MAX_MSG_SIZE 1024 
+#define MAX_MSG_SIZE 1024
+#define PA_UNUSED(x) (void)(x)
 
 taf_pa_common_LogLevel_t gLogLevel = TAF_PA_COMMON_LOG_LEVEL_INFO;
 
@@ -69,6 +70,22 @@ static int LogLevelToSyslog
     return LOG_INFO;
 }
 
+PA_SHARED PA_WEAK pa_result_t taf_pa_common_LogInit
+(
+    taf_pa_common_LogBackend_t backend
+)
+{
+    PA_UNUSED(backend);
+}
+
+PA_SHARED PA_WEAK pa_result_t taf_pa_common_LogSetBackend
+(
+    taf_pa_common_LogBackend_t backend
+)
+{
+    PA_UNUSED(backend);
+}
+
 void taf_pa_common_LogSetlevel
 (
     taf_pa_common_LogLevel_t level
@@ -98,7 +115,7 @@ void taf_pa_common_LogMessage
     char log[MAX_MSG_SIZE];
     snprintf(log, sizeof(log), "%s | %s %s() %d | %s", LogLevelToStr(level), base,
         (func ? func : "?"), line, fmt);
-	
+
     va_list ap;
     va_start(ap, fmt);
     vsyslog(LogLevelToSyslog(level), log, ap);
