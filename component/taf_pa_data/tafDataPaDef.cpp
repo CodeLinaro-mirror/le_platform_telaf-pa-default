@@ -792,3 +792,28 @@ pa_result_t PA_WEAK taf::pa::data::RemoveThroughputEventsCallback
     PA_UNUSED(id);
     return PA_NOT_IMPLEMENTED;
 }
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Get the MTU (Maximum Transmission Unit) for a network interface.
+ *
+ * @return
+ *  - PA_OK              Successfully retrieved MTU
+ *  - PA_BAD_PARAMETER   Invalid parameters (e.g., empty interfaceName)
+ *  - PA_FAULT           Failed to retrieve MTU
+ *  - PA_NOT_IMPLEMENTED API is not implemented
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf::pa::data::GetMtu
+(
+    const std::string& interfaceName,
+        ///< [IN] The network interface name.
+    int32_t& mtu
+        ///< [OUT] The MTU value in bytes.
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(interfaceName);
+    PA_UNUSED(mtu);
+    return PA_NOT_IMPLEMENTED;
+}
