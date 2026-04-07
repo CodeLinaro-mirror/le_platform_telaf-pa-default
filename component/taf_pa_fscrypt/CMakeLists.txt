@@ -12,7 +12,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/../../include/keyStore
 )
 
-add_library(${TARGET_NAME} SHARED taf_pa_fscrypt_default.c)
+add_library(${TARGET_NAME} SHARED tafFscryptPaDef.c)
 
 set_target_properties(${TARGET_NAME} PROPERTIES
     VERSION ${LIBRARY_VERSION}

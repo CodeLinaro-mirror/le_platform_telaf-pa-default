@@ -12,7 +12,7 @@ set(OUTPUT_NAME Component_${TARGET_NAME})
 # common headers
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../include)
 
-add_library(${TARGET_NAME} SHARED taf_pa_location.cpp)
+add_library(${TARGET_NAME} SHARED tafLocationPaDef.cpp)
 
 set_target_properties(${TARGET_NAME} PROPERTIES
     VERSION ${LIBRARY_VERSION}
