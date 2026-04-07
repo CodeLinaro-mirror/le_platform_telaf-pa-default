@@ -1,16 +1,18 @@
 cmake_minimum_required(VERSION 3.16)
-
-project(TAF_PA_COMMON C CXX)
+project(taf_pa_fscryptDef LANGUAGES C)
 
 set(LIBRARY_VERSION "1.0.0")
 set(LIBRARY_SOVERSION "1")
-set(TARGET_NAME taf_pa_commonDef)
+set(TARGET_NAME taf_pa_fscryptDef)
 set(OUTPUT_NAME Component_${TARGET_NAME})
 
 # common headers
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../include)
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../include/keyStore
+)
 
-add_library(${TARGET_NAME} SHARED taf_pa_common.cpp)
+add_library(${TARGET_NAME} SHARED taf_pa_fscrypt_default.c)
 
 set_target_properties(${TARGET_NAME} PROPERTIES
     VERSION ${LIBRARY_VERSION}
@@ -18,6 +20,7 @@ set_target_properties(${TARGET_NAME} PROPERTIES
     OUTPUT_NAME ${OUTPUT_NAME}
 )
 
+target_link_libraries(${TARGET_NAME} PRIVATE taf_pa_commonDef)
 install(TARGETS ${TARGET_NAME}
     LIBRARY DESTINATION lib
 )
@@ -26,9 +29,9 @@ install(TARGETS ${TARGET_NAME}
 target_compile_definitions(${TARGET_NAME} PRIVATE TAF_PA_DEFAULT=1)
 
 # -------------------------------------------
-# Add stub library: libtaf_pa_common.so
+# Add stub library: libtaf_pa_radio.so
 # -------------------------------------------
-set(STUB_TARGET_NAME taf_pa_common)
+set(STUB_TARGET_NAME taf_pa_fscrypt)
 set(STUB_OUTPUT_NAME Component_${STUB_TARGET_NAME})
 
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp "// empty stub source\n")
@@ -38,7 +41,7 @@ add_library(${STUB_TARGET_NAME} SHARED ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp)
 set_target_properties(${STUB_TARGET_NAME} PROPERTIES
     VERSION ${LIBRARY_VERSION}
     SOVERSION ${LIBRARY_SOVERSION}
-    STUB_OUTPUT_NAME ${STUB_TARGET_NAME}
+    OUTPUT_NAME ${STUB_OUTPUT_NAME}
 )
 
 install(TARGETS ${STUB_TARGET_NAME}

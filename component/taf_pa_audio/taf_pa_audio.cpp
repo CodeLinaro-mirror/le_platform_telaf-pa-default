@@ -54,14 +54,6 @@ pa_result_t tafpa::audio::taf_pa_audio_StopAudio(
     return PA_NOT_IMPLEMENTED;
 }
 
-// pa_result_t tafpa::audio::taf_pa_audio_StopVoiceStream(
-//     taf_pa_audio_RouteId_t routeId
-// )
-// {
-//     PA_INFO("Using default PA. Feature unsupported.");
-//     return PA_NOT_IMPLEMENTED;
-// }
-
 pa_result_t tafpa::audio::taf_pa_audio_SetVolume(
     PaStreamConfig streamConfig,
     double volLevel,
@@ -183,6 +175,24 @@ pa_result_t tafpa::audio::taf_pa_audio_registerDtmfListener(
 
 pa_result_t tafpa::audio::taf_pa_audio_deregisterDtmfListener(
     std::weak_ptr<IPaDtmfListener> dtmfListener
+)
+{
+    PA_INFO("Using default PA. Feature unsupported.");
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t tafpa::audio::AddSubsystemStateChangeListener(
+    taf_pa_audio_SubsystemStateChangeCb callBack,
+    std::shared_ptr<void> context,
+    uint16_t &id
+)
+{
+    PA_INFO("Using default PA. Feature unsupported.");
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t tafpa::audio::RemoveSubsystemStateChangeListener(
+    uint16_t id
 )
 {
     PA_INFO("Using default PA. Feature unsupported.");

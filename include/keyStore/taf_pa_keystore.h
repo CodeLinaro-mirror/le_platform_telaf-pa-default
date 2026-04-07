@@ -6,19 +6,7 @@
 #ifndef TAF_PA_KEYSTORAGE_H
 #define TAF_PA_KEYSTORAGE_H
 
-#ifdef TAF_PA_DEFAULT
-#define TAF_PA_WEAK __attribute__((weak))
-#else
-#define TAF_PA_WEAK
-#endif
-
-#include "legato.h"
-
-#ifdef USE_CMAKE_BUILD
-#include "taf_ks_interface.h"
-#else
-#include "interfaces.h"
-#endif
+#include "taf_pa_common.h"
 
 //--------------------------------------------------------------------------------------------------
 /**
@@ -29,10 +17,74 @@
 
 //--------------------------------------------------------------------------------------------------
 /**
+ * Max app name size.
+ */
+//--------------------------------------------------------------------------------------------------
+#define TAF_PA_KS_MAX_APP_NAME_SIZE 128
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * The maximum nonce or IV size for AES GCM, CBC, or CTR in bytes.
+ */
+//--------------------------------------------------------------------------------------------------
+#define TAF_PA_KS_MAX_AES_NONCE_SIZE 16
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Max data packet size.
+ */
+//--------------------------------------------------------------------------------------------------
+#define TAF_PA_KS_MAX_PACKET_SIZE 4096
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Max and Min HMAC key size.
+ */
+//--------------------------------------------------------------------------------------------------
+#define TAF_PA_KS_MIN_HMAC_KEY_SIZE 8
+#define TAF_PA_KS_MAX_HMAC_KEY_SIZE 128
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Bit mask for app capability.
+ */
+//--------------------------------------------------------------------------------------------------
+#define TAF_PA_KS_CAP_DELETE_KEY 0x1///< Shared app can delete the key.
+#define TAF_PA_KS_CAP_EXPORT_KEY 0x2///< Shared app can export the key.
+#define TAF_PA_KS_CAP_GET_APP_LIST 0x4///< Shared app can get shared application list of the key.
+
+//--------------------------------------------------------------------------------------------------
+/**
  * Reference to a key file object
  */
 //--------------------------------------------------------------------------------------------------
 typedef void* KeyMgt_KeyFileRef_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Defines the key usage.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_RSA_ENCRYPT_DECRYPT = 0,
+    TAF_PA_KS_RSA_ENCRYPT_ONLY = 1,
+    TAF_PA_KS_RSA_DECRYPT_ONLY = 2,
+    TAF_PA_KS_RSA_SIGN_VERIFY = 3,
+    TAF_PA_KS_RSA_SIGN_ONLY = 4,
+    TAF_PA_KS_RSA_VERIFY_ONLY = 5,
+    TAF_PA_KS_AES_ENCRYPT_DECRYPT = 6,
+    TAF_PA_KS_AES_ENCRYPT_ONLY = 7,
+    TAF_PA_KS_AES_DECRYPT_ONLY = 8,
+    TAF_PA_KS_ECDSA_SIGN_VERIFY = 9,
+    TAF_PA_KS_ECDSA_SIGN_ONLY = 10,
+    TAF_PA_KS_ECDSA_VERIFY_ONLY = 11,
+    TAF_PA_KS_HMAC_SIGN_VERIFY = 12,
+    TAF_PA_KS_HMAC_SIGN_ONLY = 13,
+    TAF_PA_KS_HMAC_VERIFY_ONLY = 14,
+    TAF_PA_KS_KEYUSAGE_MAX = 15,
+}
+taf_pa_ks_KeyUsage_t;
 
 //--------------------------------------------------------------------------------------------------
 /**
@@ -41,9 +93,9 @@ typedef void* KeyMgt_KeyFileRef_t;
 //--------------------------------------------------------------------------------------------------
 typedef struct
 {
-    taf_ks_KeyUsage_t keyCap;                    ///< Shared key capability.
-    taf_ks_AppCapMask_t appCap;                  ///< Shared app capability.
-    char appName[TAF_KS_MAX_APP_NAME_SIZE + 1];  ///< Shared app name.
+    taf_pa_ks_KeyUsage_t keyCap;                    ///< Shared key capability.
+    uint32_t appCap;                                ///< Shared app capability.
+    char appName[TAF_PA_KS_MAX_APP_NAME_SIZE + 1];  ///< Shared app name.
 }
 taf_pa_ks_SharedApp_t;
 
@@ -135,13 +187,184 @@ taf_pa_ks_SigPurpose_t;
 
 //--------------------------------------------------------------------------------------------------
 /**
+ * Padding type for RSA signature keys.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_RSA_PKCS1_V15 = 0,
+    TAF_PA_KS_RSA_PSS = 1,
+}
+taf_pa_ks_RsaPaddingType_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Key sharing state enum
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_SHARING_DISABLED = 0,
+    TAF_PA_KS_SHARING_ENABLED = 1,
+    TAF_PA_KS_SHARING_UPDATED = 2,
+}
+taf_pa_ks_SharingState_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Defines the supported RSA key size.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_RSA_SIZE_1024 = 1,
+    TAF_PA_KS_RSA_SIZE_2048 = 2,
+    TAF_PA_KS_RSA_SIZE_3072 = 3,
+    TAF_PA_KS_RSA_SIZE_4096 = 4,
+    TAF_PA_KS_RSA_SIZE_MAX = 5,
+}
+taf_pa_ks_RsaKeySize_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Defines the supported AES key size.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_AES_SIZE_128 = 1,
+    TAF_PA_KS_AES_SIZE_192 = 2,
+    TAF_PA_KS_AES_SIZE_256 = 3,
+    TAF_PA_KS_AES_SIZE_MAX = 4,
+}
+taf_pa_ks_AesKeySize_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Defines the supported ECC key size.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_ECC_SIZE_224 = 1,
+    TAF_PA_KS_ECC_SIZE_256 = 2,
+    TAF_PA_KS_ECC_SIZE_384 = 3,
+    TAF_PA_KS_ECC_SIZE_521 = 4,
+    TAF_PA_KS_ECC_SIZE_MAX = 5,
+}
+taf_pa_ks_EccKeySize_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Defines the purpose for a cryptographic operation session.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_CRYPTO_ENCRYPT = 0,
+    TAF_PA_KS_CRYPTO_DECRYPT = 1,
+    TAF_PA_KS_CRYPTO_SIGN = 2,
+    TAF_PA_KS_CRYPTO_VERIFY = 3,
+    TAF_PA_KS_CRYPTO_MAX = 4,
+}
+taf_pa_ks_CryptoPurpose_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Defines the digest algorithms used by RSA, ECC and HMAC.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_DIGEST_MD5 = 1,
+    TAF_PA_KS_DIGEST_SHA1 = 2,
+    TAF_PA_KS_DIGEST_SHA2_224 = 3,
+    TAF_PA_KS_DIGEST_SHA2_256 = 4,
+    TAF_PA_KS_DIGEST_SHA2_384 = 5,
+    TAF_PA_KS_DIGEST_SHA2_512 = 6,
+    TAF_PA_KS_DIGEST_MAX = 7,
+}
+taf_pa_ks_Digest_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Defines the padding type for RSA encryption keys.
+ *
+ * The specified hash function used in MFG1 is only for OAEP padding.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_RSA_ENC_PAD_NONE = 0,
+    TAF_PA_KS_RSA_ENC_PAD_PKCS1_V15 = 1,
+    TAF_PA_KS_RSA_ENC_PAD_OAEP_MD5 = 2,
+    TAF_PA_KS_RSA_ENC_PAD_OAEP_SHA1 = 3,
+    TAF_PA_KS_RSA_ENC_PAD_OAEP_SHA2_224 = 4,
+    TAF_PA_KS_RSA_ENC_PAD_OAEP_SHA2_256 = 5,
+    TAF_PA_KS_RSA_ENC_PAD_OAEP_SHA2_384 = 6,
+    TAF_PA_KS_RSA_ENC_PAD_OAEP_SHA2_512 = 7,
+    TAF_PA_KS_RSA_ENC_PAD_MAX = 8,
+}
+taf_pa_ks_RsaEncPadding_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Defines the padding type for RSA signature keys.
+ *
+ * The specified hash function used in MFG1 is for both PSS padding and digest to sign.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_RSA_SIG_PAD_NONE = 0,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_MD5 = 1,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_SHA1 = 2,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_SHA2_224 = 3,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_SHA2_256 = 4,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_SHA2_384 = 5,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_SHA2_512 = 6,
+    TAF_PA_KS_RSA_SIG_PAD_PSS_MD5 = 7,
+    TAF_PA_KS_RSA_SIG_PAD_PSS_SHA1 = 8,
+    TAF_PA_KS_RSA_SIG_PAD_PSS_SHA2_224 = 9,
+    TAF_PA_KS_RSA_SIG_PAD_PSS_SHA2_256 = 10,
+    TAF_PA_KS_RSA_SIG_PAD_PSS_SHA2_384 = 11,
+    TAF_PA_KS_RSA_SIG_PAD_PSS_SHA2_512 = 12,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_AND_PSS_MD5 = 13,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_AND_PSS_SHA1 = 14,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_AND_PSS_SHA2_224 = 15,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_AND_PSS_SHA2_256 = 16,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_AND_PSS_SHA2_384 = 17,
+    TAF_PA_KS_RSA_SIG_PAD_PKCS1_V15_AND_PSS_SHA2_512 = 18,
+    TAF_PA_KS_RSA_SIG_PAD_MAX = 19,
+}
+taf_pa_ks_RsaSigPadding_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Defines the AES block mode.
+ */
+//--------------------------------------------------------------------------------------------------
+typedef enum
+{
+    TAF_PA_KS_AES_MODE_ECB_PAD_NONE = 0,
+    TAF_PA_KS_AES_MODE_ECB_PAD_PKCS7 = 1,
+    TAF_PA_KS_AES_MODE_CBC_PAD_NONE = 2,
+    TAF_PA_KS_AES_MODE_CBC_PAD_PKCS7 = 3,
+    TAF_PA_KS_AES_MODE_CTR = 4,
+    TAF_PA_KS_AES_MODE_GCM = 5,
+    TAF_PA_KS_AES_MODE_MAX = 6,
+}
+taf_pa_ks_AesBlockMode_t;
+
+//--------------------------------------------------------------------------------------------------
+/**
  * AES Nonce struct
  */
 //--------------------------------------------------------------------------------------------------
 typedef struct
 {
     taf_pa_ks_NonceSize_t size;                    ///< AES nonce size.
-    uint8_t data[TAF_KS_MAX_AES_NONCE_SIZE];       ///< AES nonce buffer.
+    uint8_t data[TAF_PA_KS_MAX_AES_NONCE_SIZE];    ///< AES nonce buffer.
 }
 taf_pa_ks_Nonce_t;
 
@@ -153,7 +376,7 @@ taf_pa_ks_Nonce_t;
 typedef struct
 {
     size_t   size;                                 ///< data size.
-    uint8_t  data[TAF_KS_MAX_PACKET_SIZE];         ///< data buffer.
+    uint8_t  data[TAF_PA_KS_MAX_PACKET_SIZE];      ///< data buffer.
 }
 taf_pa_ks_Data_t;
 
@@ -164,7 +387,6 @@ taf_pa_ks_Data_t;
 //--------------------------------------------------------------------------------------------------
 typedef struct
 {
-    le_dls_Link_t   link;                          ///< Link to the tagList of the key
     taf_pa_ks_TagId_t id;                          ///< KS tag ID
     union
     {
@@ -185,13 +407,12 @@ taf_pa_ks_Tag_t;
 //--------------------------------------------------------------------------------------------------
 typedef struct
 {
-    le_dls_Link_t     link;                       ///< Link to the paramList of the crypto session
     taf_pa_ks_ParamId_t id;                       ///< KS parameter ID
     union
     {
         taf_pa_ks_Nonce_t* nonceDataPtr;          ///< TAF_PA_KS_PARAM_NONCE
         taf_pa_ks_Data_t* appDataPtr;             ///< TAF_PA_KS_PARAM_APPLICATION_DATA
-        taf_ks_RsaPaddingType_t rsaPaddingType;   ///< Padding type for RSA signing/verification
+        taf_pa_ks_RsaPaddingType_t rsaPaddingType;///< Padding type for RSA signing/verification
     };
 }
 taf_pa_ks_Param_t;
@@ -216,7 +437,7 @@ typedef void (*taf_pa_ks_KeySharingHandler_t)
     const char* keyIdPtr,                          ///< Key ID string
     const char* ownerAppNamePtr,                   ///< Owner app name string
     const char* sharedAppNamePtr,                  ///< Shared app name string
-    taf_ks_SharingState_t state,                   ///< Key sharing state
+    taf_pa_ks_SharingState_t state,                ///< Key sharing state
     KeyMgt_KeyFileRef_t keyFileRef                 ///< Key file reference
 );
 
@@ -229,7 +450,7 @@ typedef void (*taf_pa_ks_KeySharingHandler_t)
  *      LE_FAULT if there was some other error.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_Init
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_Init
 (
     void
 );
@@ -241,14 +462,15 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_Init
  * The impData must be a PKCS#8 der bytes if provided.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateRsaEncKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_GenerateRsaEncKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
-    taf_ks_RsaKeySize_t keySize,          ///< [IN] Key Size, ignored if impData is provided
+    taf_pa_ks_RsaKeySize_t keySize,       ///< [IN] Key Size, ignored if impData is provided
     taf_pa_ks_EncPurpose_t purpose,       ///< [IN] Encryption purpose
-    taf_ks_RsaEncPadding_t padding,       ///< [IN] RSA encryption padding type
-    le_dls_List_t* tagListPtr,            ///< [IN] List of taf_pa_ks_Tag_t
+    taf_pa_ks_RsaEncPadding_t padding,    ///< [IN] RSA encryption padding type
+    const taf_pa_ks_Tag_t** tagListPtr,   ///< [IN] List of taf_pa_ks_Tag_t
+    size_t tagListSize,                   ///< [IN] number of taf_pa_ks_Tag_t
     const uint8_t* impDataPtr,            ///< [IN] Imported key data
     size_t impDataSize,                   ///< [IN] less than TAF_KS_MAX_PACKET_SIZE
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
@@ -261,14 +483,15 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateRsaEncKey
  * The impData must be a PKCS#8 der bytes if provided.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateRsaSigKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_GenerateRsaSigKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
-    taf_ks_RsaKeySize_t keySize,          ///< [IN] Key Size, ignored if impData is provided
+    taf_pa_ks_RsaKeySize_t keySize,       ///< [IN] Key Size, ignored if impData is provided
     taf_pa_ks_SigPurpose_t purpose,       ///< [IN] Signature purpose
-    taf_ks_RsaSigPadding_t padding,       ///< [IN] RSA signature padding type
-    le_dls_List_t* tagListPtr,            ///< [IN] List of taf_pa_ks_Tag_t
+    taf_pa_ks_RsaSigPadding_t padding,    ///< [IN] RSA signature padding type
+    const taf_pa_ks_Tag_t** tagListPtr,   ///< [IN] List of taf_pa_ks_Tag_t
+    size_t tagListSize,                   ///< [IN] number of taf_pa_ks_Tag_t
     const uint8_t* impDataPtr,            ///< [IN] Imported key data
     size_t impDataSize,                   ///< [IN] less than TAF_KS_MAX_PACKET_SIZE
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
@@ -281,14 +504,15 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateRsaSigKey
  * The impData must be PKCS#8 der bytes if provided.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateEcdsaKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_GenerateEcdsaKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
-    taf_ks_EccKeySize_t keySize,          ///< [IN] ECC curve, ignored if impData is provided
+    taf_pa_ks_EccKeySize_t keySize,       ///< [IN] ECC curve, ignored if impData is provided
     taf_pa_ks_SigPurpose_t purpose,       ///< [IN] Signature purpose
-    taf_ks_Digest_t digest,               ///< [IN] Digest
-    le_dls_List_t* tagListPtr,            ///< [IN] List of taf_pa_ks_Tag_t
+    taf_pa_ks_Digest_t digest,            ///< [IN] Digest
+    const taf_pa_ks_Tag_t** tagListPtr,   ///< [IN] List of taf_pa_ks_Tag_t
+    size_t tagListSize,                   ///< [IN] number of taf_pa_ks_Tag_t
     const uint8_t* impDataPtr,            ///< [IN] Imported key data
     size_t impDataSize,                   ///< [IN] less than TAF_KS_MAX_PACKET_SIZE
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
@@ -301,14 +525,15 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateEcdsaKey
  * The impData must be raw key bytes if provided.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateAesKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_GenerateAesKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
-    taf_ks_AesKeySize_t keySize,          ///< [IN] AES key size, ignored if impData is provided
+    taf_pa_ks_AesKeySize_t keySize,       ///< [IN] AES key size, ignored if impData is provided
     taf_pa_ks_EncPurpose_t purpose,       ///< [IN] Encryption purpose
-    taf_ks_AesBlockMode_t mode,           ///< [IN] AES block mode
-    le_dls_List_t* tagListPtr,            ///< [IN] List of taf_pa_ks_Tag_t
+    taf_pa_ks_AesBlockMode_t mode,        ///< [IN] AES block mode
+    const taf_pa_ks_Tag_t** tagListPtr,   ///< [IN] List of taf_pa_ks_Tag_t
+    size_t tagListSize,                   ///< [IN] number of taf_pa_ks_Tag_t
     const uint8_t* impDataPtr,            ///< [IN] Imported key data
     size_t impDataSize,                   ///< [IN] less than TAF_KS_MAX_PACKET_SIZE
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
@@ -321,14 +546,15 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateAesKey
  * Currently only digest DIGEST_SHA2_256 is supported. The impData must be raw key bytes if provided
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateHmacKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_GenerateHmacKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
     uint32_t keySize,                     ///< [IN] HMAC Key Size, ignored if impData is provided
     taf_pa_ks_SigPurpose_t purpose,       ///< [IN] Signature purpose
-    taf_ks_Digest_t digest,               ///< [IN] digest
-    le_dls_List_t* tagListPtr,            ///< [IN] List of taf_pa_ks_Tag_t
+    taf_pa_ks_Digest_t digest,            ///< [IN] digest
+    const taf_pa_ks_Tag_t** tagListPtr,   ///< [IN] List of taf_pa_ks_Tag_t
+    size_t tagListSize,                   ///< [IN] number of taf_pa_ks_Tag_t
     const uint8_t* impDataPtr,            ///< [IN] Imported key data
     size_t impDataSize,                   ///< [IN] less than TAF_KS_MAX_PACKET_SIZE
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
@@ -339,9 +565,9 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GenerateHmacKey
  * Export a key into specified key data format.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_ExportKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_ExportKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
     const uint8_t* appDataPtr,            ///< [IN] Application data
     size_t appDataSize,                   ///< [IN]
@@ -354,12 +580,12 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_ExportKey
  * Share a key.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_ShareKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_ShareKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
-    taf_ks_KeyUsage_t keyCap,             ///< [IN] Shared capability
-    taf_ks_AppCapMask_t appCap,           ///< [IN] Shared app capability.
+    taf_pa_ks_KeyUsage_t keyCap,          ///< [IN] Shared capability
+    uint32_t appCap,                      ///< [IN] Shared app capability.
     const char* appName                   ///< [IN] Shared application name
 );
 
@@ -368,9 +594,9 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_ShareKey
  * Cancel key sharing to an application.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CancelKeySharing
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_CancelKeySharing
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
     const char* appName                   ///< [IN] Shared application name
 );
@@ -380,9 +606,9 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CancelKeySharing
  * Delete a key file by key name.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_DeleteKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_DeleteKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef        ///< [IN] Key file reference
 );
 
@@ -391,9 +617,9 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_DeleteKey
  * Get a key file reference by key name.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GetKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_GetKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference.
 );
@@ -403,9 +629,9 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GetKey
  * Get a key file reference of a shared key by key name and app name.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GetSharedKey
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_GetSharedKey
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
     const char* appName,                  ///< [IN] App Name
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference.
@@ -416,9 +642,9 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GetSharedKey
  * Get a shared app list for a shared key.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GetSharedAppList
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_GetSharedAppList
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
     taf_pa_ks_sharedAppList_t* appListPtr ///< [OUT] Shared app list.
 );
@@ -428,11 +654,11 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GetSharedAppList
  * Get key usage
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GetKeyUsage
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_GetKeyUsage
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
+    int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
-    taf_ks_KeyUsage_t*    keyUsagePtr     ///< [OUT] Key usage
+    taf_pa_ks_KeyUsage_t* keyUsagePtr     ///< [OUT] Key usage
 );
 
 //--------------------------------------------------------------------------------------------------
@@ -440,13 +666,14 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_GetKeyUsage
  * Start the session for the given crypto operation.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionStart
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_CryptoSessionStart
 (
-    le_msg_SessionRef_t clientSessionRef, ///< [IN] Client session reference
-    KeyMgt_KeyFileRef_t     keyFileRef,   ///< [IN] Key file reference
-    taf_ks_CryptoPurpose_t  cryptoPurpose,///< [IN] Crypto purpose
-    le_dls_List_t*           paramListPtr,///< [IN] List of taf_pa_ks_Param_t
-    uint64_t*                 opHandlePtr ///< [OUT]Cyrpto operation handle
+    int clientSessionFd,                      ///< [IN] Client session fd
+    KeyMgt_KeyFileRef_t     keyFileRef,       ///< [IN] Key file reference
+    taf_pa_ks_CryptoPurpose_t  cryptoPurpose, ///< [IN] Crypto purpose
+    const taf_pa_ks_Param_t** paramListPtr,   ///< [IN] List of taf_pa_ks_Param_t
+    size_t paramListSize,                     ///< [IN] number of taf_pa_ks_Param_t
+    uint64_t*                 opHandlePtr     ///< [OUT]Cyrpto operation handle
 );
 
 //--------------------------------------------------------------------------------------------------
@@ -457,7 +684,7 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionStart
  * This API can be called for multiple times but must before CryptoSessionProcess API.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionProcessAead
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_CryptoSessionProcessAead
 (
     uint64_t               opHandle,      ///< [IN] Cyrpto operation handle
     const uint8_t*     inputDataPtr,      ///< [IN] Data buffer to hold the AEAD data
@@ -472,7 +699,7 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionProcessAead
  * CryptoEndSession API is called.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionProcess
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_CryptoSessionProcess
 (
     uint64_t               opHandle,      ///< [IN] Cyrpto operation handle
     const uint8_t*     inputDataPtr,      ///< [IN] InputData can be one of below 4 cases:
@@ -493,7 +720,7 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionProcess
  * Finalizes and stop a crypto operation session started with CryptoStartSession API.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionEnd
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_CryptoSessionEnd
 (
     uint64_t               opHandle,      ///< [IN] Cyrpto operation handle
     const uint8_t*     inputDataPtr,      ///< [IN] Signature to verify for verification session
@@ -512,7 +739,7 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionEnd
  * Abort crypto operation session started with CryptoStartSession API.
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionAbort
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_CryptoSessionAbort
 (
     uint64_t                opHandle      ///< [IN] Cyrpto operation handle
 );
@@ -522,7 +749,7 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_CryptoSessionAbort
  * Register Key creation handler in PA layer
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_RegKeyCreationHandler
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_RegKeyCreationHandler
 (
     taf_pa_ks_KeyCreationHandler_t handlerFunc
 );
@@ -532,7 +759,7 @@ LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_RegKeyCreationHandler
  * Register Key sharing state change handler in PA layer
  */
 //--------------------------------------------------------------------------------------------------
-LE_SHARED TAF_PA_WEAK le_result_t taf_pa_ks_RegKeySharingHandler
+PA_SHARED PA_WEAK pa_result_t taf_pa_ks_RegKeySharingHandler
 (
     taf_pa_ks_KeySharingHandler_t handlerFunc
 );

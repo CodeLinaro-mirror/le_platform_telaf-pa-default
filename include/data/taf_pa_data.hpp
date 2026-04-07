@@ -387,7 +387,7 @@ using taf_pa_data_SubsystemStateChangeCb =
 
 //--------------------------------------------------------------------------------------------------
 /**
- * Register roaming events callback
+ * Register for subsystem state change events callback
  */
 //--------------------------------------------------------------------------------------------------
 PA_SHARED pa_result_t AddSubsystemStateChangeCallback
@@ -591,6 +591,20 @@ using taf_pa_data_ProfileEventsCb =
 
 //--------------------------------------------------------------------------------------------------
 /**
+ * The throughput events callback.
+ * @param [in] throughputInfoList  The list of throughput information for all active profiles.
+ * @param [in] context             The app provided context.
+ */
+//--------------------------------------------------------------------------------------------------
+using taf_pa_data_ThroughputEventsCb =
+    std::function<void
+        (
+            const std::vector<ThroughputInfo_t> &throughputInfoList,
+            std::shared_ptr<void> context
+        )>;
+
+//--------------------------------------------------------------------------------------------------
+/**
  * Register profile change events callback
  */
 //--------------------------------------------------------------------------------------------------
@@ -634,6 +648,112 @@ PA_SHARED pa_result_t RegisterSDKCallbacks
 PA_SHARED pa_result_t DeregisterSDKCallbacks
 (
 
+);
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Set the throughput report interval.
+ *
+ * Configure the interval for generating periodic uplink and downlink throughput reports.
+ * Reports are delivered via taf_pa_data_ThroughputEventsCb registered through
+ * AddThroughputEventsCallback().
+ *
+ * The minimum allowed interval is 50 ms. Passing a value of 0 disables throughput reporting.
+ * The application of this interval is a global setting.
+ *
+ * @param [in] phoneId          The phone ID.
+ * @param [in] reportInterval   Interval in milliseconds (ms) for throughput reporting.
+ *                              Minimum: 50ms, 0 to disable.
+ *
+ * @return
+ *  - PA_OK              Successfully set the interval
+ *  - PA_BAD_PARAMETER   Invalid parameters
+ *  - PA_FAULT           Failed to set the interval
+ *  - PA_TIMEOUT         Operation timed out
+ *  - PA_NOT_IMPLEMENTED API is not implemented
+ */
+//--------------------------------------------------------------------------------------------------
+PA_SHARED pa_result_t SetThroughputReportInterval
+(
+    PhoneId_e phoneId,
+    uint32_t reportInterval
+);
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Get the last throughput information for all active profiles.
+ *
+ * Retrieves the most recent uplink and downlink throughput information for all active data
+ * profiles on the specified phone.
+ *
+ * @param [in]  phoneId              The phone ID.
+ * @param [out] throughputInfoList   The list of throughput information for all active profiles.
+ *
+ * @return
+ *  - PA_OK              Successfully retrieved throughput information
+ *  - PA_BAD_PARAMETER   Invalid parameters
+ *  - PA_FAULT           Failed to retrieve throughput information
+ *  - PA_TIMEOUT         Operation timed out
+ *  - PA_NOT_IMPLEMENTED API is not implemented
+ */
+//--------------------------------------------------------------------------------------------------
+PA_SHARED pa_result_t GetLastThroughputInfo
+(
+    PhoneId_e phoneId,
+    std::vector<ThroughputInfo_t> &throughputInfoList
+);
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Register throughput events callback.
+ *
+ * Register a callback to receive periodic throughput information updates. The callback will be
+ * invoked at the interval configured via SetThroughputReportInterval().
+ *
+ * @param [in]  callBack   The callback function to register.
+ * @param [in]  context    The context pointer passed to callback.
+ * @param [out] id         The unique ID assigned to this callback.
+ *
+ * @return
+ *  - PA_OK              Successfully registered callback
+ *  - PA_BAD_PARAMETER   Invalid parameters (e.g., null callback)
+ *  - PA_FAULT           Failed to register with TelSDK
+ *  - PA_NOT_IMPLEMENTED API is not implemented
+ *
+ * @note When this is the first throughput callback:
+ *       - Registers THROUGHPUT indication with TelSDK
+ *       - Starts receiving periodic throughput events
+ */
+//--------------------------------------------------------------------------------------------------
+PA_SHARED pa_result_t AddThroughputEventsCallback
+(
+    taf_pa_data_ThroughputEventsCb callBack,
+    std::shared_ptr<void> context,
+    uint16_t &id
+);
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Remove a previously registered throughput events callback.
+ *
+ * Unregister a callback that was previously registered via AddThroughputEventsCallback().
+ *
+ * @param [in] id  The ID of the callback to remove.
+ *
+ * @return
+ *  - PA_OK              Successfully removed callback
+ *  - PA_NOT_FOUND       Callback with specified ID not found
+ *  - PA_FAULT           Failed to deregister from TelSDK
+ *  - PA_NOT_IMPLEMENTED API is not implemented
+ *
+ * @note If this is the last throughput callback:
+ *       - Deregisters THROUGHPUT indication from TelSDK
+ *       - Stops receiving periodic throughput events
+ */
+//--------------------------------------------------------------------------------------------------
+PA_SHARED pa_result_t RemoveThroughputEventsCallback
+(
+    uint16_t id
 );
 
 } //data

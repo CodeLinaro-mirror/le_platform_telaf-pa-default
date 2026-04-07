@@ -103,6 +103,7 @@ typedef struct
     uint8_t priority;
     taf_pa_vlan_network_type_t nwType;
     taf_pa_vlan_iface_type_t   iface;
+    bool isBridgeEnabled = true;
 } taf_pa_Vlan_t;
 
 
@@ -347,4 +348,3 @@ PA_SHARED PA_WEAK pa_result_t taf_pa_net_GetIPConfig
 );
 
 #endif /* TAF_PA_VLAN_HPP */
-

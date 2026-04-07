@@ -89,3 +89,24 @@ pa_result_t taf_pa_mrc_PerformABSync
 
     return -ENOSYS;
 }
+
+taf_pa_mrc_ScrubStatusHandlerRef_t taf_pa_mrc_AddScrubStatusHandler
+(
+    taf_pa_mrc_ScrubStatusHdlrFunc_t handlerFuncPtr,
+    void* contextPtr
+)
+{
+    PA_INFO("Function is not implemented in default PA.");
+
+    return nullptr;
+}
+
+pa_result_t taf_pa_mrc_AckSlotToggle
+(
+    int32_t success
+)
+{
+    PA_INFO("Function is not implemented in default PA.");
+
+    return -ENOSYS;
+}
