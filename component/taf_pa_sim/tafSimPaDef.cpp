@@ -235,6 +235,23 @@ pa_result_t taf_pa_sim_GetHomeNetworkMccMnc
     return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
 }
 
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Get home network MCC/MNC.
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t taf_pa_sim_GetHomeNetworkMccMncStr
+(
+    taf_pa_sim_Id_t simId,
+    std::string& mcc,
+    std::string& mnc
+)
+{
+    PA_INFO("Function is not implemented in stub PA");
+    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+}
+
 //--------------------------------------------------------------------------------------------------
 /**
  * Get sim slot count.
