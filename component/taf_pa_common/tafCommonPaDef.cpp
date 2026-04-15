@@ -72,10 +72,20 @@ static int LogLevelToSyslog
 
 PA_SHARED PA_WEAK pa_result_t taf_pa_common_LogInit
 (
-    taf_pa_common_LogBackend_t backend
+    taf_pa_common_LogBackend_t backend,
+    taf_pa_common_LogLevel_t initLogLevel,
+    void* ctxPtr
 )
 {
     PA_UNUSED(backend);
+    return PA_OK;
+}
+
+PA_SHARED PA_WEAK pa_result_t taf_pa_common_LogDeinit
+(
+)
+{
+    return PA_OK;
 }
 
 PA_SHARED PA_WEAK pa_result_t taf_pa_common_LogSetBackend
@@ -84,9 +94,10 @@ PA_SHARED PA_WEAK pa_result_t taf_pa_common_LogSetBackend
 )
 {
     PA_UNUSED(backend);
+    return PA_OK;
 }
 
-void taf_pa_common_LogSetlevel
+void PA_WEAK taf_pa_common_LogSetlevel
 (
     taf_pa_common_LogLevel_t level
 )
@@ -94,7 +105,7 @@ void taf_pa_common_LogSetlevel
     gLogLevel = level;
 }
 
-void taf_pa_common_LogMessage
+void PA WEAK taf_pa_common_LogMessage
 (
     taf_pa_common_LogLevel_t level,
     const char* file,
