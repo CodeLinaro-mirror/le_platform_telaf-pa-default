@@ -25,9 +25,7 @@ target_compile_definitions(taf_pa_pmsDef PRIVATE TAF_PA_DEFAULT=1)
 # Add stub library: Component_taf_pa_pms.so
 # -------------------------------------------
 
-file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp "// empty stub source\n")
-
-add_library(taf_pa_pms SHARED ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp)
+add_library(taf_pa_pms SHARED tafPmsPaDef.cpp)
 
 set_target_properties(taf_pa_pms PROPERTIES OUTPUT_NAME Component_taf_pa_pms)
 

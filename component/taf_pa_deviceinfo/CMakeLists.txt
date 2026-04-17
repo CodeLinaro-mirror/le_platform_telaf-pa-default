@@ -34,9 +34,7 @@ target_compile_definitions(${TARGET_NAME} PRIVATE TAF_PA_DEFAULT=1)
 set(STUB_TARGET_NAME taf_pa_deviceinfo)
 set(STUB_OUTPUT_NAME Component_${STUB_TARGET_NAME})
 
-file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp "// empty stub source\n")
-
-add_library(${STUB_TARGET_NAME} SHARED ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp)
+add_library(${STUB_TARGET_NAME} SHARED tafDeviceinfoPaDef.cpp)
 
 set_target_properties(${STUB_TARGET_NAME} PROPERTIES
     VERSION ${LIBRARY_VERSION}
