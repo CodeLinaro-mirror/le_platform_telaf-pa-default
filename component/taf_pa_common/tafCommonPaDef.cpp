@@ -105,7 +105,7 @@ void PA_WEAK taf_pa_common_LogSetlevel
     gLogLevel = level;
 }
 
-void PA WEAK taf_pa_common_LogMessage
+void PA_WEAK taf_pa_common_LogMessage
 (
     taf_pa_common_LogLevel_t level,
     const char* file,
