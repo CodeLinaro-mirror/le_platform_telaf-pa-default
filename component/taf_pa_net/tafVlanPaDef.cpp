@@ -49,25 +49,7 @@ pa_result_t taf_pa_net_RemoveVlanInterface
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t taf_pa_net_BindWithProfile
-(
-     const taf_pa_Vlan_t vlan,
-     const taf_pa_VlanBindConfig_t vlanBindConfig
-)
-{
-    PA_INFO("Default platform adatper implementation");
-    return PA_NOT_IMPLEMENTED;
-}
 
-pa_result_t taf_pa_net_UnbindWithProfile
-(
-     const taf_pa_Vlan_t vlan,
-     const taf_pa_VlanBindConfig_t vlanBindConfig
-)
-{
-    PA_INFO("Default platform adatper implementation");
-    return PA_NOT_IMPLEMENTED;
-}
 
 pa_result_t taf_pa_net_BindWithBackhaul
 (
@@ -98,15 +80,7 @@ pa_result_t taf_pa_net_QueryVlanInfo
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t taf_pa_net_QueryVlanMappingList
-(
-     const uint8_t slotId,                     // IN
-     std::list<std::pair<int, int>> &mapping   // OUT
-)
-{
-    PA_INFO("Default platform adatper implementation");
-    return PA_NOT_IMPLEMENTED;
-}
+
 
 pa_result_t taf_pa_net_QueryVlanToBackhaulMappingList
 (
