@@ -152,6 +152,23 @@ taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     return TAF_PA_NOT_IMPLEMENTED;
 }
 
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
+    int phoneId,
+    const std::string& dialNumber,
+    const std::vector<uint8_t>& msdPdu,
+    taf_pa_ecall_MakeEcallCb callback,
+    std::any context
+)
+{
+    UNUSED(phoneId);
+    UNUSED(dialNumber);
+    UNUSED(msdPdu);
+    UNUSED(callback);
+    UNUSED(context);
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
+}
+
 taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
     uint8_t phoneId,
     const taf_pa_ecall_msd_data_t& msdData,
@@ -334,6 +351,34 @@ taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_RegisterListener(
 )
 {
     UNUSED(eventListener);
+    UNUSED(context);
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
+}
+
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateECallPostTestRegistrationTimer(
+    int phoneId,
+    uint32_t duration,
+    taf_pa_ecall_CommandCb callback,
+    std::any context
+)
+{
+    UNUSED(phoneId);
+    UNUSED(duration);
+    UNUSED(callback);
+    UNUSED(context);
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
+}
+
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_GetECallPostTestRegistrationTimer(
+    int phoneId,
+    taf_pa_ecall_PostTestRegistrationTimerCb callback,
+    std::any context
+)
+{
+    UNUSED(phoneId);
+    UNUSED(callback);
     UNUSED(context);
     TAF_PA_INFO_NOT_IMPLEMENTED();
     return TAF_PA_NOT_IMPLEMENTED;
