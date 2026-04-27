@@ -610,3 +610,18 @@ pa_result_t PA_WEAK taf_pa_sim_GetRemainingPukTries
     PA_INFO("Function is not implemented in stub PA");
     return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
 }
+
+//----------------------------------------------------------------------------------------------
+/**
+ * Get EID string.
+ */
+//----------------------------------------------------------------------------------------------
+pa_result_t taf_pa_sim_GetEID
+(
+    taf_pa_sim_Id_t simId,
+    std::string&  eidStr
+)
+{
+    PA_INFO("Function is not implemented in stub PA");
+    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+}
