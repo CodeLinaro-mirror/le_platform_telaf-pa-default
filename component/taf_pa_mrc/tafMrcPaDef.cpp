@@ -79,6 +79,16 @@ pa_result_t PA_WEAK taf_pa_mrc_GetEfsBlockStatus
     return -ENOSYS;
 }
 
+pa_result_t taf_pa_mrc_GetEfsUsageStats
+(
+    taf_pa_mrc_EfsUsageStats_t* statsPtr
+)
+{
+    PA_INFO("Function is not implemented in default PA.");
+
+    return -ENOSYS;
+}
+
 pa_result_t PA_WEAK taf_pa_mrc_SetTimerPeriod
 (
     taf_pa_mrc_Timer_t timer,
