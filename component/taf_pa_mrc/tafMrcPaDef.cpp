@@ -7,7 +7,7 @@
 
 #include "tafMrcPa.hpp"
 
-pa_result_t taf_pa_mrc_Init
+pa_result_t PA_WEAK taf_pa_mrc_Init
 (
     void
 )
@@ -17,7 +17,7 @@ pa_result_t taf_pa_mrc_Init
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_mrc_RegisterIndication
+pa_result_t PA_WEAK taf_pa_mrc_RegisterIndication
 (
     uint8_t registration
 )
@@ -27,7 +27,7 @@ pa_result_t taf_pa_mrc_RegisterIndication
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_mrc_SetProcessStatus
+pa_result_t PA_WEAK taf_pa_mrc_SetProcessStatus
 (
     taf_pa_mrc_Process_t process,
     taf_pa_mrc_Status_t status
@@ -38,7 +38,7 @@ pa_result_t taf_pa_mrc_SetProcessStatus
     return -ENOSYS;
 }
 
-taf_pa_mrc_ProcessStatusHandlerRef_t taf_pa_mrc_AddProcessStatusHandler
+taf_pa_mrc_ProcessStatusHandlerRef_t PA_WEAK taf_pa_mrc_AddProcessStatusHandler
 (
     taf_pa_mrc_ProcessStatusHdlrFunc_t handlerFuncPtr,
     void* contextPtr
@@ -49,7 +49,7 @@ taf_pa_mrc_ProcessStatusHandlerRef_t taf_pa_mrc_AddProcessStatusHandler
     return nullptr;
 }
 
-pa_result_t taf_pa_mrc_GetEfsPeStatus
+pa_result_t PA_WEAK taf_pa_mrc_GetEfsPeStatus
 (
     taf_pa_mrc_EfsPeStatus_t* statusPtr
 )
@@ -59,7 +59,7 @@ pa_result_t taf_pa_mrc_GetEfsPeStatus
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_mrc_GetEfsBlockStatus
+pa_result_t PA_WEAK taf_pa_mrc_GetEfsBlockStatus
 (
     taf_pa_mrc_EfsBlockStatus_t* statusPtr
 )
@@ -69,7 +69,7 @@ pa_result_t taf_pa_mrc_GetEfsBlockStatus
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_mrc_SetTimerPeriod
+pa_result_t PA_WEAK taf_pa_mrc_SetTimerPeriod
 (
     taf_pa_mrc_Timer_t timer,
     uint32_t period
@@ -80,7 +80,7 @@ pa_result_t taf_pa_mrc_SetTimerPeriod
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_mrc_PerformABSync
+pa_result_t PA_WEAK taf_pa_mrc_PerformABSync
 (
     void
 )
@@ -90,7 +90,7 @@ pa_result_t taf_pa_mrc_PerformABSync
     return -ENOSYS;
 }
 
-taf_pa_mrc_ScrubStatusHandlerRef_t taf_pa_mrc_AddScrubStatusHandler
+taf_pa_mrc_ScrubStatusHandlerRef_t PA_WEAK taf_pa_mrc_AddScrubStatusHandler
 (
     taf_pa_mrc_ScrubStatusHdlrFunc_t handlerFuncPtr,
     void* contextPtr
@@ -101,7 +101,7 @@ taf_pa_mrc_ScrubStatusHandlerRef_t taf_pa_mrc_AddScrubStatusHandler
     return nullptr;
 }
 
-pa_result_t taf_pa_mrc_AckSlotToggle
+pa_result_t PA_WEAK taf_pa_mrc_AckSlotToggle
 (
     int32_t success
 )

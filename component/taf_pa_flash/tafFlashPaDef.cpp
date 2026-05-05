@@ -7,7 +7,7 @@
 
 #include "tafFlashPa.hpp"
 
-pa_result_t taf_pa_flash_Init
+pa_result_t PA_WEAK taf_pa_flash_Init
 (
     void
 )
@@ -17,7 +17,7 @@ pa_result_t taf_pa_flash_Init
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_OpenMtd
+pa_result_t PA_WEAK taf_pa_flash_OpenMtd
 (
     const char* namePtr,
     taf_pa_flash_OpenModeBitMask_t mode,
@@ -29,7 +29,7 @@ pa_result_t taf_pa_flash_OpenMtd
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_CloseMtd
+pa_result_t PA_WEAK taf_pa_flash_CloseMtd
 (
     taf_pa_flash_MtdRef_t mtdRef
 )
@@ -39,7 +39,7 @@ pa_result_t taf_pa_flash_CloseMtd
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_GetMtdInfo
+pa_result_t PA_WEAK taf_pa_flash_GetMtdInfo
 (
     taf_pa_flash_MtdRef_t mtdRef,
     taf_pa_flash_MtdInfo_t* infoPtr
@@ -50,7 +50,7 @@ pa_result_t taf_pa_flash_GetMtdInfo
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_EraseMtdBlock
+pa_result_t PA_WEAK taf_pa_flash_EraseMtdBlock
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t blockIndex
@@ -61,7 +61,7 @@ pa_result_t taf_pa_flash_EraseMtdBlock
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_CheckMtdGoodBlock
+pa_result_t PA_WEAK taf_pa_flash_CheckMtdGoodBlock
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t blockIndex,
@@ -73,7 +73,7 @@ pa_result_t taf_pa_flash_CheckMtdGoodBlock
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_MarkMtdBadBlock
+pa_result_t PA_WEAK taf_pa_flash_MarkMtdBadBlock
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t blockIndex
@@ -84,7 +84,7 @@ pa_result_t taf_pa_flash_MarkMtdBadBlock
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_ReadMtdPage
+pa_result_t PA_WEAK taf_pa_flash_ReadMtdPage
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t pageIndex,
@@ -97,7 +97,7 @@ pa_result_t taf_pa_flash_ReadMtdPage
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_WriteMtdPage
+pa_result_t PA_WEAK taf_pa_flash_WriteMtdPage
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t pageIndex,
@@ -110,7 +110,7 @@ pa_result_t taf_pa_flash_WriteMtdPage
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_CopyMtd
+pa_result_t PA_WEAK taf_pa_flash_CopyMtd
 (
     const char* srcNamePtr,
     const char* dstNamePtr,
@@ -122,7 +122,7 @@ pa_result_t taf_pa_flash_CopyMtd
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_OpenUbiVolume
+pa_result_t PA_WEAK taf_pa_flash_OpenUbiVolume
 (
     const char* namePtr,
     taf_pa_flash_OpenModeBitMask_t mode,
@@ -134,7 +134,7 @@ pa_result_t taf_pa_flash_OpenUbiVolume
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_CloseUbiVolume
+pa_result_t PA_WEAK taf_pa_flash_CloseUbiVolume
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef
 )
@@ -144,7 +144,7 @@ pa_result_t taf_pa_flash_CloseUbiVolume
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_SetUbiVolumeUpdateSize
+pa_result_t PA_WEAK taf_pa_flash_SetUbiVolumeUpdateSize
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef,
     int64_t size
@@ -155,7 +155,7 @@ pa_result_t taf_pa_flash_SetUbiVolumeUpdateSize
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_ReadUbiVolume
+pa_result_t PA_WEAK taf_pa_flash_ReadUbiVolume
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef,
     off_t offset,
@@ -168,7 +168,7 @@ pa_result_t taf_pa_flash_ReadUbiVolume
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_UpdateUbiVolume
+pa_result_t PA_WEAK taf_pa_flash_UpdateUbiVolume
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef,
     const unsigned char* dataPtr,
@@ -180,7 +180,7 @@ pa_result_t taf_pa_flash_UpdateUbiVolume
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_CopyUbiVolume
+pa_result_t PA_WEAK taf_pa_flash_CopyUbiVolume
 (
     const char* srcNamePtr,
     const char* dstNamePtr,
@@ -193,7 +193,7 @@ pa_result_t taf_pa_flash_CopyUbiVolume
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_EraseUbiVolume
+pa_result_t PA_WEAK taf_pa_flash_EraseUbiVolume
 (
     const char* namePtr
 )
@@ -203,7 +203,7 @@ pa_result_t taf_pa_flash_EraseUbiVolume
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_flash_GetUbiVolumeInfo
+pa_result_t PA_WEAK taf_pa_flash_GetUbiVolumeInfo
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef,
     taf_pa_flash_UbiVolumeInfo_t* infoPtr

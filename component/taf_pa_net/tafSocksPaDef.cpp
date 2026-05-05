@@ -7,7 +7,7 @@
 
 /* Implementation */
 
-pa_result_t taf_pa_socks_Init()
+pa_result_t PA_WEAK taf_pa_socks_Init()
 {
     PA_INFO("Default platform adatper implementation");
     return PA_NOT_IMPLEMENTED;
@@ -23,7 +23,7 @@ pa_result_t taf_pa_socks_Init()
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_SetDeviceMode
+pa_result_t PA_WEAK taf_pa_net_SetDeviceMode
 (
     taf_pa_net_DeviceMode_t deviceMode  ///< [IN] Device mode
 )
@@ -40,7 +40,7 @@ pa_result_t taf_pa_net_SetDeviceMode
  *
  */
 //--------------------------------------------------------------------------------------------------
-taf_pa_net_DeviceMode_t taf_pa_net_GetDeviceMode
+taf_pa_net_DeviceMode_t PA_WEAK taf_pa_net_GetDeviceMode
 (
 )
 {
@@ -52,7 +52,7 @@ taf_pa_net_DeviceMode_t taf_pa_net_GetDeviceMode
  * Set SOCKS authentication method
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_SetSocksAuthMethod
+pa_result_t PA_WEAK taf_pa_net_SetSocksAuthMethod
 (
     taf_pa_net_AuthMethod_t authMethod
 )
@@ -66,7 +66,7 @@ pa_result_t taf_pa_net_SetSocksAuthMethod
  * Get SOCKS authentication method
  */
 //--------------------------------------------------------------------------------------------------
-taf_pa_net_AuthMethod_t taf_pa_net_GetSocksAuthMethod
+taf_pa_net_AuthMethod_t PA_WEAK taf_pa_net_GetSocksAuthMethod
 (
 )
 {
@@ -79,7 +79,7 @@ taf_pa_net_AuthMethod_t taf_pa_net_GetSocksAuthMethod
  * Sets SOCKS LAN interface
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_SetSocksLanInterface
+pa_result_t PA_WEAK taf_pa_net_SetSocksLanInterface
 (
     const char* ifName
 )
@@ -93,7 +93,7 @@ pa_result_t taf_pa_net_SetSocksLanInterface
  * Gets SOCKS LAN interface
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_GetSocksLanInterface
+pa_result_t PA_WEAK taf_pa_net_GetSocksLanInterface
 (
     char* ifName,
     size_t ifNameSize
@@ -108,7 +108,7 @@ pa_result_t taf_pa_net_GetSocksLanInterface
  * Adds username/profile association
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_AddSocksAssociation
+pa_result_t PA_WEAK taf_pa_net_AddSocksAssociation
 (
     const char* userName,
     uint32_t profileId
@@ -123,7 +123,7 @@ pa_result_t taf_pa_net_AddSocksAssociation
  * Deletes username/profile association
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_RemoveSocksAssociation
+pa_result_t PA_WEAK taf_pa_net_RemoveSocksAssociation
 (
     const char* userName
 )
@@ -137,7 +137,7 @@ pa_result_t taf_pa_net_RemoveSocksAssociation
  FUNCTION        taf_Socks::EnableSocksCmdSync
 
 ======================================================================*/
-pa_result_t taf_pa_net_EnableSocksCmdSync()
+pa_result_t PA_WEAK taf_pa_net_EnableSocksCmdSync()
 {
     PA_INFO("Default taf_pa_net_EnableSocksCmdSync implementation");
     return PA_NOT_IMPLEMENTED;
@@ -148,7 +148,7 @@ pa_result_t taf_pa_net_EnableSocksCmdSync()
  FUNCTION        taf_Socks::DisableSocksCmdSync
 
 ======================================================================*/
-pa_result_t taf_pa_net_DisableSocksCmdSync()
+pa_result_t PA_WEAK taf_pa_net_DisableSocksCmdSync()
 {
     PA_INFO("Default taf_pa_net_DisableSocksCmdSync implementation");
     return PA_NOT_IMPLEMENTED;
@@ -158,7 +158,7 @@ pa_result_t taf_pa_net_DisableSocksCmdSync()
  FUNCTION        EnableSocksCmdSync
 
 ======================================================================*/
-pa_result_t taf_pa_net_EnableSocksCmdASync(taf_pa_socks_CallCb callback,void *contextPtr)
+pa_result_t PA_WEAK taf_pa_net_EnableSocksCmdASync(taf_pa_socks_CallCb callback,void *contextPtr)
 {
     PA_INFO("Default taf_pa_net_EnableSocksCmdASync implementation");
     return PA_NOT_IMPLEMENTED;
@@ -171,7 +171,7 @@ pa_result_t taf_pa_net_EnableSocksCmdASync(taf_pa_socks_CallCb callback,void *co
 
 
 ======================================================================*/
-pa_result_t taf_pa_net_DisableSocksCmdASync(taf_pa_socks_CallCb callback,void *contextPtr)
+pa_result_t PA_WEAK taf_pa_net_DisableSocksCmdASync(taf_pa_socks_CallCb callback,void *contextPtr)
 {
     PA_INFO("Default taf_pa_net_DisableSocksCmdASync implementation");
     return PA_NOT_IMPLEMENTED;

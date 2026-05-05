@@ -10,7 +10,7 @@
  * PA initialization.
  */
 //--------------------------------------------------------------------------------------------------
-void taf_pa_fsc_Init
+void PA_WEAK taf_pa_fsc_Init
 (
     void* cryptoFunc
 )
@@ -23,7 +23,7 @@ void taf_pa_fsc_Init
  * Get a key file reference by directory name.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_fsc_GetKey
+pa_result_t PA_WEAK taf_pa_fsc_GetKey
 (
     int clientSessionFd,                    ///< [IN] Client session Fd
     const char* dirName,                    ///< [IN] dir Name
@@ -40,7 +40,7 @@ pa_result_t taf_pa_fsc_GetKey
  * Create AES key and return a key file reference.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_fsc_GenerateAesKey
+pa_result_t PA_WEAK taf_pa_fsc_GenerateAesKey
 (
     int clientSessionFd,                    ///< [IN] Client session Fd
     const char* dirName,                    ///< [IN] dir Name
@@ -57,7 +57,7 @@ pa_result_t taf_pa_fsc_GenerateAesKey
  * Delete a key file.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_fsc_DeleteKey
+pa_result_t PA_WEAK taf_pa_fsc_DeleteKey
 (
     int clientSessionFd,                    ///< [IN] Client session Fd
     KeyMgt_KeyFileRef_t keyFileRef          ///< [IN] Key file reference

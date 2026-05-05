@@ -11,7 +11,7 @@
  *  SIM refresh register.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_RefreshRegister
+pa_result_t PA_WEAK taf_pa_sim_RefreshRegister
 (
     taf_pa_sim_SessionType_t sessionType,
     uint32_t filesLen,
@@ -27,7 +27,7 @@ pa_result_t taf_pa_sim_RefreshRegister
  *  SIM refresh ok.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_RefreshOk
+pa_result_t PA_WEAK taf_pa_sim_RefreshOk
 (
     taf_pa_sim_SessionType_t sessionType,
     bool* refreshAllow
@@ -42,7 +42,7 @@ pa_result_t taf_pa_sim_RefreshOk
  *  SIM refresh complete.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_RefreshComplete
+pa_result_t PA_WEAK taf_pa_sim_RefreshComplete
 (
     taf_pa_sim_SessionType_t sessionType
 )
@@ -55,7 +55,7 @@ pa_result_t taf_pa_sim_RefreshComplete
  * Add handler for SIM refresh
  */
 //--------------------------------------------------------------------------------------------------
-taf_pa_sim_RefreshChangeHandlerRef_t taf_pa_sim_AddRefreshChangeHandler
+taf_pa_sim_RefreshChangeHandlerRef_t PA_WEAK taf_pa_sim_AddRefreshChangeHandler
 (
     taf_pa_sim_RefreshChangeHandlerFunc_t handlerFuncPtr,
     void* contextPtr
@@ -70,7 +70,7 @@ taf_pa_sim_RefreshChangeHandlerRef_t taf_pa_sim_AddRefreshChangeHandler
  * Remove handler for SIM refresh
  */
 //--------------------------------------------------------------------------------------------------
-void taf_pa_sim_RemoveRefreshChangeHandler
+void PA_WEAK taf_pa_sim_RemoveRefreshChangeHandler
 (
     taf_pa_sim_RefreshChangeHandlerRef_t handlerRef ///< [IN] Handler reference.
 )
@@ -83,7 +83,7 @@ void taf_pa_sim_RemoveRefreshChangeHandler
  * Initialize PA SIM
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_Init
+pa_result_t PA_WEAK taf_pa_sim_Init
 (
 
 )
@@ -92,7 +92,7 @@ pa_result_t taf_pa_sim_Init
     return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
 }
 
-uint8_t taf_pa_sim_GetProfileNum
+uint8_t PA_WEAK taf_pa_sim_GetProfileNum
 (
     taf_pa_sim_SlotId_t slot
 )
@@ -102,7 +102,7 @@ uint8_t taf_pa_sim_GetProfileNum
     return 0;
 }
 
-taf_pa_sim_ProfileInfo_t taf_pa_sim_GetProfile
+taf_pa_sim_ProfileInfo_t PA_WEAK taf_pa_sim_GetProfile
 (
     taf_pa_sim_SlotId_t slot,
     uint8_t index
@@ -119,7 +119,7 @@ taf_pa_sim_ProfileInfo_t taf_pa_sim_GetProfile
     return info;
 }
 
-pa_result_t taf_pa_sim_SetActiveProfile
+pa_result_t PA_WEAK taf_pa_sim_SetActiveProfile
 (
     taf_pa_sim_SlotId_t slot,
     taf_pa_sim_ProfileId_t profileId
@@ -135,7 +135,7 @@ pa_result_t taf_pa_sim_SetActiveProfile
  * Register subscription, card and multi sim listeners
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_RegisterListeners
+pa_result_t PA_WEAK taf_pa_sim_RegisterListeners
 (
 )
 {
@@ -148,7 +148,7 @@ pa_result_t taf_pa_sim_RegisterListeners
  * Deregister subscription, card and multi sim listeners
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_DeregisterListeners
+pa_result_t PA_WEAK taf_pa_sim_DeregisterListeners
 (
 )
 {
@@ -164,7 +164,7 @@ pa_result_t taf_pa_sim_DeregisterListeners
  * Get Iccid.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetIccid
+pa_result_t PA_WEAK taf_pa_sim_GetIccid
 (
     taf_pa_sim_Id_t simId,
     std::string& iccIdStr
@@ -179,7 +179,7 @@ pa_result_t taf_pa_sim_GetIccid
  * Get subscriber phone number.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetSubscriberPhoneNumber
+pa_result_t PA_WEAK taf_pa_sim_GetSubscriberPhoneNumber
 (
     taf_pa_sim_Id_t simId,
     std::string& phoneNumber
@@ -194,7 +194,7 @@ pa_result_t taf_pa_sim_GetSubscriberPhoneNumber
  * Get IMSI.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetImsi
+pa_result_t PA_WEAK taf_pa_sim_GetImsi
 (
     taf_pa_sim_Id_t simId,
     std::string& imsi
@@ -209,7 +209,7 @@ pa_result_t taf_pa_sim_GetImsi
  * Get carrier name.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetCarrierName
+pa_result_t PA_WEAK taf_pa_sim_GetCarrierName
 (
     taf_pa_sim_Id_t simId,
     std::string& nameString
@@ -224,7 +224,7 @@ pa_result_t taf_pa_sim_GetCarrierName
  * Get home network MCC/MNC.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetHomeNetworkMccMnc
+pa_result_t PA_WEAK taf_pa_sim_GetHomeNetworkMccMnc
 (
     taf_pa_sim_Id_t simId,
     int* mcc,
@@ -241,7 +241,7 @@ pa_result_t taf_pa_sim_GetHomeNetworkMccMnc
  * Get home network MCC/MNC.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetHomeNetworkMccMncStr
+pa_result_t PA_WEAK taf_pa_sim_GetHomeNetworkMccMncStr
 (
     taf_pa_sim_Id_t simId,
     std::string& mcc,
@@ -257,7 +257,7 @@ pa_result_t taf_pa_sim_GetHomeNetworkMccMncStr
  * Get sim slot count.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_getSlotCount
+pa_result_t PA_WEAK taf_pa_sim_getSlotCount
 (
     int* count
 )
@@ -271,7 +271,7 @@ pa_result_t taf_pa_sim_getSlotCount
  * Get sim state.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetState
+pa_result_t PA_WEAK taf_pa_sim_GetState
 (
     taf_pa_sim_Id_t simId,
     taf_pa_sim_States_t* state
@@ -286,7 +286,7 @@ pa_result_t taf_pa_sim_GetState
  * set power state.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_SetPower
+pa_result_t PA_WEAK taf_pa_sim_SetPower
 (
     taf_pa_sim_Id_t simId,
     taf_pa_sim_power_state_t powerState
@@ -301,7 +301,7 @@ pa_result_t taf_pa_sim_SetPower
  * Check if multisim sub system is ready or not.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_IsSubsystemReady
+pa_result_t PA_WEAK taf_pa_sim_IsSubsystemReady
 (
     bool* isReady
 )
@@ -316,7 +316,7 @@ pa_result_t taf_pa_sim_IsSubsystemReady
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_selectSimSlot
+pa_result_t PA_WEAK taf_pa_sim_selectSimSlot
 (
     taf_pa_sim_Id_t simId
 )
@@ -331,7 +331,7 @@ pa_result_t taf_pa_sim_selectSimSlot
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_ChangeCardPin
+pa_result_t PA_WEAK taf_pa_sim_ChangeCardPin
 (
     taf_pa_sim_LockType_t lockType,
     const char* oldpinPtr,
@@ -350,7 +350,7 @@ pa_result_t taf_pa_sim_ChangeCardPin
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_UnlockCardByPin
+pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPin
 (
     taf_pa_sim_LockType_t lockType,
     const char* pinPtr,
@@ -368,7 +368,7 @@ pa_result_t taf_pa_sim_UnlockCardByPin
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_UnlockCardByPuk
+pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPuk
 (
     taf_pa_sim_LockType_t lockType,
     const char* pukPtr,
@@ -387,7 +387,7 @@ pa_result_t taf_pa_sim_UnlockCardByPuk
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_SetCardLock
+pa_result_t PA_WEAK taf_pa_sim_SetCardLock
 (
     taf_pa_sim_LockType_t lockType,
     const char* pinPtr,
@@ -405,7 +405,7 @@ pa_result_t taf_pa_sim_SetCardLock
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_SetCardUnLock
+pa_result_t PA_WEAK taf_pa_sim_SetCardUnLock
 (
     taf_pa_sim_LockType_t lockType,
     const char* pinPtr,
@@ -423,7 +423,7 @@ pa_result_t taf_pa_sim_SetCardUnLock
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetAppTypes
+pa_result_t PA_WEAK taf_pa_sim_GetAppTypes
 (
     taf_pa_sim_AppType_t* appTypePtr,
     size_t* appTypeNumElementsPtr
@@ -439,7 +439,7 @@ pa_result_t taf_pa_sim_GetAppTypes
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_OpenLogicalChannel
+pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannel
 (
     taf_pa_sim_AppType_t appType,
     uint8_t* channelPtr,
@@ -457,7 +457,7 @@ pa_result_t taf_pa_sim_OpenLogicalChannel
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_OpenLogicalChannelByAid
+pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannelByAid
 (
     const char* aid,
     uint8_t* channelIdPtr,
@@ -475,7 +475,7 @@ pa_result_t taf_pa_sim_OpenLogicalChannelByAid
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_CloseLogicalChannel
+pa_result_t PA_WEAK taf_pa_sim_CloseLogicalChannel
 (
     uint8_t channelId,
     taf_pa_sim_GeneralCb callback,
@@ -493,7 +493,7 @@ pa_result_t taf_pa_sim_CloseLogicalChannel
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_SendApduOnLogicalChannel
+pa_result_t PA_WEAK taf_pa_sim_SendApduOnLogicalChannel
 (
     uint8_t channel,
     uint8_t* responseApduPtr,
@@ -515,7 +515,7 @@ pa_result_t taf_pa_sim_SendApduOnLogicalChannel
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_SendApdu
+pa_result_t PA_WEAK taf_pa_sim_SendApdu
 (
     uint8_t* responseApduPtr,
     size_t* responseApduNumElementsPtr,
@@ -536,7 +536,7 @@ pa_result_t taf_pa_sim_SendApdu
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_ExchangeSimIO
+pa_result_t PA_WEAK taf_pa_sim_ExchangeSimIO
 (
     taf_pa_sim_Command_t command,
     uint8_t *p1, uint8_t *p2,
@@ -559,7 +559,7 @@ pa_result_t taf_pa_sim_ExchangeSimIO
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_RegisterEventListener
+pa_result_t PA_WEAK taf_pa_sim_RegisterEventListener
 (
     taf_pa_sim_EventListener* eventListener,
     std::any context
@@ -575,7 +575,7 @@ pa_result_t taf_pa_sim_RegisterEventListener
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetRemainingPINTries
+pa_result_t PA_WEAK taf_pa_sim_GetRemainingPINTries
 (
     taf_pa_sim_Id_t simId,
     int32_t* retryCount
@@ -591,7 +591,7 @@ pa_result_t taf_pa_sim_GetRemainingPINTries
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetRemainingPukTries
+pa_result_t PA_WEAK taf_pa_sim_GetRemainingPukTries
 (
     taf_pa_sim_Id_t simId,
     uint32_t* remainingPukTries

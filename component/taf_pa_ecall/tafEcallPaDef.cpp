@@ -16,13 +16,13 @@ using namespace tafpa::ecall;
 #define UNUSED(x) (void)(x)
 #endif
 
-pa_result_t tafpa::ecall::taf_pa_ecall_Init()
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Init()
 {
     PA_INFO("Using default PA. Feature unsupported.");
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_SetConfig(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetConfig(
     const taf_pa_ecall_config_t& config)
 {
     PA_INFO("Using default PA. Feature unsupported.");
@@ -30,7 +30,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_SetConfig(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_GetConfig(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetConfig(
     taf_pa_ecall_config_t& config
 )
 {
@@ -39,7 +39,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_GetConfig(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_SetOpMode(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetOpMode(
     uint8_t phoneId,
     taf_pa_ecall_mode_t mode,
     taf_pa_ecall_CommandCb callback,
@@ -54,7 +54,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_SetOpMode(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_GetOpMode(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetOpMode(
     uint8_t phoneId,
     taf_pa_ecall_GetModeCb callback,
     std::any context
@@ -67,13 +67,13 @@ pa_result_t tafpa::ecall::taf_pa_ecall_GetOpMode(
     return PA_NOT_IMPLEMENTED;
 }
 
-std::vector<std::shared_ptr<taf_pa_ecall_CallInfo_t>> tafpa::ecall::taf_pa_ecall_GetInProgressCalls()
+std::vector<std::shared_ptr<taf_pa_ecall_CallInfo_t>> PA_WEAK tafpa::ecall::taf_pa_ecall_GetInProgressCalls()
 {
     PA_INFO("Using default PA. Feature unsupported.");
     return {};
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_RequestNetworkDeregistration(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestNetworkDeregistration(
     uint8_t phoneId,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -86,7 +86,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_RequestNetworkDeregistration(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_MakeECall(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     int phoneId,
     const taf_pa_ecall_msd_data_t& msdData,
     taf_pa_ecall_category_t category,
@@ -105,7 +105,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_MakeECall(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_MakeECall(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     int phoneId,
     const std::vector<uint8_t>& msdPdu,
     taf_pa_ecall_category_t category,
@@ -124,7 +124,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_MakeECall(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_MakeECall(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     int phoneId,
     std::string dialNumber,
     const taf_pa_ecall_custom_sip_header_t& header,
@@ -143,7 +143,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_MakeECall(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_UpdateMsd(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
     uint8_t phoneId,
     const taf_pa_ecall_msd_data_t& msdData,
     taf_pa_ecall_CommandCb callback,
@@ -158,7 +158,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_UpdateMsd(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_UpdateMsd(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
     uint8_t phoneId,
     const std::vector<uint8_t>& msdData,
     taf_pa_ecall_CommandCb callback,
@@ -173,7 +173,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_UpdateMsd(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_EncodeMsd(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_EncodeMsd(
     const taf_pa_ecall_msd_data_t& msdData,
     std::vector<uint8_t>& msdPdu
 )
@@ -184,7 +184,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_EncodeMsd(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_RequestHlapTimerStatus(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimerStatus(
     int phoneId,
     taf_pa_ecall_HlapTimerStatusCb callback,
     std::any context
@@ -197,7 +197,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_RequestHlapTimerStatus(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_RequestHlapTimer(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimer(
     int phoneId,
     taf_pa_ecall_hlap_timer_type_t type,
     taf_pa_ecall_HlapTimerCb callback,
@@ -212,7 +212,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_RequestHlapTimer(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_UpdateHlapTimer(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateHlapTimer(
     int phoneId,
     taf_pa_ecall_hlap_timer_type_t type,
     uint32_t duration,
@@ -229,7 +229,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_UpdateHlapTimer(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_SetEcallRedial(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetEcallRedial(
     const std::vector<int>& timeGap,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -242,7 +242,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_SetEcallRedial(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_GetEcallRedial(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetEcallRedial(
     std::vector<int>& callOrigTimeGap,
     std::vector<int>& callDropTimeGap
 )
@@ -253,7 +253,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_GetEcallRedial(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_RestartHlapTimer(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RestartHlapTimer(
     int phoneId,
     taf_pa_ecall_hlap_timer_id_t id,
     uint32_t duration,
@@ -270,7 +270,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_RestartHlapTimer(
     return PA_NOT_IMPLEMENTED;
 }
 
-int8_t tafpa::ecall::taf_pa_ecall_GetPhoneIdFromSlotId(
+int8_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetPhoneIdFromSlotId(
     int8_t slotId
 )
 {
@@ -279,7 +279,7 @@ int8_t tafpa::ecall::taf_pa_ecall_GetPhoneIdFromSlotId(
     return -1; // Return invalid phone ID
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_Hangup(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Hangup(
     const taf_pa_ecall_CallInfo_t& callInfo,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -292,7 +292,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_Hangup(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_Reject(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Reject(
     const taf_pa_ecall_CallInfo_t& callInfo,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -305,7 +305,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_Reject(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_Answer(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Answer(
     const taf_pa_ecall_CallInfo_t& callInfo,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -318,7 +318,7 @@ pa_result_t tafpa::ecall::taf_pa_ecall_Answer(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::ecall::taf_pa_ecall_RegisterListener(
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RegisterListener(
     const taf_pa_ecall_event_listener_t* eventListener,
     std::any context
 )
