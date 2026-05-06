@@ -19,6 +19,13 @@ pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Init()
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Make
 (
     const taf_pa_voicecall_CallInfo_t& callInfo,

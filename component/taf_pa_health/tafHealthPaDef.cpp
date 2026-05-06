@@ -52,3 +52,10 @@ pa_result_t PA_WEAK taf_pa_health_RegModemStatusUpdateHandler
     PA_INFO("Default platform adatper PA_NOT_IMPLEMENTED");
     return PA_NOT_IMPLEMENTED;
 }
+
+pa_result_t PA_WEAK taf_pa_health_Deinit(void)
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}

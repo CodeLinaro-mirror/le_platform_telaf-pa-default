@@ -92,6 +92,16 @@ pa_result_t PA_WEAK taf_pa_sim_Init
     return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK taf_pa_sim_Deinit
+(
+    void
+)
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+}
+
 uint8_t PA_WEAK taf_pa_sim_GetProfileNum
 (
     taf_pa_sim_SlotId_t slot

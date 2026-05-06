@@ -17,6 +17,16 @@ pa_result_t PA_WEAK taf_pa_radio_Init
     return -ENOSYS;
 }
 
+pa_result_t PA_WEAK taf_pa_radio_Deinit
+(
+    void
+)
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return -ENOSYS;
+}
+
 pa_result_t PA_WEAK taf_pa_radio_GetOperatingMode
 (
     uint32_t instance,

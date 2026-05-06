@@ -21,7 +21,8 @@ void PA_WEAK taf_pa_pms_Deinit
     taf_pa_pms_Reference_t   *paRefPtr
 )
 {
-    PA_INFO("[DEF PA] NOT implemented");
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
 }
 
 pa_result_t PA_WEAK taf_pa_pms_SetPowerStateAsMaster

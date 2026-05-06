@@ -48,8 +48,9 @@ pa_result_t PA_WEAK taf::pa::data::Init
 //--------------------------------------------------------------------------------------------------
 pa_result_t PA_WEAK taf::pa::data::Deinit()
 {
-    PA_DEBUG("Default PA implementation.");
-    return PA_NOT_IMPLEMENTED;
+    PA_DEBUG("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
 }
 
 //--------------------------------------------------------------------------------------------------

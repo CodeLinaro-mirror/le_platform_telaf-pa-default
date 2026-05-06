@@ -14,6 +14,13 @@ pa_result_t PA_WEAK taf_pa_net_Init()
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK taf_pa_net_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 //--------------------------------------------------------------------------------------------------
 /**
  * Get phone ID from slot ID

@@ -22,6 +22,13 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Init()
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetConfig(
     const taf_pa_ecall_config_t& config)
 {

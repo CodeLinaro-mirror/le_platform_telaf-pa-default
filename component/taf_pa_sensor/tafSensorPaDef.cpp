@@ -15,6 +15,13 @@ pa_result_t PA_WEAK tafpa::sensor::taf_pa_sensor_Init(int8_t& listSize)
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK tafpa::sensor::taf_pa_sensor_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 pa_result_t PA_WEAK tafpa::sensor::taf_pa_sensor_GetSensorInfo(
     int8_t index,
     taf_pa_sensor_BasicInfo &basicInfo,

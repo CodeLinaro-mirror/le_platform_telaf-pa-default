@@ -17,6 +17,13 @@ pa_result_t PA_WEAK taf_pa_gnss_Init(void)
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK taf_pa_time_Deinit(void)
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 pa_result_t PA_WEAK taf_pa_RegGnssTimeListener(void)
 {
     PA_INFO("Default platform adatper PA_NOT_IMPLEMENTED");

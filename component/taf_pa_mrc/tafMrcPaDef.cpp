@@ -17,6 +17,16 @@ pa_result_t PA_WEAK taf_pa_mrc_Init
     return -ENOSYS;
 }
 
+pa_result_t PA_WEAK taf_pa_mrc_Deinit
+(
+    void
+)
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 pa_result_t PA_WEAK taf_pa_mrc_RegisterIndication
 (
     uint8_t registration

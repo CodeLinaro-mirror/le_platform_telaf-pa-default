@@ -21,6 +21,13 @@ pa_result_t PA_WEAK taf_pa_therm_Init(void)
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK taf_pa_therm_Deinit(void)
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 //--------------------------------------------------------------------------------------------------
 /**
  * Get list of all thermal zones

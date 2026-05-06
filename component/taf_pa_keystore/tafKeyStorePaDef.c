@@ -22,6 +22,18 @@ pa_result_t PA_WEAK taf_pa_ks_Init
     PA_INFO("Telaf keyStore defalut PA initialized.");
     return PA_NOT_IMPLEMENTED;
 }
+//--------------------------------------------------------------------------------------------------
+/**
+ * PA deinitialization.
+ */
+//--------------------------------------------------------------------------------------------------
+void PA_WEAK taf_pa_ks_Deinit
+(
+    void
+)
+{
+    PA_INFO("Telaf keyStore default PA deinitialized.");
+}
 
 //--------------------------------------------------------------------------------------------------
 /**

@@ -13,6 +13,12 @@ pa_result_t PA_WEAK taf_pa_socks_Init()
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK taf_pa_socks_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    return PA_OK;
+}
+
 //--------------------------------------------------------------------------------------------------
 /**
  * Set device mode

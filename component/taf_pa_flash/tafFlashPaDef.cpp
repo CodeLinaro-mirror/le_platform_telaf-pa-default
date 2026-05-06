@@ -17,6 +17,16 @@ pa_result_t PA_WEAK taf_pa_flash_Init
     return -ENOSYS;
 }
 
+pa_result_t PA_WEAK taf_pa_flash_Deinit
+(
+    void
+)
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 pa_result_t PA_WEAK taf_pa_flash_OpenMtd
 (
     const char* namePtr,

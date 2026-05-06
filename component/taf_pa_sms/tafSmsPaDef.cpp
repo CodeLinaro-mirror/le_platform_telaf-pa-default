@@ -17,6 +17,16 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_Init
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_Deinit
+(
+    void
+)
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_ReadMessage
 (
     uint32_t readAtIdx,

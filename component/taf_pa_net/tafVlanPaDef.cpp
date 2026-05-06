@@ -15,6 +15,12 @@ pa_result_t PA_WEAK taf_pa_vlan_Init()
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK taf_pa_vlan_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    return PA_OK;
+}
+
 //--------------------------------------------------------------------------------------------------
 /**
  * Register hardware acceleration notification handler in PA layer

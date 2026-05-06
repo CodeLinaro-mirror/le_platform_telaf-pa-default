@@ -14,6 +14,13 @@ pa_result_t PA_WEAK Init()
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
 pa_result_t PA_WEAK RegisterDeviceListener(DeviceListener, std::any)
 {
     PA_INFO("Using default PA. Feature unsupported.");

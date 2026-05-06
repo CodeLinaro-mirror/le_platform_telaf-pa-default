@@ -14,6 +14,13 @@ bool PA_WEAK taf_pa_l2tp_Init()
     return true;
 }
 
+bool PA_WEAK taf_pa_l2tp_Deinit()
+{
+    PA_DEBUG("Enter taf_pa_l2tp_Deinit in Default PA");
+    PA_INFO("Default platform adapter deinitialization");
+    return PA_OK;
+}
+
 //--------------------------------------------------------------------------------------------------
 /**
  * Add Tunnel Asynchronously
