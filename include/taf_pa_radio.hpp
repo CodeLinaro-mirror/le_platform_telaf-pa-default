@@ -163,7 +163,8 @@ typedef enum
     TAF_PA_RADIO_SIGNAL_METRIC_RSCP = 5,
     TAF_PA_RADIO_SIGNAL_METRIC_RSRP = 6,
     TAF_PA_RADIO_SIGNAL_METRIC_RSRQ = 7,
-    TAF_PA_RADIO_SIGNAL_METRIC_SNR = 8
+    TAF_PA_RADIO_SIGNAL_METRIC_SNR = 8,
+    TAF_PA_RADIO_SIGNAL_METRIC_SS = 9
 } taf_pa_radio_SignalMetric_t;
 
 typedef enum
@@ -391,6 +392,7 @@ typedef struct
 {
     int32_t rssi;
     int32_t ber;
+    int32_t ss;
 } taf_pa_radio_GsmSignalStrengthInfo_t;
 
 typedef struct
@@ -424,6 +426,7 @@ typedef struct
     int32_t rsrq;
     int32_t rsrp;
     int32_t snr;
+    int32_t ss;
 } taf_pa_radio_LteSignalStrengthInfo_t;
 
 typedef struct
@@ -431,6 +434,7 @@ typedef struct
     int32_t rsrq;
     int32_t rsrp;
     int32_t snr;
+    int32_t ss;
 } taf_pa_radio_Nr5gSignalStrengthInfo_t;
 
 typedef struct
