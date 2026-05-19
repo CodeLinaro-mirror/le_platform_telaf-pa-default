@@ -7,11 +7,18 @@
 
 /* Implementation */
 
-bool taf_pa_l2tp_Init()
+bool PA_WEAK taf_pa_l2tp_Init()
 {
     PA_DEBUG("Enter taf_pa_l2tp_Init in Default PA");
     PA_INFO("Default platform adatper implementation");
     return true;
+}
+
+bool PA_WEAK taf_pa_l2tp_Deinit()
+{
+    PA_DEBUG("Enter taf_pa_l2tp_Deinit in Default PA");
+    PA_INFO("Default platform adapter deinitialization");
+    return PA_OK;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -19,7 +26,7 @@ bool taf_pa_l2tp_Init()
  * Add Tunnel Asynchronously
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_AddTunnelAsync
+pa_result_t PA_WEAK taf_pa_net_AddTunnelAsync
 (
     const taf_pa_net_L2tpTunnel_t& addTunnelConfig,   // IN
     taf_pa_l2tp_CallCb callback,           // IN
@@ -35,7 +42,7 @@ pa_result_t taf_pa_net_AddTunnelAsync
  * Add Tunnel Synchronously
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_AddTunnelSync
+pa_result_t PA_WEAK taf_pa_net_AddTunnelSync
 (
     const taf_pa_net_L2tpTunnel_t& addTunnelConfig   // IN
 )
@@ -49,7 +56,7 @@ pa_result_t taf_pa_net_AddTunnelSync
  * Remove Tunnel Asynchronously
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_RemoveTunnelAsync
+pa_result_t PA_WEAK taf_pa_net_RemoveTunnelAsync
 (
     const uint32_t tunnelId,   // IN
     taf_pa_l2tp_CallCb callback,          // IN
@@ -65,7 +72,7 @@ pa_result_t taf_pa_net_RemoveTunnelAsync
  * Remove Tunnel Synchronously
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_RemoveTunnelSync
+pa_result_t PA_WEAK taf_pa_net_RemoveTunnelSync
 (
     const uint32_t tunnelId   // IN
 )
@@ -79,7 +86,7 @@ pa_result_t taf_pa_net_RemoveTunnelSync
  * Request L2TP Configuration
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_RequestL2tpConfig
+pa_result_t PA_WEAK taf_pa_net_RequestL2tpConfig
 (
     taf_pa_net_L2tpConfig_t& L2tpConfig  // OUT
 )
@@ -93,7 +100,7 @@ pa_result_t taf_pa_net_RequestL2tpConfig
  * Set L2TP Configuration Asynchronously
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_SetL2tpConfigAsync
+pa_result_t PA_WEAK taf_pa_net_SetL2tpConfigAsync
 (
     const taf_pa_net_L2tpConfig_t& L2tpConfig,  // IN
     taf_pa_l2tp_CallCb callback,        // IN
@@ -109,7 +116,7 @@ pa_result_t taf_pa_net_SetL2tpConfigAsync
  * Set L2TP Configuration Synchronously
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_SetL2tpConfigSync
+pa_result_t PA_WEAK taf_pa_net_SetL2tpConfigSync
 (
     taf_pa_net_L2tpConfig_t& L2tpConfig  // IN
 )

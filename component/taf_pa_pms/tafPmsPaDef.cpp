@@ -5,7 +5,7 @@
 
 #include "tafPmsPa.hpp"
 
-pa_result_t taf_pa_pms_Init
+pa_result_t PA_WEAK taf_pa_pms_Init
 (
     taf_pa_pms_Reference_t  *paRefPtr,
     SendEventFunc_t          fnSendEvent,
@@ -16,15 +16,16 @@ pa_result_t taf_pa_pms_Init
     return PA_NOT_IMPLEMENTED;
 }
 
-void taf_pa_pms_Deinit
+void PA_WEAK taf_pa_pms_Deinit
 (
     taf_pa_pms_Reference_t   *paRefPtr
 )
 {
-    PA_INFO("[DEF PA] NOT implemented");
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
 }
 
-pa_result_t taf_pa_pms_SetPowerStateAsMaster
+pa_result_t PA_WEAK taf_pa_pms_SetPowerStateAsMaster
 (
     taf_pa_pms_Reference_t    paRef,
     taf_pa_pms_PowerState_t   state,
@@ -35,7 +36,7 @@ pa_result_t taf_pa_pms_SetPowerStateAsMaster
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t taf_pa_pms_SendAckForStateUpdate
+pa_result_t PA_WEAK taf_pa_pms_SendAckForStateUpdate
 (
     taf_pa_pms_Reference_t    paRef,
     taf_pa_pms_PowerState_t   state,
@@ -46,7 +47,7 @@ pa_result_t taf_pa_pms_SendAckForStateUpdate
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t taf_pa_pms_GetAllMachineNames
+pa_result_t PA_WEAK taf_pa_pms_GetAllMachineNames
 (
     taf_pa_pms_Reference_t    paRef,
     std::vector<std::string> &machineNames
@@ -56,7 +57,7 @@ pa_result_t taf_pa_pms_GetAllMachineNames
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t taf_pa_pms_SetModemWakeupFilter
+pa_result_t PA_WEAK taf_pa_pms_SetModemWakeupFilter
 (
     taf_pa_pms_Reference_t    paRef,
     uint32_t                  wsBitmask
@@ -66,7 +67,7 @@ pa_result_t taf_pa_pms_SetModemWakeupFilter
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t taf_pa_pms_GetModemWakeupFilter
+pa_result_t PA_WEAK taf_pa_pms_GetModemWakeupFilter
 (
     taf_pa_pms_Reference_t    paRef,
     uint32_t                 *wsBitmaskPtr

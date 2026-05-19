@@ -8,13 +8,20 @@
 /* Implementation */
 using namespace tafpa::audio;
 
-pa_result_t tafpa::audio::taf_pa_audio_Init()
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_Init()
 {
     PA_INFO("Using default PA. Feature unsupported.");
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_CreateStream(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_CreateStream(
     PaStreamConfig streamConfig,
     taf_pa_audio_cb callback,
     std::any context
@@ -24,7 +31,7 @@ pa_result_t tafpa::audio::taf_pa_audio_CreateStream(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_DeleteStream(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_DeleteStream(
     PaStreamConfig streamConfig,
     taf_pa_audio_cb callback,
     std::any context
@@ -34,7 +41,7 @@ pa_result_t tafpa::audio::taf_pa_audio_DeleteStream(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_StartAudio(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StartAudio(
     PaStreamConfig streamConfig,
     taf_pa_audio_cb callback,
     std::any context
@@ -44,7 +51,7 @@ pa_result_t tafpa::audio::taf_pa_audio_StartAudio(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_StopAudio(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StopAudio(
     PaStreamConfig streamConfig,
     taf_pa_audio_cb callback,
     std::any context
@@ -54,7 +61,7 @@ pa_result_t tafpa::audio::taf_pa_audio_StopAudio(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_SetVolume(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_SetVolume(
     PaStreamConfig streamConfig,
     double volLevel,
     taf_pa_audio_cb callback,
@@ -65,7 +72,7 @@ pa_result_t tafpa::audio::taf_pa_audio_SetVolume(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_GetVolume(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_GetVolume(
     PaStreamConfig streamConfig,
     double *volLevel,
     taf_pa_audio_cb callback,
@@ -76,7 +83,7 @@ pa_result_t tafpa::audio::taf_pa_audio_GetVolume(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_SetMute(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_SetMute(
     PaStreamConfig streamConfig,
     bool isMute,
     taf_pa_audio_cb callback,
@@ -87,7 +94,7 @@ pa_result_t tafpa::audio::taf_pa_audio_SetMute(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_GetMute(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_GetMute(
     PaStreamConfig streamConfig,
     bool *isMute,
     taf_pa_audio_cb callback,
@@ -98,7 +105,7 @@ pa_result_t tafpa::audio::taf_pa_audio_GetMute(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_StartPlayback(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StartPlayback(
     std::vector<taf_pa_audio_PlayFileInfo_t> &playFileInfos,
     int listSiz,
     std::weak_ptr<IPaPlayListListener> pbStatusListener
@@ -108,7 +115,7 @@ pa_result_t tafpa::audio::taf_pa_audio_StartPlayback(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_StopPlayback(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StopPlayback(
     PaStreamConfig streamConfig
 )
 {
@@ -116,7 +123,7 @@ pa_result_t tafpa::audio::taf_pa_audio_StopPlayback(
     return PA_NOT_IMPLEMENTED;
 }
 
-std::shared_ptr<PaAudioCaptureStream> tafpa::audio::taf_pa_audio_GetCaptureStream(
+std::shared_ptr<PaAudioCaptureStream> PA_WEAK tafpa::audio::taf_pa_audio_GetCaptureStream(
     PaStreamDirection streamDir
 )
 {
@@ -124,7 +131,7 @@ std::shared_ptr<PaAudioCaptureStream> tafpa::audio::taf_pa_audio_GetCaptureStrea
     return NULL;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_PlaySignallingDtmfOnTx(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_PlaySignallingDtmfOnTx(
     uint32_t slotId,
     const char dtmf,
     taf_pa_audio_cb callback,
@@ -135,7 +142,7 @@ pa_result_t tafpa::audio::taf_pa_audio_PlaySignallingDtmfOnTx(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_StopSignallingDtmfOnTx(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StopSignallingDtmfOnTx(
     uint32_t slotId,
     taf_pa_audio_cb callback,
     std::any context
@@ -145,7 +152,7 @@ pa_result_t tafpa::audio::taf_pa_audio_StopSignallingDtmfOnTx(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_PlayDtmf(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_PlayDtmf(
         PaDtmfTone dtmfTone, uint16_t duration,
         uint16_t gain,
         taf_pa_audio_cb callback,
@@ -156,7 +163,7 @@ pa_result_t tafpa::audio::taf_pa_audio_PlayDtmf(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_StopDtmf(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StopDtmf(
     PaStreamDirection direction, taf_pa_audio_cb callback,
     std::any context
 )
@@ -165,7 +172,7 @@ pa_result_t tafpa::audio::taf_pa_audio_StopDtmf(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_registerDtmfListener(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_registerDtmfListener(
     std::weak_ptr<IPaDtmfListener> dtmfListener
 )
 {
@@ -173,7 +180,7 @@ pa_result_t tafpa::audio::taf_pa_audio_registerDtmfListener(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::taf_pa_audio_deregisterDtmfListener(
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_deregisterDtmfListener(
     std::weak_ptr<IPaDtmfListener> dtmfListener
 )
 {
@@ -181,7 +188,7 @@ pa_result_t tafpa::audio::taf_pa_audio_deregisterDtmfListener(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::AddSubsystemStateChangeListener(
+pa_result_t PA_WEAK tafpa::audio::AddSubsystemStateChangeListener(
     taf_pa_audio_SubsystemStateChangeCb callBack,
     std::shared_ptr<void> context,
     uint16_t &id
@@ -191,7 +198,7 @@ pa_result_t tafpa::audio::AddSubsystemStateChangeListener(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::audio::RemoveSubsystemStateChangeListener(
+pa_result_t PA_WEAK tafpa::audio::RemoveSubsystemStateChangeListener(
     uint16_t id
 )
 {

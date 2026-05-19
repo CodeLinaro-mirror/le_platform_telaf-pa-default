@@ -7,10 +7,16 @@
 
 /* Implementation */
 
-pa_result_t taf_pa_nat_Init()
+pa_result_t PA_WEAK taf_pa_nat_Init()
 {
     PA_INFO("Default platform adatper implementation");
     return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf_pa_nat_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    return PA_OK;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -22,7 +28,7 @@ pa_result_t taf_pa_nat_Init()
  *      - PA_FAULT on failure
  */
 //--------------------------------------------------------------------------------------------------
- pa_result_t taf_pa_nat_AddDestNatEntry(
+pa_result_t PA_WEAK taf_pa_nat_AddDestNatEntry(
     uint32_t profileId,
     uint8_t slotId,
     const taf_pa_net_NatConfig_t *natConfig
@@ -42,7 +48,7 @@ pa_result_t taf_pa_nat_Init()
  *      - PA_FAULT on failure
  */
 //--------------------------------------------------------------------------------------------------
- pa_result_t taf_pa_nat_RemoveDestNatEntry(
+pa_result_t PA_WEAK taf_pa_nat_RemoveDestNatEntry(
     uint32_t profileId,
     uint8_t slotId,
     const taf_pa_net_NatConfig_t *natConfig
@@ -62,7 +68,7 @@ pa_result_t taf_pa_nat_Init()
  *      - PA_TIMEOUT on timeout
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_nat_QueryDestNatEntryList(
+pa_result_t PA_WEAK taf_pa_nat_QueryDestNatEntryList(
     uint32_t profileId,
     uint8_t slotId,
     std::vector<taf_pa_net_NatConfig_t> &natEntryInfo

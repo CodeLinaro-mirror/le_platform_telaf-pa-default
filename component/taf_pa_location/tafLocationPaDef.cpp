@@ -6,28 +6,35 @@
 #include "tafCommonPa.h"
 #include "tafLocationPa.hpp"
 
-using namespace tafpa::location;
+namespace tafpa::location {
 
-pa_result_t tafpa::location::taf_pa_location_Init()
+pa_result_t PA_WEAK taf_pa_location_Init()
 {
     PA_INFO("Location PA: Default platform adapter Init() called (unimplemented)");
     return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_location_LocationId tafpa::location::taf_pa_location_CreateClient()
+pa_result_t PA_WEAK taf_pa_location_Deinit()
+{
+    PA_INFO("Location PA: Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_NOT_IMPLEMENTED;
+}
+
+taf_pa_location_LocationId PA_WEAK taf_pa_location_CreateClient()
 {
     PA_INFO("Location PA: Default platform adapter CreateClient() called");
     return 0;
 }
 
-pa_result_t tafpa::location::taf_pa_location_DeleteClient(taf_pa_location_LocationId clientId)
+pa_result_t PA_WEAK taf_pa_location_DeleteClient(taf_pa_location_LocationId clientId)
 {
     PA_INFO("Location PA: Default platform adapter DeleteClient()");
     (void)clientId;
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_RegisterListener(taf_pa_location_LocationId clientId, taf_pa_location_EventListener* eventListener, std::any context)
+pa_result_t PA_WEAK taf_pa_location_RegisterListener(taf_pa_location_LocationId clientId, taf_pa_location_EventListener* eventListener, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter RegisterListener() called ");
     (void)clientId;
@@ -36,7 +43,7 @@ pa_result_t tafpa::location::taf_pa_location_RegisterListener(taf_pa_location_Lo
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_startDetailedEngineReports(taf_pa_location_LocationId clientId, uint32_t optInterval, uint16_t engineType, taf_pa_location_GeneralCb callback, uint32_t reportMask, std::any context)
+pa_result_t PA_WEAK taf_pa_location_startDetailedEngineReports(taf_pa_location_LocationId clientId, uint32_t optInterval, uint16_t engineType, taf_pa_location_GeneralCb callback, uint32_t reportMask, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter startDetailedEngineReports() called ");
     (void)clientId;
@@ -48,7 +55,7 @@ pa_result_t tafpa::location::taf_pa_location_startDetailedEngineReports(taf_pa_l
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_stopReports(taf_pa_location_LocationId clientId, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_stopReports(taf_pa_location_LocationId clientId, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter stopReports() called");
     (void)clientId;
@@ -57,7 +64,7 @@ pa_result_t tafpa::location::taf_pa_location_stopReports(taf_pa_location_Locatio
     return PA_NOT_IMPLEMENTED;
 }
 
-uint32_t tafpa::location::taf_pa_location_getCapabilities(taf_pa_location_LocationId clientId, std::any context)
+uint32_t PA_WEAK taf_pa_location_getCapabilities(taf_pa_location_LocationId clientId, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter getCapabilities() called");
     (void)clientId;
@@ -65,7 +72,7 @@ uint32_t tafpa::location::taf_pa_location_getCapabilities(taf_pa_location_Locati
     return 0;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureConstellations(const std::vector<taf_pa_location_SvBlackListInfo_t>& svBlackListData, taf_pa_location_GeneralCb callback, bool deviceReset, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureConstellations(const std::vector<taf_pa_location_SvBlackListInfo_t>& svBlackListData, taf_pa_location_GeneralCb callback, bool deviceReset, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureConstellations() called");
     (void)svBlackListData;
@@ -75,7 +82,7 @@ pa_result_t tafpa::location::taf_pa_location_configureConstellations(const std::
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_deleteAidingData(taf_pa_location_AidingDataType_t aidingData, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_deleteAidingData(taf_pa_location_AidingDataType_t aidingData, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter deleteAidingData() called");
     (void)aidingData;
@@ -84,7 +91,7 @@ pa_result_t tafpa::location::taf_pa_location_deleteAidingData(taf_pa_location_Ai
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_deleteAllAidingData(taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_deleteAllAidingData(taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter deleteAllAidingData() called");
     (void)callback;
@@ -92,7 +99,7 @@ pa_result_t tafpa::location::taf_pa_location_deleteAllAidingData(taf_pa_location
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureMinSVElevation(uint8_t minElevation, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureMinSVElevation(uint8_t minElevation, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureMinSVElevation() called");
     (void)minElevation;
@@ -101,7 +108,7 @@ pa_result_t tafpa::location::taf_pa_location_configureMinSVElevation(uint8_t min
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_requestMinSVElevation(taf_pa_location_RequestMinSVElevationCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_requestMinSVElevation(taf_pa_location_RequestMinSVElevationCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter requestMinSVElevation() called");
     (void)callback;
@@ -109,7 +116,7 @@ pa_result_t tafpa::location::taf_pa_location_requestMinSVElevation(taf_pa_locati
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureNmeaTypes(taf_pa_location_NmeaSentenceType_t nmeaType, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureNmeaTypes(taf_pa_location_NmeaSentenceType_t nmeaType, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureNmeaTypes() called ");
     (void)nmeaType;
@@ -118,7 +125,7 @@ pa_result_t tafpa::location::taf_pa_location_configureNmeaTypes(taf_pa_location_
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureDR(const taf_pa_location_DREngineConfiguration_t& drConfig, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureDR(const taf_pa_location_DREngineConfiguration_t& drConfig, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureDR() called (unimplemented)");
     (void)drConfig;
@@ -127,7 +134,7 @@ pa_result_t tafpa::location::taf_pa_location_configureDR(const taf_pa_location_D
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureEngineState(taf_pa_location_EngineType_t engineType, taf_pa_location_LocationEngineRunState_t engineState,taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureEngineState(taf_pa_location_EngineType_t engineType, taf_pa_location_LocationEngineRunState_t engineState,taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureEngineState() called");
     (void)engineType;
@@ -137,7 +144,7 @@ pa_result_t tafpa::location::taf_pa_location_configureEngineState(taf_pa_locatio
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureRobustLocation(bool enableRobustloc, bool enableE911loc, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureRobustLocation(bool enableRobustloc, bool enableE911loc, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureRobustLocation() called (unimplemented)");
     (void)enableRobustloc;
@@ -147,7 +154,7 @@ pa_result_t tafpa::location::taf_pa_location_configureRobustLocation(bool enable
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_requestRobustLocation(taf_pa_location_RequestRobustLocationCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_requestRobustLocation(taf_pa_location_RequestRobustLocationCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter requestRobustLocation() called (unimplemented)");
     (void)callback;
@@ -155,7 +162,7 @@ pa_result_t tafpa::location::taf_pa_location_requestRobustLocation(taf_pa_locati
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureSecondaryBand(const std::unordered_set<taf_pa_location_GnssConstellationType_t>& constSet, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureSecondaryBand(const std::unordered_set<taf_pa_location_GnssConstellationType_t>& constSet, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureSecondaryBand() called (unimplemented)");
     (void)constSet;
@@ -164,7 +171,7 @@ pa_result_t tafpa::location::taf_pa_location_configureSecondaryBand(const std::u
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_requestSecondaryBandConfig(taf_pa_location_RequestSecondaryBandConfigCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_requestSecondaryBandConfig(taf_pa_location_RequestSecondaryBandConfigCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter requestSecondaryBandConfig() called (unimplemented)");
     (void)callback;
@@ -172,7 +179,7 @@ pa_result_t tafpa::location::taf_pa_location_requestSecondaryBandConfig(taf_pa_l
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureLeverArm(const taf_pa_location_LeverArmParams_t* leverArmConfigInfoPtr, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureLeverArm(const taf_pa_location_LeverArmParams_t* leverArmConfigInfoPtr, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureLeverArm() called (unimplemented)");
     (void)leverArmConfigInfoPtr;
@@ -181,7 +188,7 @@ pa_result_t tafpa::location::taf_pa_location_configureLeverArm(const taf_pa_loca
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureMinGpsWeek(uint16_t minGpsWeek, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureMinGpsWeek(uint16_t minGpsWeek, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureMinGpsWeek() called (unimplemented)");
     (void)minGpsWeek;
@@ -190,7 +197,7 @@ pa_result_t tafpa::location::taf_pa_location_configureMinGpsWeek(uint16_t minGps
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureNmea(const taf_pa_location_NmeaConfig_t& nmeaConfigData, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureNmea(const taf_pa_location_NmeaConfig_t& nmeaConfigData, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter configureNmea() called (unimplemented)");
     (void)nmeaConfigData;
@@ -199,7 +206,7 @@ pa_result_t tafpa::location::taf_pa_location_configureNmea(const taf_pa_location
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_requestMinGpsWeek(taf_pa_location_RequestMinGpsWeekCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_requestMinGpsWeek(taf_pa_location_RequestMinGpsWeekCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter requestMinGpsWeek() called (unimplemented)");
     (void)callback;
@@ -207,7 +214,7 @@ pa_result_t tafpa::location::taf_pa_location_requestMinGpsWeek(taf_pa_location_R
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_requestXtraStatus(taf_pa_location_RequestXtraStatusCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_requestXtraStatus(taf_pa_location_RequestXtraStatusCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter requestXtraStatus() called (unimplemented)");
     (void)callback;
@@ -215,7 +222,7 @@ pa_result_t tafpa::location::taf_pa_location_requestXtraStatus(taf_pa_location_R
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_injectMerkleTreeInformation(const std::string merkleTreeInfo, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_injectMerkleTreeInformation(const std::string merkleTreeInfo, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter taf_pa_location_injectMerkleTreeInformation() called ");
     (void)merkleTreeInfo;
@@ -223,7 +230,7 @@ pa_result_t tafpa::location::taf_pa_location_injectMerkleTreeInformation(const s
     (void)context;
     return PA_NOT_IMPLEMENTED;
 }
-pa_result_t tafpa::location::taf_pa_location_configureOsnma(bool enableOsnma, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureOsnma(bool enableOsnma, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter taf_pa_location_configureOsnma() called ");
     (void)enableOsnma;
@@ -232,7 +239,7 @@ pa_result_t tafpa::location::taf_pa_location_configureOsnma(bool enableOsnma, ta
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_configureEngineIntegrityRisk(taf_pa_location_EngineType_t engineType,uint32_t integrityRisk, taf_pa_location_GeneralCb callback, std::any context)
+pa_result_t PA_WEAK taf_pa_location_configureEngineIntegrityRisk(taf_pa_location_EngineType_t engineType,uint32_t integrityRisk, taf_pa_location_GeneralCb callback, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter ConfigureEngineIntegrityRisk() called ");
     (void)engineType;
@@ -242,7 +249,7 @@ pa_result_t tafpa::location::taf_pa_location_configureEngineIntegrityRisk(taf_pa
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_injectCorrectionData(const uint8_t *injectionData, uint32_t
+pa_result_t PA_WEAK taf_pa_location_injectCorrectionData(const uint8_t *injectionData, uint32_t
 injectionDataSize, taf_pa_location_GeneralCb callback,std::any context)
 {
     PA_INFO("Location PA: Default platform adapter taf_pa_location_injectCorrectionData() called ");
@@ -253,7 +260,7 @@ injectionDataSize, taf_pa_location_GeneralCb callback,std::any context)
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_createDgnssSource(taf_pa_location_DgnssDataFormat_t dgnssFormat,taf_pa_location_GeneralCb callback,std::any context)
+pa_result_t PA_WEAK taf_pa_location_createDgnssSource(taf_pa_location_DgnssDataFormat_t dgnssFormat,taf_pa_location_GeneralCb callback,std::any context)
 {
     PA_INFO("Location PA: Default platform adapter taf_pa_location_createDgnssSource() called ");
     (void)dgnssFormat;
@@ -262,7 +269,7 @@ pa_result_t tafpa::location::taf_pa_location_createDgnssSource(taf_pa_location_D
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_releaseDgnssSource(taf_pa_location_GeneralCb callback,std::any context)
+pa_result_t PA_WEAK taf_pa_location_releaseDgnssSource(taf_pa_location_GeneralCb callback,std::any context)
 {
     PA_INFO("Location PA: Default platform adapter taf_pa_location_releaseSource() called ");
     (void)callback;
@@ -270,7 +277,7 @@ pa_result_t tafpa::location::taf_pa_location_releaseDgnssSource(taf_pa_location_
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_registerDgnssEventListener(
+pa_result_t PA_WEAK taf_pa_location_registerDgnssEventListener(
 taf_pa_location_DgnssEventListener* eventListener, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter RegisterDgnssEventListener() called ");
@@ -279,7 +286,7 @@ taf_pa_location_DgnssEventListener* eventListener, std::any context)
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_initializeDgnss(taf_pa_location_DgnssDataFormat_t dataFormat,
+pa_result_t PA_WEAK taf_pa_location_initializeDgnss(taf_pa_location_DgnssDataFormat_t dataFormat,
 taf_pa_location_GeneralCb callback,std::any context)
 {
     PA_INFO("Location PA: Default platform adapter taf_pa_location_initializeDgnss() called ");
@@ -289,14 +296,14 @@ taf_pa_location_GeneralCb callback,std::any context)
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_deregisterDgnssEventListener(std::any context)
+pa_result_t PA_WEAK taf_pa_location_deregisterDgnssEventListener(std::any context)
 {
     PA_INFO("Location PA: Default platform adapter DeregisterDgnssEventListener() called ");
     (void)context;
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::location::taf_pa_location_deInitializeDgnss(taf_pa_location_GeneralCb callback,
+pa_result_t PA_WEAK taf_pa_location_deInitializeDgnss(taf_pa_location_GeneralCb callback,
 std::any context)
 {
     PA_INFO("Location PA: Default platform adapter taf_pa_location_deInitializeDgnss() called ");
@@ -304,3 +311,5 @@ std::any context)
     (void)context;
     return PA_NOT_IMPLEMENTED;
 }
+
+} // namespace tafpa::location

@@ -8,14 +8,21 @@
 /* Implementation */
 using namespace tafpa::sensor;
 
-pa_result_t tafpa::sensor::taf_pa_sensor_Init(int8_t& listSize)
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_Init(int8_t& listSize)
 {
     PA_INFO("Using default PA for Sensor. Feature unsupported.");
     listSize = 0;
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::sensor::taf_pa_sensor_GetSensorInfo(
+pa_result_t PA_WEAK tafpa::sensor::taf_pa_sensor_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_GetSensorInfo(
     int8_t index,
     taf_pa_sensor_BasicInfo &basicInfo,
     taf_pa_sensor_ConfigInfo &configInfo,
@@ -23,43 +30,57 @@ pa_result_t tafpa::sensor::taf_pa_sensor_GetSensorInfo(
 )
 {
     PA_INFO("Using default PA for Sensor. Feature unsupported.");
-    memset(&basicInfo, 0, sizeof(taf_pa_sensor_BasicInfo));
+    (void)index;
+    basicInfo.id = 0;
+    basicInfo.version = 0;
     basicInfo.sensorType = taf_pa_sensor_SensorType::INVALID;
-    memset(&configInfo, 0, sizeof(taf_pa_sensor_ConfigInfo));
-    memset(&capabilities, 0, sizeof(taf_pa_sensor_Capabilities));
+    basicInfo.sensorName = "";
+    basicInfo.vendorName = "";
+    configInfo.samplingRateList.clear();
+    configInfo.maxSamplingRate = 0.0;
+    configInfo.maxBatchCount = 0;
+    configInfo.minBatchCount = 0;
+    capabilities.range = 0;
+    capabilities.resolution = 0.0;
+    capabilities.maxRange = 0.0;
     return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_sensor_SensorId tafpa::sensor::taf_pa_sensor_GetSensorClient(const std::string& sensorName)
+PA_SHARED PA_WEAK taf_pa_sensor_SensorId tafpa::sensor::taf_pa_sensor_GetSensorClient(const std::string& sensorName)
 {
     PA_INFO("Using default PA for Sensor. Feature unsupported.");
     (void)sensorName;
     return 0;
 }
 
-pa_result_t tafpa::sensor::taf_pa_sensor_ReleaseSensorClient(taf_pa_sensor_SensorId sensorId)
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_ReleaseSensorClient(taf_pa_sensor_SensorId sensorId)
 {
     PA_INFO("Using default PA for Sensor. Feature unsupported.");
     (void)sensorId;
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::sensor::taf_pa_sensor_Activate(
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_SetConfig(
     taf_pa_sensor_SensorId sensorId,
-    double sampleRate,
-    uint32_t batchCount,
-    bool isRotated
+    double samplingRate,
+    uint32_t batchCount
 )
 {
     PA_INFO("Using default PA for Sensor. Feature unsupported.");
     (void)sensorId;
-    (void)sampleRate;
+    (void)samplingRate;
     (void)batchCount;
-    (void)isRotated;
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::sensor::taf_pa_sensor_SetEulerAngle(
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_Activate(taf_pa_sensor_SensorId sensorId)
+{
+    PA_INFO("Using default PA for Sensor. Feature unsupported.");
+    (void)sensorId;
+    return PA_NOT_IMPLEMENTED;
+}
+
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_SetEulerAngle(
     taf_pa_sensor_SensorId sensorId,
     double pitch,
     double roll,
@@ -74,14 +95,14 @@ pa_result_t tafpa::sensor::taf_pa_sensor_SetEulerAngle(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::sensor::taf_pa_sensor_Deactivate(taf_pa_sensor_SensorId sensorId)
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_Deactivate(taf_pa_sensor_SensorId sensorId)
 {
     PA_INFO("Using default PA for Sensor. Feature unsupported.");
     (void)sensorId;
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::sensor::taf_pa_sensor_SelfTest(
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_SelfTestAsync(
     taf_pa_sensor_SensorId sensorId,
     taf_pa_sensor_SelfTestMode mode,
     taf_pa_sensor_SelfTestResultCb callback,
@@ -96,7 +117,7 @@ pa_result_t tafpa::sensor::taf_pa_sensor_SelfTest(
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::sensor::taf_pa_sensor_RegisterListener(
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_AddListener(
     taf_pa_sensor_SensorId sensorId,
     taf_pa_sensor_EventListener* eventListener,
     std::any context
@@ -106,5 +127,57 @@ pa_result_t tafpa::sensor::taf_pa_sensor_RegisterListener(
     (void)sensorId;
     (void)eventListener;
     (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_RemoveListener(
+    taf_pa_sensor_SensorId sensorId
+)
+{
+    PA_INFO("Using default PA for Sensor. Feature unsupported.");
+    (void)sensorId;
+    return PA_NOT_IMPLEMENTED;
+}
+
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_AddConfigUpdateHandler(
+    taf_pa_sensor_SensorId sensorId,
+    taf_pa_sensor_ConfigUpdateCb callback,
+    std::any context
+)
+{
+    PA_INFO("Using default PA for Sensor. Feature unsupported.");
+    (void)sensorId;
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_RemoveConfigUpdateHandler(
+    taf_pa_sensor_SensorId sensorId
+)
+{
+    PA_INFO("Using default PA for Sensor. Feature unsupported.");
+    (void)sensorId;
+    return PA_NOT_IMPLEMENTED;
+}
+
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_AddCapabilityHandler(
+    taf_pa_sensor_SensorId sensorId,
+    taf_pa_sensor_CapabilityCb callback,
+    std::any context
+)
+{
+    PA_INFO("Using default PA for Sensor. Feature unsupported.");
+    (void)sensorId;
+    (void)callback;
+    (void)context;
+    return PA_NOT_IMPLEMENTED;
+}
+
+PA_SHARED PA_WEAK pa_result_t tafpa::sensor::taf_pa_sensor_RemoveCapabilityHandler(
+    taf_pa_sensor_SensorId sensorId
+)
+{
+    PA_INFO("Using default PA for Sensor. Feature unsupported.");
+    (void)sensorId;
     return PA_NOT_IMPLEMENTED;
 }

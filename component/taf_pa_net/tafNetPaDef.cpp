@@ -8,10 +8,17 @@
 
 /* Implementation */
 
-pa_result_t taf_pa_net_Init()
+pa_result_t PA_WEAK taf_pa_net_Init()
 {
     PA_INFO("Default platform adatper implementation");
     return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf_pa_net_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -23,7 +30,7 @@ pa_result_t taf_pa_net_Init()
  *         PA_FAULT         Failure
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_GetPhoneIdFromSlotId
+pa_result_t PA_WEAK taf_pa_net_GetPhoneIdFromSlotId
 (
     uint8_t slotId,      ///< [IN] Slot ID
     uint8_t *phoneIdPtr  ///< [OUT] Phone ID
@@ -42,7 +49,7 @@ pa_result_t taf_pa_net_GetPhoneIdFromSlotId
  *         PA_FAULT         Failure
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_GetSlotIdFromPhoneId
+pa_result_t PA_WEAK taf_pa_net_GetSlotIdFromPhoneId
 (
     uint8_t phoneId,     ///< [IN] Phone ID
     uint8_t *slotIdPtr   ///< [OUT] Slot ID
@@ -61,7 +68,7 @@ pa_result_t taf_pa_net_GetSlotIdFromPhoneId
  *         PA_FAULT         Failure
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t taf_pa_net_GetSupportedSlotIds
+pa_result_t PA_WEAK taf_pa_net_GetSupportedSlotIds
 (
     std::vector<uint8_t> &slotIds   ///< [OUT] Slot IDs
 )

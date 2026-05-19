@@ -7,7 +7,7 @@
 
 #include "tafRadioPa.hpp"
 
-pa_result_t taf_pa_radio_Init
+pa_result_t PA_WEAK taf_pa_radio_Init
 (
     void
 )
@@ -17,7 +17,17 @@ pa_result_t taf_pa_radio_Init
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetOperatingMode
+pa_result_t PA_WEAK taf_pa_radio_Deinit
+(
+    void
+)
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return -ENOSYS;
+}
+
+pa_result_t PA_WEAK taf_pa_radio_GetOperatingMode
 (
     uint32_t instance,
     taf_pa_radio_OperatingMode_t* modePtr
@@ -28,7 +38,7 @@ pa_result_t taf_pa_radio_GetOperatingMode
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_SetOperatingMode
+pa_result_t PA_WEAK taf_pa_radio_SetOperatingMode
 (
     uint32_t instance,
     taf_pa_radio_OperatingMode_t mode
@@ -39,7 +49,7 @@ pa_result_t taf_pa_radio_SetOperatingMode
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_SetNetworkSelectionPreference
+pa_result_t PA_WEAK taf_pa_radio_SetNetworkSelectionPreference
 (
     uint32_t instance,
     taf_pa_radio_NetworkSelectionPreference_t* preferencePtr
@@ -50,7 +60,7 @@ pa_result_t taf_pa_radio_SetNetworkSelectionPreference
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetNetworkSelectionPreference
+pa_result_t PA_WEAK taf_pa_radio_GetNetworkSelectionPreference
 (
     uint32_t instance,
     taf_pa_radio_NetworkSelectionPreference_t* preferencePtr
@@ -61,7 +71,7 @@ pa_result_t taf_pa_radio_GetNetworkSelectionPreference
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_SetPreferredNetwork
+pa_result_t PA_WEAK taf_pa_radio_SetPreferredNetwork
 (
     uint32_t instance,
     taf_pa_radio_PreferredNetworkConfig_t* configPtr
@@ -72,7 +82,7 @@ pa_result_t taf_pa_radio_SetPreferredNetwork
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetPreferredNetwork
+pa_result_t PA_WEAK taf_pa_radio_GetPreferredNetwork
 (
     uint32_t instance,
     taf_pa_radio_PreferredNetworks_t* networksPtr
@@ -94,7 +104,7 @@ PA_SHARED PA_WEAK pa_result_t taf_pa_radio_SetPreferredRat
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetPreferredRat
+pa_result_t PA_WEAK taf_pa_radio_GetPreferredRat
 (
     uint32_t instance,
     taf_pa_radio_RatBitMask_t* bitmaskPtr
@@ -105,7 +115,7 @@ pa_result_t taf_pa_radio_GetPreferredRat
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetVoiceServiceInfo
+pa_result_t PA_WEAK taf_pa_radio_GetVoiceServiceInfo
 (
     uint32_t instance,
     taf_pa_radio_VoiceServiceInfo_t* infoPtr
@@ -116,7 +126,7 @@ pa_result_t taf_pa_radio_GetVoiceServiceInfo
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetDataServieState
+pa_result_t PA_WEAK taf_pa_radio_GetDataServieState
 (
     uint32_t instance,
     taf_pa_radio_DataServiceState_t* statePtr
@@ -127,7 +137,7 @@ pa_result_t taf_pa_radio_GetDataServieState
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetServiceDomain
+pa_result_t PA_WEAK taf_pa_radio_GetServiceDomain
 (
     uint32_t instance,
     taf_pa_radio_Rat_t rat,
@@ -139,7 +149,7 @@ pa_result_t taf_pa_radio_GetServiceDomain
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetServiceDomainPreferences
+pa_result_t PA_WEAK taf_pa_radio_GetServiceDomainPreferences
 (
     uint32_t instance,
     taf_pa_radio_ServiceDomainBitMask_t* bitmaskPtr
@@ -150,7 +160,7 @@ pa_result_t taf_pa_radio_GetServiceDomainPreferences
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_SetServiceDomainPreferences
+pa_result_t PA_WEAK taf_pa_radio_SetServiceDomainPreferences
 (
     uint32_t instance,
     taf_pa_radio_ServiceDomainBitMask_t bitmask
@@ -161,7 +171,7 @@ pa_result_t taf_pa_radio_SetServiceDomainPreferences
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetSignalStrengthLevel
+pa_result_t PA_WEAK taf_pa_radio_GetSignalStrengthLevel
 (
     uint32_t instance,
     taf_pa_radio_Rat_t rat,
@@ -173,7 +183,7 @@ pa_result_t taf_pa_radio_GetSignalStrengthLevel
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetSignalStrengthInfo
+pa_result_t PA_WEAK taf_pa_radio_GetSignalStrengthInfo
 (
     uint32_t instance,
     taf_pa_radio_SignalStrengthInfo_t* infoPtr
@@ -184,7 +194,7 @@ pa_result_t taf_pa_radio_GetSignalStrengthInfo
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_SetSignalStrengthInd
+pa_result_t PA_WEAK taf_pa_radio_SetSignalStrengthInd
 (
     uint32_t instance,
     taf_pa_radio_SignalStrengthIndConfig_t* configPtr
@@ -195,7 +205,7 @@ pa_result_t taf_pa_radio_SetSignalStrengthInd
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetCellLocationListInfo
+pa_result_t PA_WEAK taf_pa_radio_GetCellLocationListInfo
 (
     uint32_t instance,
     taf_pa_radio_CellLocationListInfo_t* infoPtr
@@ -206,7 +216,7 @@ pa_result_t taf_pa_radio_GetCellLocationListInfo
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetCurrNetworkName
+pa_result_t PA_WEAK taf_pa_radio_GetCurrNetworkName
 (
     uint32_t instance,
     taf_pa_radio_CurrNetworkName_t* infoPtr
@@ -217,7 +227,7 @@ pa_result_t taf_pa_radio_GetCurrNetworkName
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_PerformPlmnNetworkScan
+pa_result_t PA_WEAK taf_pa_radio_PerformPlmnNetworkScan
 (
     uint32_t instance,
     taf_pa_radio_PlmnNetworkScanConfig_t* configPtr,
@@ -229,7 +239,7 @@ pa_result_t taf_pa_radio_PerformPlmnNetworkScan
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetBandCapabilities
+pa_result_t PA_WEAK taf_pa_radio_GetBandCapabilities
 (
     uint32_t instance,
     taf_pa_radio_BandBitMask_t* bitmaskPtr
@@ -240,7 +250,7 @@ pa_result_t taf_pa_radio_GetBandCapabilities
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetLteBandCapabilities
+pa_result_t PA_WEAK taf_pa_radio_GetLteBandCapabilities
 (
     uint32_t instance,
     taf_pa_radio_LteBand_t* bandPtr
@@ -251,7 +261,7 @@ pa_result_t taf_pa_radio_GetLteBandCapabilities
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_SetBandPreferences
+pa_result_t PA_WEAK taf_pa_radio_SetBandPreferences
 (
     uint32_t instance,
     taf_pa_radio_BandBitMask_t bitmask
@@ -262,7 +272,7 @@ pa_result_t taf_pa_radio_SetBandPreferences
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetBandPreferences
+pa_result_t PA_WEAK taf_pa_radio_GetBandPreferences
 (
     uint32_t instance,
     taf_pa_radio_BandBitMask_t* bitmaskPtr
@@ -273,7 +283,7 @@ pa_result_t taf_pa_radio_GetBandPreferences
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_SetLteBandPreferences
+pa_result_t PA_WEAK taf_pa_radio_SetLteBandPreferences
 (
     uint32_t instance,
     taf_pa_radio_LteBand_t* bandPtr
@@ -284,7 +294,7 @@ pa_result_t taf_pa_radio_SetLteBandPreferences
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetLteBandPreferences
+pa_result_t PA_WEAK taf_pa_radio_GetLteBandPreferences
 (
     uint32_t instance,
     taf_pa_radio_LteBand_t* bandPtr
@@ -295,7 +305,7 @@ pa_result_t taf_pa_radio_GetLteBandPreferences
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetImsRegistrationStatus
+pa_result_t PA_WEAK taf_pa_radio_GetImsRegistrationStatus
 (
     uint32_t instance,
     taf_pa_radio_ImsRegistrationStatus_t* statusPtr
@@ -306,7 +316,7 @@ pa_result_t taf_pa_radio_GetImsRegistrationStatus
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetLteCsCapability
+pa_result_t PA_WEAK taf_pa_radio_GetLteCsCapability
 (
     uint32_t instance,
     taf_pa_radio_LteCsCapability_t* capabilityPtr
@@ -317,7 +327,7 @@ pa_result_t taf_pa_radio_GetLteCsCapability
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetImsServiceStatus
+pa_result_t PA_WEAK taf_pa_radio_GetImsServiceStatus
 (
     uint32_t instance,
     taf_pa_radio_ImsService_t service,
@@ -329,7 +339,7 @@ pa_result_t taf_pa_radio_GetImsServiceStatus
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetImsPdpFailureErrorCode
+pa_result_t PA_WEAK taf_pa_radio_GetImsPdpFailureErrorCode
 (
     uint32_t instance,
     taf_pa_radio_ImsPdpFailureErrorCode_t* codePtr
@@ -340,7 +350,7 @@ pa_result_t taf_pa_radio_GetImsPdpFailureErrorCode
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_ToggleImsService
+pa_result_t PA_WEAK taf_pa_radio_ToggleImsService
 (
     uint32_t instance,
     taf_pa_radio_ImsServiceSettingBitMask_t bitmask,
@@ -352,7 +362,7 @@ pa_result_t taf_pa_radio_ToggleImsService
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetEnabledImsService
+pa_result_t PA_WEAK taf_pa_radio_GetEnabledImsService
 (
     uint32_t instance,
     taf_pa_radio_ImsServiceSettingBitMask_t* bitmaskPtr
@@ -363,7 +373,7 @@ pa_result_t taf_pa_radio_GetEnabledImsService
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_SetImsUserAgent
+pa_result_t PA_WEAK taf_pa_radio_SetImsUserAgent
 (
     uint32_t instance,
     const char* namePtr
@@ -374,7 +384,7 @@ pa_result_t taf_pa_radio_SetImsUserAgent
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetImsUserAgent
+pa_result_t PA_WEAK taf_pa_radio_GetImsUserAgent
 (
     uint32_t instance,
     char* namePtr,
@@ -386,7 +396,7 @@ pa_result_t taf_pa_radio_GetImsUserAgent
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetEndcAvailability
+pa_result_t PA_WEAK taf_pa_radio_GetEndcAvailability
 (
     uint32_t instance,
     taf_pa_radio_EndcAvailability_t* availabilityPtr
@@ -397,7 +407,7 @@ pa_result_t taf_pa_radio_GetEndcAvailability
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetDcnrRestriction
+pa_result_t PA_WEAK taf_pa_radio_GetDcnrRestriction
 (
     uint32_t instance,
     taf_pa_radio_DcnrRestriction_t* restrictionPtr
@@ -408,7 +418,7 @@ pa_result_t taf_pa_radio_GetDcnrRestriction
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetSimCapacityInfo
+pa_result_t PA_WEAK taf_pa_radio_GetSimCapacityInfo
 (
     taf_pa_radio_SimCapabilityInfo_t* infoPtr
 )
@@ -418,7 +428,7 @@ pa_result_t taf_pa_radio_GetSimCapacityInfo
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetDeviceAndSimCardRatCapability
+pa_result_t PA_WEAK taf_pa_radio_GetDeviceAndSimCardRatCapability
 (
     uint32_t instance,
     taf_pa_radio_DeviceAndSimCardRatCapability_t* capabilityPtr
@@ -429,7 +439,7 @@ pa_result_t taf_pa_radio_GetDeviceAndSimCardRatCapability
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetServingCellBandInfo
+pa_result_t PA_WEAK taf_pa_radio_GetServingCellBandInfo
 (
     uint32_t instance,
     taf_pa_radio_ServingCellBandInfo_t* infoPtr
@@ -440,7 +450,7 @@ pa_result_t taf_pa_radio_GetServingCellBandInfo
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetNrIcon
+pa_result_t PA_WEAK taf_pa_radio_GetNrIcon
 (
     uint32_t instance,
     taf_pa_radio_NrIcon_t* iconPtr
@@ -451,7 +461,7 @@ pa_result_t taf_pa_radio_GetNrIcon
     return -ENOSYS;
 }
 
-taf_pa_radio_NetworkRejectHandlerRef_t taf_pa_radio_AddNetworkRejectHandler
+taf_pa_radio_NetworkRejectHandlerRef_t PA_WEAK taf_pa_radio_AddNetworkRejectHandler
 (
     uint32_t instance,
     taf_pa_radio_NetworkRejectHdlrFunc_t handlerFuncPtr,
@@ -463,7 +473,7 @@ taf_pa_radio_NetworkRejectHandlerRef_t taf_pa_radio_AddNetworkRejectHandler
     return nullptr;
 }
 
-taf_pa_radio_RatChangeHandlerRef_t taf_pa_radio_AddRatChangeHandler
+taf_pa_radio_RatChangeHandlerRef_t PA_WEAK taf_pa_radio_AddRatChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_RatChangeHdlrFunc_t handlerFuncPtr,
@@ -475,7 +485,7 @@ taf_pa_radio_RatChangeHandlerRef_t taf_pa_radio_AddRatChangeHandler
     return nullptr;
 }
 
-taf_pa_radio_VoiceServiceInfoHandlerRef_t taf_pa_radio_AddVoiceServiceInfoHandler
+taf_pa_radio_VoiceServiceInfoHandlerRef_t PA_WEAK taf_pa_radio_AddVoiceServiceInfoHandler
 (
     uint32_t instance,
     taf_pa_radio_VoiceServiceInfoHdlrFunc_t handlerFuncPtr,
@@ -487,7 +497,7 @@ taf_pa_radio_VoiceServiceInfoHandlerRef_t taf_pa_radio_AddVoiceServiceInfoHandle
     return nullptr;
 }
 
-taf_pa_radio_DataServiceStatusHandlerRef_t taf_pa_radio_AddDataServiceStatusHandler
+taf_pa_radio_DataServiceStatusHandlerRef_t PA_WEAK taf_pa_radio_AddDataServiceStatusHandler
 (
     uint32_t instance,
     taf_pa_radio_DataServiceStatusHdlrFunc_t handlerFuncPtr,
@@ -499,7 +509,7 @@ taf_pa_radio_DataServiceStatusHandlerRef_t taf_pa_radio_AddDataServiceStatusHand
     return nullptr;
 }
 
-taf_pa_radio_DataRoamingStatusHandlerRef_t taf_pa_radio_AddDataRoamingStatusHandler
+taf_pa_radio_DataRoamingStatusHandlerRef_t PA_WEAK taf_pa_radio_AddDataRoamingStatusHandler
 (
     uint32_t instance,
     taf_pa_radio_DataRoamingStatusHdlrFunc_t handlerFuncPtr,
@@ -511,7 +521,7 @@ taf_pa_radio_DataRoamingStatusHandlerRef_t taf_pa_radio_AddDataRoamingStatusHand
     return nullptr;
 }
 
-taf_pa_radio_SignalStrengthInfoChangeHandlerRef_t taf_pa_radio_AddSignalStrengthInfoChangeHandler
+taf_pa_radio_SignalStrengthInfoChangeHandlerRef_t PA_WEAK taf_pa_radio_AddSignalStrengthInfoChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_SignalStrengthInfoChangeHdlrFunc_t handlerFuncPtr,
@@ -523,7 +533,7 @@ taf_pa_radio_SignalStrengthInfoChangeHandlerRef_t taf_pa_radio_AddSignalStrength
     return nullptr;
 }
 
-taf_pa_radio_ImsRegStatusChangeHandlerRef_t taf_pa_radio_AddImsRegStatusChangeHandler
+taf_pa_radio_ImsRegStatusChangeHandlerRef_t PA_WEAK taf_pa_radio_AddImsRegStatusChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_ImsRegStatusChangeHdlrFunc_t handlerFuncPtr,
@@ -535,7 +545,7 @@ taf_pa_radio_ImsRegStatusChangeHandlerRef_t taf_pa_radio_AddImsRegStatusChangeHa
     return nullptr;
 }
 
-taf_pa_radio_OperatingModeChangeHandlerRef_t taf_pa_radio_AddOperatingModeChangeHandler
+taf_pa_radio_OperatingModeChangeHandlerRef_t PA_WEAK taf_pa_radio_AddOperatingModeChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_OperatingModeChangeHdlrFunc_t handlerFuncPtr,
@@ -547,7 +557,7 @@ taf_pa_radio_OperatingModeChangeHandlerRef_t taf_pa_radio_AddOperatingModeChange
     return nullptr;
 }
 
-taf_pa_radio_ServiceDomainHandlerRef_t taf_pa_radio_AddServiceDomainHandler
+taf_pa_radio_ServiceDomainHandlerRef_t PA_WEAK taf_pa_radio_AddServiceDomainHandler
 (
     uint32_t instance,
     taf_pa_radio_ServiceDomainHdlrFunc_t handlerFuncPtr,
@@ -559,7 +569,7 @@ taf_pa_radio_ServiceDomainHandlerRef_t taf_pa_radio_AddServiceDomainHandler
     return nullptr;
 }
 
-taf_pa_radio_LteCsCapabilityHandlerRef_t taf_pa_radio_AddLteCsCapabilityHandler
+taf_pa_radio_LteCsCapabilityHandlerRef_t PA_WEAK taf_pa_radio_AddLteCsCapabilityHandler
 (
     uint32_t instance,
     taf_pa_radio_LteCsCapabilityHdlrFunc_t handlerFuncPtr,
@@ -571,7 +581,7 @@ taf_pa_radio_LteCsCapabilityHandlerRef_t taf_pa_radio_AddLteCsCapabilityHandler
     return nullptr;
 }
 
-taf_pa_radio_ImsServiceInfoHandlerRef_t taf_pa_radio_AddImsServiceInfoHandler
+taf_pa_radio_ImsServiceInfoHandlerRef_t PA_WEAK taf_pa_radio_AddImsServiceInfoHandler
 (
     uint32_t instance,
     taf_pa_radio_ImsServiceInfoHdlrFunc_t handlerFuncPtr,
@@ -583,7 +593,7 @@ taf_pa_radio_ImsServiceInfoHandlerRef_t taf_pa_radio_AddImsServiceInfoHandler
     return nullptr;
 }
 
-taf_pa_radio_ImsPdpErrorHandlerRef_t taf_pa_radio_AddImsPdpErrorHandler
+taf_pa_radio_ImsPdpErrorHandlerRef_t PA_WEAK taf_pa_radio_AddImsPdpErrorHandler
 (
     uint32_t instance,
     taf_pa_radio_ImsPdpErrorHdlrFunc_t handlerFuncPtr,
@@ -595,7 +605,7 @@ taf_pa_radio_ImsPdpErrorHandlerRef_t taf_pa_radio_AddImsPdpErrorHandler
     return nullptr;
 }
 
-taf_pa_radio_CellInfoChangeHandlerRef_t taf_pa_radio_AddCellInfoChangeHandler
+taf_pa_radio_CellInfoChangeHandlerRef_t PA_WEAK taf_pa_radio_AddCellInfoChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_CellInfoChangeHdlrFunc_t handlerFuncPtr,
@@ -607,7 +617,7 @@ taf_pa_radio_CellInfoChangeHandlerRef_t taf_pa_radio_AddCellInfoChangeHandler
     return nullptr;
 }
 
-taf_pa_radio_NrIconChangeHandlerRef_t taf_pa_radio_AddNrIconChangeHandler
+taf_pa_radio_NrIconChangeHandlerRef_t PA_WEAK taf_pa_radio_AddNrIconChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_NrIconChangeHdlrFunc_t handlerFuncPtr,
@@ -619,7 +629,7 @@ taf_pa_radio_NrIconChangeHandlerRef_t taf_pa_radio_AddNrIconChangeHandler
     return nullptr;
 }
 
-pa_result_t taf_pa_radio_RegisterIndication
+pa_result_t PA_WEAK taf_pa_radio_RegisterIndication
 (
     uint32_t instance,
     uint8_t registration
@@ -630,7 +640,7 @@ pa_result_t taf_pa_radio_RegisterIndication
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_PerformPciNetworkScan
+pa_result_t PA_WEAK taf_pa_radio_PerformPciNetworkScan
 (
     uint32_t instance,
     taf_pa_radio_RatBitMask_t bitmask,
@@ -642,7 +652,7 @@ pa_result_t taf_pa_radio_PerformPciNetworkScan
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetServingRat
+pa_result_t PA_WEAK taf_pa_radio_GetServingRat
 (
     uint32_t instance,
     taf_pa_radio_Rat_t* ratPtr
@@ -653,7 +663,7 @@ pa_result_t taf_pa_radio_GetServingRat
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetRatSvcStatus
+pa_result_t PA_WEAK taf_pa_radio_GetRatSvcStatus
 (
     uint32_t instance,
     taf_pa_radio_Rat_t rat,
@@ -665,7 +675,7 @@ pa_result_t taf_pa_radio_GetRatSvcStatus
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetServingCellRac
+pa_result_t PA_WEAK taf_pa_radio_GetServingCellRac
 (
     uint32_t instance,
     taf_pa_radio_Rat_t rat,
@@ -677,7 +687,7 @@ pa_result_t taf_pa_radio_GetServingCellRac
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetDataAvailSysStatus
+pa_result_t PA_WEAK taf_pa_radio_GetDataAvailSysStatus
 (
     uint32_t instance,
     taf_pa_radio_DataAvailSysStatus_t* statusPtr
@@ -688,7 +698,7 @@ pa_result_t taf_pa_radio_GetDataAvailSysStatus
     return -ENOSYS;
 }
 
-pa_result_t taf_pa_radio_GetLteCphyCaInfo
+pa_result_t PA_WEAK taf_pa_radio_GetLteCphyCaInfo
 (
     uint32_t instance,
     taf_pa_radio_LteCphyCaInfo_t* infoPtr
@@ -699,7 +709,7 @@ pa_result_t taf_pa_radio_GetLteCphyCaInfo
     return -ENOSYS;
 }
 
-taf_pa_radio_RatSvcStatusHandlerRef_t taf_pa_radio_AddRatSvcStatusHandler
+taf_pa_radio_RatSvcStatusHandlerRef_t PA_WEAK taf_pa_radio_AddRatSvcStatusHandler
 (
     uint32_t instance,
     taf_pa_radio_RatSvcStatusHdlrFunc_t handlerFuncPtr,
@@ -711,7 +721,7 @@ taf_pa_radio_RatSvcStatusHandlerRef_t taf_pa_radio_AddRatSvcStatusHandler
     return nullptr;
 }
 
-taf_pa_radio_LteCphyCaHandlerRef_t taf_pa_radio_AddLteCphyCaHandler
+taf_pa_radio_LteCphyCaHandlerRef_t PA_WEAK taf_pa_radio_AddLteCphyCaHandler
 (
     uint32_t instance,
     taf_pa_radio_LteCphyCaHdlrFunc_t handlerFuncPtr,
@@ -723,7 +733,7 @@ taf_pa_radio_LteCphyCaHandlerRef_t taf_pa_radio_AddLteCphyCaHandler
     return nullptr;
 }
 
-taf_pa_radio_DataAvailSysStatusHandlerRef_t taf_pa_radio_AddDataAvailSysStatusHandler
+taf_pa_radio_DataAvailSysStatusHandlerRef_t PA_WEAK taf_pa_radio_AddDataAvailSysStatusHandler
 (
     uint32_t instance,
     taf_pa_radio_DataAvailSysStatusHdlrFunc_t handlerFuncPtr,
@@ -735,7 +745,7 @@ taf_pa_radio_DataAvailSysStatusHandlerRef_t taf_pa_radio_AddDataAvailSysStatusHa
     return nullptr;
 }
 
-pa_result_t taf_pa_radio_GetDataCurrRoamingStatus
+pa_result_t PA_WEAK taf_pa_radio_GetDataCurrRoamingStatus
 (
     uint32_t instance,
     taf_pa_radio_DataRoamingStatus_t* statusPtr

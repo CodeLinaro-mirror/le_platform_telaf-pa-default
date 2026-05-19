@@ -13,13 +13,20 @@
 /* Implementation */
 using namespace tafpa::voicecall;
 
-pa_result_t tafpa::voicecall::taf_pa_voicecall_Init()
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Init()
 {
     PA_INFO("Using default PA. Feature unsupported.");
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::voicecall::taf_pa_voicecall_Make
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Deinit()
+{
+    PA_INFO("Default platform adapter deinitialization");
+    // No managers to clean up in default implementation
+    return PA_OK;
+}
+
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Make
 (
     const taf_pa_voicecall_CallInfo_t& callInfo,
     taf_pa_voicecall_CallCb callback,
@@ -30,7 +37,7 @@ pa_result_t tafpa::voicecall::taf_pa_voicecall_Make
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::voicecall::taf_pa_voicecall_Stop
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Stop
 (
     const taf_pa_voicecall_CallInfo_t& callInfo,
     taf_pa_voicecall_CallCb callback,
@@ -41,7 +48,7 @@ pa_result_t tafpa::voicecall::taf_pa_voicecall_Stop
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::voicecall::taf_pa_voicecall_Hold
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Hold
 (
     const taf_pa_voicecall_CallInfo_t& callInfo,
     taf_pa_voicecall_CallCb callback,
@@ -52,7 +59,7 @@ pa_result_t tafpa::voicecall::taf_pa_voicecall_Hold
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::voicecall::taf_pa_voicecall_Resume
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Resume
 (
     const taf_pa_voicecall_CallInfo_t& callInfo,
     taf_pa_voicecall_CallCb callback,
@@ -63,7 +70,7 @@ pa_result_t tafpa::voicecall::taf_pa_voicecall_Resume
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::voicecall::taf_pa_voicecall_Answer
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Answer
 (
     const taf_pa_voicecall_CallInfo_t& callInfo,
     taf_pa_voicecall_CallCb callback,
@@ -74,7 +81,7 @@ pa_result_t tafpa::voicecall::taf_pa_voicecall_Answer
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::voicecall::taf_pa_voicecall_Swap
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Swap
 (
     const taf_pa_voicecall_CallInfo_t& callInfo,
     taf_pa_voicecall_CallCb callback,
@@ -85,7 +92,7 @@ pa_result_t tafpa::voicecall::taf_pa_voicecall_Swap
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::voicecall::taf_pa_voicecall_RegisterEventListener
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_RegisterEventListener
 (
     taf_pa_voicecall_EventListener listener, std::any context
 )
@@ -94,7 +101,7 @@ pa_result_t tafpa::voicecall::taf_pa_voicecall_RegisterEventListener
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t tafpa::voicecall::taf_pa_voicecall_GetCallTermination
+pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_GetCallTermination
 (
     const taf_pa_voicecall_CallInfo_t& callInfo,
     taf_pa_voicecall_termination_t *termination
