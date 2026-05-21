@@ -26,7 +26,7 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Deinit()
 {
     PA_INFO("Default platform adapter deinitialization");
     // No managers to clean up in default implementation
-    return PA_OK;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetConfig(
@@ -74,10 +74,12 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetOpMode(
     return PA_NOT_IMPLEMENTED;
 }
 
-std::vector<std::shared_ptr<taf_pa_ecall_CallInfo_t>> PA_WEAK tafpa::ecall::taf_pa_ecall_GetInProgressCalls()
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetInProgressCalls(
+    std::vector<std::shared_ptr<taf_pa_ecall_CallInfo_t>>* callListPtr
+)
 {
     PA_INFO("Using default PA. Feature unsupported.");
-    return {};
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestNetworkDeregistration(
@@ -277,13 +279,14 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RestartHlapTimer(
     return PA_NOT_IMPLEMENTED;
 }
 
-int8_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetPhoneIdFromSlotId(
-    int8_t slotId
+pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetPhoneIdFromSlotId(
+    int8_t slotId,
+    int8_t* phoneIdPtr
 )
 {
     PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(slotId);
-    return -1; // Return invalid phone ID
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Hangup(

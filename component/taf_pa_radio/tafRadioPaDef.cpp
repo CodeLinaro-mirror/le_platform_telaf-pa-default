@@ -3,8 +3,6 @@
  * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
-#include <errno.h>
-
 #include "tafRadioPa.hpp"
 
 pa_result_t PA_WEAK taf_pa_radio_Init
@@ -14,7 +12,7 @@ pa_result_t PA_WEAK taf_pa_radio_Init
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_Deinit
@@ -24,7 +22,7 @@ pa_result_t PA_WEAK taf_pa_radio_Deinit
 {
     PA_INFO("Default platform adapter deinitialization");
     // No managers to clean up in default implementation
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetOperatingMode
@@ -35,7 +33,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetOperatingMode
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_SetOperatingMode
@@ -46,7 +44,7 @@ pa_result_t PA_WEAK taf_pa_radio_SetOperatingMode
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_SetNetworkSelectionPreference
@@ -57,7 +55,7 @@ pa_result_t PA_WEAK taf_pa_radio_SetNetworkSelectionPreference
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetNetworkSelectionPreference
@@ -68,7 +66,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetNetworkSelectionPreference
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_SetPreferredNetwork
@@ -79,7 +77,7 @@ pa_result_t PA_WEAK taf_pa_radio_SetPreferredNetwork
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetPreferredNetwork
@@ -90,7 +88,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetPreferredNetwork
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 PA_SHARED PA_WEAK pa_result_t taf_pa_radio_SetPreferredRat
@@ -101,7 +99,7 @@ PA_SHARED PA_WEAK pa_result_t taf_pa_radio_SetPreferredRat
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetPreferredRat
@@ -112,7 +110,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetPreferredRat
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetVoiceServiceInfo
@@ -123,7 +121,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetVoiceServiceInfo
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetDataServieState
@@ -134,7 +132,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetDataServieState
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetServiceDomain
@@ -146,7 +144,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetServiceDomain
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetServiceDomainPreferences
@@ -157,7 +155,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetServiceDomainPreferences
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_SetServiceDomainPreferences
@@ -168,7 +166,7 @@ pa_result_t PA_WEAK taf_pa_radio_SetServiceDomainPreferences
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetSignalStrengthLevel
@@ -180,7 +178,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetSignalStrengthLevel
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetSignalStrengthInfo
@@ -191,7 +189,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetSignalStrengthInfo
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_SetSignalStrengthInd
@@ -202,7 +200,7 @@ pa_result_t PA_WEAK taf_pa_radio_SetSignalStrengthInd
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetCellLocationListInfo
@@ -213,7 +211,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetCellLocationListInfo
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetCurrNetworkName
@@ -224,7 +222,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetCurrNetworkName
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_PerformPlmnNetworkScan
@@ -236,7 +234,7 @@ pa_result_t PA_WEAK taf_pa_radio_PerformPlmnNetworkScan
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetBandCapabilities
@@ -247,7 +245,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetBandCapabilities
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetLteBandCapabilities
@@ -258,7 +256,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetLteBandCapabilities
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_SetBandPreferences
@@ -269,7 +267,7 @@ pa_result_t PA_WEAK taf_pa_radio_SetBandPreferences
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetBandPreferences
@@ -280,7 +278,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetBandPreferences
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_SetLteBandPreferences
@@ -291,7 +289,7 @@ pa_result_t PA_WEAK taf_pa_radio_SetLteBandPreferences
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetLteBandPreferences
@@ -302,7 +300,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetLteBandPreferences
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetImsRegistrationStatus
@@ -313,7 +311,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetImsRegistrationStatus
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetLteCsCapability
@@ -324,7 +322,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetLteCsCapability
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetImsServiceStatus
@@ -336,7 +334,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetImsServiceStatus
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetImsPdpFailureErrorCode
@@ -347,7 +345,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetImsPdpFailureErrorCode
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_ToggleImsService
@@ -359,7 +357,7 @@ pa_result_t PA_WEAK taf_pa_radio_ToggleImsService
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetEnabledImsService
@@ -370,7 +368,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetEnabledImsService
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_SetImsUserAgent
@@ -381,7 +379,7 @@ pa_result_t PA_WEAK taf_pa_radio_SetImsUserAgent
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetImsUserAgent
@@ -393,7 +391,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetImsUserAgent
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetEndcAvailability
@@ -404,7 +402,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetEndcAvailability
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetDcnrRestriction
@@ -415,7 +413,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetDcnrRestriction
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetSimCapacityInfo
@@ -425,7 +423,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetSimCapacityInfo
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetDeviceAndSimCardRatCapability
@@ -436,7 +434,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetDeviceAndSimCardRatCapability
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetServingCellBandInfo
@@ -447,7 +445,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetServingCellBandInfo
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetNrIcon
@@ -458,7 +456,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetNrIcon
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 taf_pa_radio_NetworkRejectHandlerRef_t PA_WEAK taf_pa_radio_AddNetworkRejectHandler
@@ -637,7 +635,7 @@ pa_result_t PA_WEAK taf_pa_radio_RegisterIndication
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_PerformPciNetworkScan
@@ -649,7 +647,7 @@ pa_result_t PA_WEAK taf_pa_radio_PerformPciNetworkScan
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetServingRat
@@ -660,7 +658,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetServingRat
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetRatSvcStatus
@@ -672,7 +670,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetRatSvcStatus
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetServingCellRac
@@ -684,7 +682,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetServingCellRac
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetDataAvailSysStatus
@@ -695,7 +693,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetDataAvailSysStatus
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetLteCphyCaInfo
@@ -706,7 +704,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetLteCphyCaInfo
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 taf_pa_radio_RatSvcStatusHandlerRef_t PA_WEAK taf_pa_radio_AddRatSvcStatusHandler
@@ -753,5 +751,5 @@ pa_result_t PA_WEAK taf_pa_radio_GetDataCurrRoamingStatus
 {
     PA_INFO("Function is not implemented in default PA.");
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }

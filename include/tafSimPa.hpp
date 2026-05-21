@@ -275,16 +275,18 @@ typedef struct
 } taf_pa_sim_ProfileInfo_t;
 
 // Number of profiles for a given slot
-PA_SHARED uint8_t taf_pa_sim_GetProfileNum
+PA_SHARED pa_result_t taf_pa_sim_GetProfileNum
 (
-    taf_pa_sim_SlotId_t slot
+    taf_pa_sim_SlotId_t slot,
+    uint8_t* profileNumPtr
 );
 
 // Get profile info by slot and index
-PA_SHARED taf_pa_sim_ProfileInfo_t taf_pa_sim_GetProfile
+PA_SHARED pa_result_t taf_pa_sim_GetProfile
 (
     taf_pa_sim_SlotId_t slot,
-    uint8_t index
+    uint8_t index,
+    taf_pa_sim_ProfileInfo_t* profileInfoPtr
 );
 
 // Set active profile (also enables profile by default)
@@ -343,7 +345,7 @@ PA_SHARED taf_pa_sim_RefreshChangeHandlerRef_t taf_pa_sim_AddRefreshChangeHandle
  * Remove handler for SIM refresh
  */
 //--------------------------------------------------------------------------------------------------
-PA_SHARED void taf_pa_sim_RemoveRefreshChangeHandler
+PA_SHARED pa_result_t taf_pa_sim_RemoveRefreshChangeHandler
 (
    taf_pa_sim_RefreshChangeHandlerRef_t handlerRef ///< [IN] Handler reference.
 );

@@ -61,7 +61,7 @@ taf_pa_sim_RefreshChangeHandlerRef_t PA_WEAK taf_pa_sim_AddRefreshChangeHandler
     void* contextPtr
 )
 {
-	PA_INFO("Function is not implemented in stub PA.");
+    PA_INFO("Function is not implemented in stub PA.");
     return NULL;
 }
 
@@ -70,13 +70,13 @@ taf_pa_sim_RefreshChangeHandlerRef_t PA_WEAK taf_pa_sim_AddRefreshChangeHandler
  * Remove handler for SIM refresh
  */
 //--------------------------------------------------------------------------------------------------
-void PA_WEAK taf_pa_sim_RemoveRefreshChangeHandler
+pa_result_t PA_WEAK taf_pa_sim_RemoveRefreshChangeHandler
 (
     taf_pa_sim_RefreshChangeHandlerRef_t handlerRef ///< [IN] Handler reference.
 )
 {
     PA_INFO("Function is not implemented in stub PA.");
-    return;
+    return PA_NOT_IMPLEMENTED;
 }
 //--------------------------------------------------------------------------------------------------
 /**
@@ -89,7 +89,7 @@ pa_result_t PA_WEAK taf_pa_sim_Init
 )
 {
     PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_sim_Deinit
@@ -99,34 +99,31 @@ pa_result_t PA_WEAK taf_pa_sim_Deinit
 {
     PA_INFO("Default platform adapter deinitialization");
     // No managers to clean up in default implementation
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    return PA_NOT_IMPLEMENTED;
 }
 
-uint8_t PA_WEAK taf_pa_sim_GetProfileNum
+pa_result_t PA_WEAK taf_pa_sim_GetProfileNum
 (
-    taf_pa_sim_SlotId_t slot
+    taf_pa_sim_SlotId_t slot,
+    uint8_t* profileNumPtr
 )
 {
     PA_INFO("Function is not implemented in stub PA.");
-    (void)slot;  // suppress unused warning
-    return 0;
+    (void)slot;
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_sim_ProfileInfo_t PA_WEAK taf_pa_sim_GetProfile
+pa_result_t PA_WEAK taf_pa_sim_GetProfile
 (
     taf_pa_sim_SlotId_t slot,
-    uint8_t index
+    uint8_t index,
+    taf_pa_sim_ProfileInfo_t* profileInfoPtr
 )
 {
     PA_INFO("Function is not implemented in stub PA.");
     (void)slot;
     (void)index;
-
-    taf_pa_sim_ProfileInfo_t info;
-    info.profileId = TAF_PA_SIM_PROFILE_ID_UNKNOWN;
-    info.type      = TAF_PA_SIM_PROFILE_TYPE_UNKNOWN;
-    info.state     = TAF_PA_SIM_PROFILE_STATE_UNKNOWN;
-    return info;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_sim_SetActiveProfile

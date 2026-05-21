@@ -21,10 +21,10 @@ pa_result_t PA_WEAK taf_pa_location_Deinit()
     return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_location_LocationId PA_WEAK taf_pa_location_CreateClient()
+pa_result_t PA_WEAK taf_pa_location_CreateClient(taf_pa_location_LocationId* clientIdPtr)
 {
     PA_INFO("Location PA: Default platform adapter CreateClient() called");
-    return 0;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_location_DeleteClient(taf_pa_location_LocationId clientId)
@@ -64,12 +64,12 @@ pa_result_t PA_WEAK taf_pa_location_stopReports(taf_pa_location_LocationId clien
     return PA_NOT_IMPLEMENTED;
 }
 
-uint32_t PA_WEAK taf_pa_location_getCapabilities(taf_pa_location_LocationId clientId, std::any context)
+pa_result_t PA_WEAK taf_pa_location_getCapabilities(taf_pa_location_LocationId clientId, uint32_t* capabilitiesPtr, std::any context)
 {
     PA_INFO("Location PA: Default platform adapter getCapabilities() called");
     (void)clientId;
     (void)context;
-    return 0;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_location_configureConstellations(const std::vector<taf_pa_location_SvBlackListInfo_t>& svBlackListData, taf_pa_location_GeneralCb callback, bool deviceReset, std::any context)
