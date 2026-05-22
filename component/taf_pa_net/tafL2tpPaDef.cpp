@@ -7,18 +7,16 @@
 
 /* Implementation */
 
-bool PA_WEAK taf_pa_l2tp_Init()
+pa_result_t PA_WEAK taf_pa_l2tp_Init()
 {
-    PA_DEBUG("Enter taf_pa_l2tp_Init in Default PA");
-    PA_INFO("Default platform adatper implementation");
-    return true;
+    PA_INFO("not implemented");
+    return PA_NOT_IMPLEMENTED;
 }
 
-bool PA_WEAK taf_pa_l2tp_Deinit()
+pa_result_t PA_WEAK taf_pa_l2tp_Deinit()
 {
-    PA_DEBUG("Enter taf_pa_l2tp_Deinit in Default PA");
-    PA_INFO("Default platform adapter deinitialization");
-    return PA_OK;
+    PA_INFO("not implemented");
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
