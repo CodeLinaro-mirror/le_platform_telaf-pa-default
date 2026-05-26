@@ -13,7 +13,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_Init
     void
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -22,8 +22,8 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_Deinit
     void
 )
 {
-    PA_INFO("Default platform adapter deinitialization");
     // No managers to clean up in default implementation
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -37,7 +37,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_ReadMessage
     uint32_t* pduMsgIndex
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -46,7 +46,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RegisterIncomingSmsCallback
     IncomingSmsCallback cb
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -55,7 +55,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RegisterMemoryFullCallback
     MemoryFullCallback cb
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -67,7 +67,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SendRawSms
     uint8_t phoneId
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -79,7 +79,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SendPDUMessageAsync
     std::function<void(pa_result_t)> cb
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -90,7 +90,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SetActivationStatus
     uint32_t timeout
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -100,7 +100,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RequestMessageFilters
     uint32_t timeout
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -112,7 +112,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_AddCellBroadcastIds
     uint32_t timeout
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -124,7 +124,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RemoveCellBroadcastIds
     uint32_t timeout
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -136,7 +136,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_GetSmsCenterAddress
     uint32_t timeout
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -147,7 +147,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SetSmsCenterAddress
     uint32_t timeout
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -158,7 +158,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_GetPreferredStorage
     uint8_t phoneId
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -169,7 +169,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SetPreferredStorage
     uint8_t phoneId
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -181,7 +181,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SetTag
     uint8_t phoneId
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -192,7 +192,7 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_DeleteMessage
     uint8_t phoneId
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -206,6 +206,6 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RequestSmsMessageList
     int32_t* msgCountPtr
 )
 {
-    PA_INFO("Using default PA. Feature not implemented.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

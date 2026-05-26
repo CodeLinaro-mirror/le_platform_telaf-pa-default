@@ -12,17 +12,17 @@ pa_result_t PA_WEAK taf_pa_pms_Init
     uint32_t                 timeoutMs
 )
 {
-    PA_INFO("[DEF PA] NOT implemented");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
-void PA_WEAK taf_pa_pms_Deinit
+pa_result_t PA_WEAK taf_pa_pms_Deinit
 (
     taf_pa_pms_Reference_t   *paRefPtr
 )
 {
-    PA_INFO("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_pms_SetPowerStateAsMaster
@@ -32,7 +32,7 @@ pa_result_t PA_WEAK taf_pa_pms_SetPowerStateAsMaster
     const char               *name
 )
 {
-    PA_INFO("[DEF PA] NOT implemented");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -43,7 +43,7 @@ pa_result_t PA_WEAK taf_pa_pms_SendAckForStateUpdate
     taf_pa_pms_Ack_t          ack
 )
 {
-    PA_INFO("[DEF PA] NOT implemented");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -53,7 +53,7 @@ pa_result_t PA_WEAK taf_pa_pms_GetAllMachineNames
     std::vector<std::string> &machineNames
 )
 {
-    PA_INFO("[DEF PA] NOT implemented");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -63,7 +63,7 @@ pa_result_t PA_WEAK taf_pa_pms_SetModemWakeupFilter
     uint32_t                  wsBitmask
 )
 {
-    PA_INFO("[DEF PA] NOT implemented");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -73,6 +73,6 @@ pa_result_t PA_WEAK taf_pa_pms_GetModemWakeupFilter
     uint32_t                 *wsBitmaskPtr
 )
 {
-    PA_INFO("[DEF PA] NOT implemented");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

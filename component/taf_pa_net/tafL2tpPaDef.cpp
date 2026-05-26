@@ -9,13 +9,13 @@
 
 pa_result_t PA_WEAK taf_pa_l2tp_Init()
 {
-    PA_INFO("not implemented");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_l2tp_Deinit()
 {
-    PA_INFO("not implemented");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -31,7 +31,7 @@ pa_result_t PA_WEAK taf_pa_net_AddTunnelAsync
     void* contextPtr                    // IN
 )
 {
-    PA_DEBUG("Enter taf_pa_net_AddTunnelAsync in Default PA");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -45,7 +45,7 @@ pa_result_t PA_WEAK taf_pa_net_AddTunnelSync
     const taf_pa_net_L2tpTunnel_t& addTunnelConfig   // IN
 )
 {
-    PA_DEBUG("Enter taf_pa_net_AddTunnelSync in Default PA");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -61,7 +61,7 @@ pa_result_t PA_WEAK taf_pa_net_RemoveTunnelAsync
     void* contextPtr                    // IN
 )
 {
-    PA_DEBUG("Enter taf_pa_net_RemoveTunnelAsync in Default PA");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -75,7 +75,7 @@ pa_result_t PA_WEAK taf_pa_net_RemoveTunnelSync
     const uint32_t tunnelId   // IN
 )
 {
-    PA_DEBUG("Enter taf_pa_net_RemoveTunnelSync in Default PA");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -89,7 +89,7 @@ pa_result_t PA_WEAK taf_pa_net_RequestL2tpConfig
     taf_pa_net_L2tpConfig_t& L2tpConfig  // OUT
 )
 {
-    PA_DEBUG("Enter taf_pa_net_RequestL2tpConfig in Default PA");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -105,7 +105,7 @@ pa_result_t PA_WEAK taf_pa_net_SetL2tpConfigAsync
     void* contextPtr                                   // IN
 )
 {
-    PA_DEBUG("Enter taf_pa_net_SetL2tpConfigAsync in Default PA");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -119,6 +119,6 @@ pa_result_t PA_WEAK taf_pa_net_SetL2tpConfigSync
     taf_pa_net_L2tpConfig_t& L2tpConfig  // IN
 )
 {
-    PA_DEBUG("Enter taf_pa_net_SetL2tpConfigSync in Default PA");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

@@ -11,14 +11,14 @@
 
 pa_result_t PA_WEAK taf_pa_vlan_Init()
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_vlan_Deinit()
 {
-    PA_INFO("Default platform adapter deinitialization");
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ pa_result_t PA_WEAK taf_pa_vlan_RegHwAccelarationUpdateHandler
     taf_pa_vlan_HardwareAccelerationHandler_t handlerFunc
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -41,7 +41,7 @@ pa_result_t PA_WEAK taf_pa_net_AddVlanInterface
      const taf_pa_vlan_iface_type_t iftype
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -51,7 +51,7 @@ pa_result_t PA_WEAK taf_pa_net_RemoveVlanInterface
      const taf_pa_vlan_iface_type_t iftype
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -63,7 +63,7 @@ pa_result_t PA_WEAK taf_pa_net_BindWithBackhaul
      const taf_pa_VlanBindConfig_t vlanBindConfig
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -73,7 +73,7 @@ pa_result_t PA_WEAK taf_pa_net_UnbindWithBackhaul
      const taf_pa_VlanBindConfig_t vlanBindConfig
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -82,7 +82,7 @@ pa_result_t PA_WEAK taf_pa_net_QueryVlanInfo
     std::vector<taf_pa_Vlan_t> &vlanEntryInfo    // OUT
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -95,19 +95,19 @@ pa_result_t PA_WEAK taf_pa_net_QueryVlanToBackhaulMappingList
     std::vector<taf_pa_VlanBindConfig_t>& vlanEntryInfo  // OUT
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_net_RegVlanListener()
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_net_DeregVlanListener()
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -118,7 +118,7 @@ pa_result_t PA_WEAK taf_pa_net_GetBackhaulPreference
     std::vector<taf_pa_vlan_backhaul_type_t> &backhaulPref    // OUT
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -127,7 +127,7 @@ pa_result_t PA_WEAK taf_pa_net_SetBackhaulPreference
     std::vector<taf_pa_vlan_backhaul_type_t> backhaulPref    // IN
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -136,7 +136,7 @@ pa_result_t PA_WEAK taf_pa_net_GetIPPassThroughNatConfig
     bool &isEnabledPtr                         // OUT
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -145,7 +145,7 @@ pa_result_t PA_WEAK taf_pa_net_SetIPPassThroughNatConfig
     bool isEnabledPtr                         // IN
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -155,7 +155,7 @@ pa_result_t PA_WEAK taf_pa_net_SetIPPassThroughConfig
     const taf_pa_IpptConfigOut_t *ipptConfigOut   // IN
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -165,7 +165,7 @@ pa_result_t PA_WEAK taf_pa_net_GetIPPassThroughConfig
     taf_pa_IpptConfigOut_t *ipptConfigOut         // OUT
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -175,7 +175,7 @@ pa_result_t PA_WEAK taf_pa_net_SetIPConfig
     const taf_pa_IpConfig_t *ipConfig               // IN
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -185,6 +185,6 @@ pa_result_t PA_WEAK taf_pa_net_GetIPConfig
     taf_pa_IpConfig_t *ipConfig                     // OUT
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

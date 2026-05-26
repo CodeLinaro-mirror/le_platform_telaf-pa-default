@@ -7,31 +7,31 @@
 
 pa_result_t PA_WEAK taf_pa_health_ModemNotificationInit(void)
 {
-    PA_INFO("Default platform adatper PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_health_RegModemListener(void)
 {
-    PA_INFO("Default platform adatper PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_health_DeregModemListener(void)
 {
-    PA_INFO("Default platform adatper PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_health_PhoneInit(void)
 {
-    PA_INFO("Default platform adatper PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_health_ReqPhoneOperatingMode(void)
 {
-    PA_INFO("Default platform adatper PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -40,7 +40,7 @@ pa_result_t PA_WEAK taf_pa_health_RegModemOperationModeUpdateHandler
     taf_pa_health_ModemOperatingModeUpdateHandler_t handlerFunc
 )
 {
-    PA_INFO("Default platform adatper PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -49,13 +49,12 @@ pa_result_t PA_WEAK taf_pa_health_RegModemStatusUpdateHandler
     taf_pa_health_ModemStatusUpdateHandler_t handlerFunc
 )
 {
-    PA_INFO("Default platform adatper PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_health_Deinit(void)
 {
-    PA_INFO("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }

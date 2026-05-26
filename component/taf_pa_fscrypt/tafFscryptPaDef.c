@@ -10,12 +10,13 @@
  * PA initialization.
  */
 //--------------------------------------------------------------------------------------------------
-void PA_WEAK taf_pa_fsc_Init
+pa_result_t PA_WEAK taf_pa_fsc_Init
 (
     void* cryptoFunc
 )
 {
-    PA_INFO("Telaf fscrypt default PA initialized.");
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -23,12 +24,13 @@ void PA_WEAK taf_pa_fsc_Init
  * PA deinitialization.
  */
 //--------------------------------------------------------------------------------------------------
-void PA_WEAK taf_pa_fsc_Deinit
+pa_result_t PA_WEAK taf_pa_fsc_Deinit
 (
     void
 )
 {
-    PA_INFO("Telaf fscrypt default PA deinitialized.");
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -45,6 +47,7 @@ pa_result_t PA_WEAK taf_pa_fsc_GetKey
     size_t keyLen                           ///< [OUT] Length of raw key
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -62,6 +65,7 @@ pa_result_t PA_WEAK taf_pa_fsc_GenerateAesKey
     size_t keyLen                           ///< [OUT] Length of raw key
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -76,5 +80,6 @@ pa_result_t PA_WEAK taf_pa_fsc_DeleteKey
     KeyMgt_KeyFileRef_t keyFileRef          ///< [IN] Key file reference
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

@@ -10,8 +10,8 @@ pa_result_t PA_WEAK taf_pa_radio_Init
     void
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -20,8 +20,8 @@ pa_result_t PA_WEAK taf_pa_radio_Deinit
     void
 )
 {
-    PA_INFO("Default platform adapter deinitialization");
     // No managers to clean up in default implementation
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -31,8 +31,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetOperatingMode
     taf_pa_radio_OperatingMode_t* modePtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -42,8 +42,8 @@ pa_result_t PA_WEAK taf_pa_radio_SetOperatingMode
     taf_pa_radio_OperatingMode_t mode
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -53,8 +53,8 @@ pa_result_t PA_WEAK taf_pa_radio_SetNetworkSelectionPreference
     taf_pa_radio_NetworkSelectionPreference_t* preferencePtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -64,8 +64,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetNetworkSelectionPreference
     taf_pa_radio_NetworkSelectionPreference_t* preferencePtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -75,8 +75,8 @@ pa_result_t PA_WEAK taf_pa_radio_SetPreferredNetwork
     taf_pa_radio_PreferredNetworkConfig_t* configPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -86,8 +86,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetPreferredNetwork
     taf_pa_radio_PreferredNetworks_t* networksPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -97,8 +97,8 @@ PA_SHARED PA_WEAK pa_result_t taf_pa_radio_SetPreferredRat
     taf_pa_radio_RatBitMask_t bitmask
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -108,8 +108,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetPreferredRat
     taf_pa_radio_RatBitMask_t* bitmaskPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -119,8 +119,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetVoiceServiceInfo
     taf_pa_radio_VoiceServiceInfo_t* infoPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -130,8 +130,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetDataServieState
     taf_pa_radio_DataServiceState_t* statePtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -142,8 +142,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetServiceDomain
     taf_pa_radio_ServiceDomain_t* domainPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -153,8 +153,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetServiceDomainPreferences
     taf_pa_radio_ServiceDomainBitMask_t* bitmaskPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -164,8 +164,8 @@ pa_result_t PA_WEAK taf_pa_radio_SetServiceDomainPreferences
     taf_pa_radio_ServiceDomainBitMask_t bitmask
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -176,8 +176,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetSignalStrengthLevel
     taf_pa_radio_SignalStrengthLevel_t* levelPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -187,8 +187,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetSignalStrengthInfo
     taf_pa_radio_SignalStrengthInfo_t* infoPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -198,8 +198,8 @@ pa_result_t PA_WEAK taf_pa_radio_SetSignalStrengthInd
     taf_pa_radio_SignalStrengthIndConfig_t* configPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -209,8 +209,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetCellLocationListInfo
     taf_pa_radio_CellLocationListInfo_t* infoPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -220,8 +220,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetCurrNetworkName
     taf_pa_radio_CurrNetworkName_t* infoPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -232,8 +232,8 @@ pa_result_t PA_WEAK taf_pa_radio_PerformPlmnNetworkScan
     taf_pa_radio_PlmnScanInformation_t* informationPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -243,8 +243,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetBandCapabilities
     taf_pa_radio_BandBitMask_t* bitmaskPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -254,8 +254,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetLteBandCapabilities
     taf_pa_radio_LteBand_t* bandPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -265,8 +265,8 @@ pa_result_t PA_WEAK taf_pa_radio_SetBandPreferences
     taf_pa_radio_BandBitMask_t bitmask
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -276,8 +276,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetBandPreferences
     taf_pa_radio_BandBitMask_t* bitmaskPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -287,8 +287,8 @@ pa_result_t PA_WEAK taf_pa_radio_SetLteBandPreferences
     taf_pa_radio_LteBand_t* bandPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -298,8 +298,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetLteBandPreferences
     taf_pa_radio_LteBand_t* bandPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -309,8 +309,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetImsRegistrationStatus
     taf_pa_radio_ImsRegistrationStatus_t* statusPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -320,8 +320,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetLteCsCapability
     taf_pa_radio_LteCsCapability_t* capabilityPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -332,8 +332,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetImsServiceStatus
     taf_pa_radio_ImsServiceStatus_t* statusPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -343,8 +343,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetImsPdpFailureErrorCode
     taf_pa_radio_ImsPdpFailureErrorCode_t* codePtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -355,8 +355,8 @@ pa_result_t PA_WEAK taf_pa_radio_ToggleImsService
     bool enable
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -366,8 +366,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetEnabledImsService
     taf_pa_radio_ImsServiceSettingBitMask_t* bitmaskPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -377,8 +377,8 @@ pa_result_t PA_WEAK taf_pa_radio_SetImsUserAgent
     const char* namePtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -389,8 +389,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetImsUserAgent
     size_t namePtrSize
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -400,8 +400,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetEndcAvailability
     taf_pa_radio_EndcAvailability_t* availabilityPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -411,8 +411,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetDcnrRestriction
     taf_pa_radio_DcnrRestriction_t* restrictionPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -421,8 +421,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetSimCapacityInfo
     taf_pa_radio_SimCapabilityInfo_t* infoPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -432,8 +432,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetDeviceAndSimCardRatCapability
     taf_pa_radio_DeviceAndSimCardRatCapability_t* capabilityPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -443,8 +443,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetServingCellBandInfo
     taf_pa_radio_ServingCellBandInfo_t* infoPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -454,177 +454,191 @@ pa_result_t PA_WEAK taf_pa_radio_GetNrIcon
     taf_pa_radio_NrIcon_t* iconPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_NetworkRejectHandlerRef_t PA_WEAK taf_pa_radio_AddNetworkRejectHandler
+pa_result_t PA_WEAK taf_pa_radio_AddNetworkRejectHandler
 (
     uint32_t instance,
     taf_pa_radio_NetworkRejectHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_NetworkRejectHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_RatChangeHandlerRef_t PA_WEAK taf_pa_radio_AddRatChangeHandler
+pa_result_t PA_WEAK taf_pa_radio_AddRatChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_RatChangeHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_RatChangeHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_VoiceServiceInfoHandlerRef_t PA_WEAK taf_pa_radio_AddVoiceServiceInfoHandler
+pa_result_t PA_WEAK taf_pa_radio_AddVoiceServiceInfoHandler
 (
     uint32_t instance,
     taf_pa_radio_VoiceServiceInfoHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_VoiceServiceInfoHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_DataServiceStatusHandlerRef_t PA_WEAK taf_pa_radio_AddDataServiceStatusHandler
+pa_result_t PA_WEAK taf_pa_radio_AddDataServiceStatusHandler
 (
     uint32_t instance,
     taf_pa_radio_DataServiceStatusHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_DataServiceStatusHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_DataRoamingStatusHandlerRef_t PA_WEAK taf_pa_radio_AddDataRoamingStatusHandler
+pa_result_t PA_WEAK taf_pa_radio_AddDataRoamingStatusHandler
 (
     uint32_t instance,
     taf_pa_radio_DataRoamingStatusHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_DataRoamingStatusHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_SignalStrengthInfoChangeHandlerRef_t PA_WEAK taf_pa_radio_AddSignalStrengthInfoChangeHandler
+pa_result_t PA_WEAK taf_pa_radio_AddSignalStrengthInfoChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_SignalStrengthInfoChangeHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_SignalStrengthInfoChangeHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_ImsRegStatusChangeHandlerRef_t PA_WEAK taf_pa_radio_AddImsRegStatusChangeHandler
+pa_result_t PA_WEAK taf_pa_radio_AddImsRegStatusChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_ImsRegStatusChangeHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_ImsRegStatusChangeHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_OperatingModeChangeHandlerRef_t PA_WEAK taf_pa_radio_AddOperatingModeChangeHandler
+pa_result_t PA_WEAK taf_pa_radio_AddOperatingModeChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_OperatingModeChangeHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_OperatingModeChangeHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_ServiceDomainHandlerRef_t PA_WEAK taf_pa_radio_AddServiceDomainHandler
+pa_result_t PA_WEAK taf_pa_radio_AddServiceDomainHandler
 (
     uint32_t instance,
     taf_pa_radio_ServiceDomainHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_ServiceDomainHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_LteCsCapabilityHandlerRef_t PA_WEAK taf_pa_radio_AddLteCsCapabilityHandler
+pa_result_t PA_WEAK taf_pa_radio_AddLteCsCapabilityHandler
 (
     uint32_t instance,
     taf_pa_radio_LteCsCapabilityHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_LteCsCapabilityHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_ImsServiceInfoHandlerRef_t PA_WEAK taf_pa_radio_AddImsServiceInfoHandler
+pa_result_t PA_WEAK taf_pa_radio_AddImsServiceInfoHandler
 (
     uint32_t instance,
     taf_pa_radio_ImsServiceInfoHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_ImsServiceInfoHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_ImsPdpErrorHandlerRef_t PA_WEAK taf_pa_radio_AddImsPdpErrorHandler
+pa_result_t PA_WEAK taf_pa_radio_AddImsPdpErrorHandler
 (
     uint32_t instance,
     taf_pa_radio_ImsPdpErrorHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_ImsPdpErrorHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_CellInfoChangeHandlerRef_t PA_WEAK taf_pa_radio_AddCellInfoChangeHandler
+pa_result_t PA_WEAK taf_pa_radio_AddCellInfoChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_CellInfoChangeHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_CellInfoChangeHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_NrIconChangeHandlerRef_t PA_WEAK taf_pa_radio_AddNrIconChangeHandler
+pa_result_t PA_WEAK taf_pa_radio_AddNrIconChangeHandler
 (
     uint32_t instance,
     taf_pa_radio_NrIconChangeHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_NrIconChangeHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_RegisterIndication
@@ -633,8 +647,8 @@ pa_result_t PA_WEAK taf_pa_radio_RegisterIndication
     uint8_t registration
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -645,8 +659,8 @@ pa_result_t PA_WEAK taf_pa_radio_PerformPciNetworkScan
     taf_pa_radio_PciScanInformation_t* informationPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -656,8 +670,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetServingRat
     taf_pa_radio_Rat_t* ratPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -668,8 +682,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetRatSvcStatus
     taf_pa_radio_RatServiceStatus_t* statusPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -680,8 +694,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetServingCellRac
     uint8_t* racPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -691,8 +705,8 @@ pa_result_t PA_WEAK taf_pa_radio_GetDataAvailSysStatus
     taf_pa_radio_DataAvailSysStatus_t* statusPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -702,45 +716,48 @@ pa_result_t PA_WEAK taf_pa_radio_GetLteCphyCaInfo
     taf_pa_radio_LteCphyCaInfo_t* infoPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_RatSvcStatusHandlerRef_t PA_WEAK taf_pa_radio_AddRatSvcStatusHandler
+pa_result_t PA_WEAK taf_pa_radio_AddRatSvcStatusHandler
 (
     uint32_t instance,
     taf_pa_radio_RatSvcStatusHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_RatSvcStatusHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_LteCphyCaHandlerRef_t PA_WEAK taf_pa_radio_AddLteCphyCaHandler
+pa_result_t PA_WEAK taf_pa_radio_AddLteCphyCaHandler
 (
     uint32_t instance,
     taf_pa_radio_LteCphyCaHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_LteCphyCaHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_radio_DataAvailSysStatusHandlerRef_t PA_WEAK taf_pa_radio_AddDataAvailSysStatusHandler
+pa_result_t PA_WEAK taf_pa_radio_AddDataAvailSysStatusHandler
 (
     uint32_t instance,
     taf_pa_radio_DataAvailSysStatusHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_radio_DataAvailSysStatusHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_radio_GetDataCurrRoamingStatus
@@ -749,7 +766,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetDataCurrRoamingStatus
     taf_pa_radio_DataRoamingStatus_t* statusPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
 
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

@@ -22,7 +22,6 @@ extern "C" {
 #define TAF_PA_SIM_RESULT_TIMEOUT -8
 #define TAF_PA_SIM_RESULT_BAD_PARAMETER -15
 #define TAF_PA_SIM_RESULT_UNSUPPORTED -18
-#define TAF_PA_SIM_RESULT_NOT_IMPLEMENTED -20
 
 #define MAX_SIM_PATH 10
 #define MAX_SIM_REFRESH_FILES 100
@@ -334,10 +333,11 @@ PA_SHARED pa_result_t taf_pa_sim_RefreshComplete
  * Add handler for SIM refresh
  */
 //--------------------------------------------------------------------------------------------------
-PA_SHARED taf_pa_sim_RefreshChangeHandlerRef_t taf_pa_sim_AddRefreshChangeHandler
+PA_SHARED pa_result_t taf_pa_sim_AddRefreshChangeHandler
 (
     taf_pa_sim_RefreshChangeHandlerFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_sim_RefreshChangeHandlerRef_t* handlerRefPtr
 );
 
 //--------------------------------------------------------------------------------------------------

@@ -184,4 +184,3 @@ PA_SHARED pa_result_t taf_pa_sms_RequestSmsMessageList
 }
 
 #endif /* TAF_SMS_PA_HPP */
-

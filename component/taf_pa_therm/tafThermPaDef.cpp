@@ -17,15 +17,14 @@
 //--------------------------------------------------------------------------------------------------
 pa_result_t PA_WEAK taf_pa_therm_Init(void)
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_therm_Deinit(void)
 {
-    PA_INFO("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -35,7 +34,7 @@ pa_result_t PA_WEAK taf_pa_therm_Deinit(void)
 //--------------------------------------------------------------------------------------------------
 pa_result_t PA_WEAK taf_pa_therm_GetThermalZones(std::vector<taf_pa_therm_ThermalZoneInfo>& thermalZones)
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -46,7 +45,7 @@ pa_result_t PA_WEAK taf_pa_therm_GetThermalZones(std::vector<taf_pa_therm_Therma
 //--------------------------------------------------------------------------------------------------
 pa_result_t PA_WEAK taf_pa_therm_GetThermalZoneById(uint32_t zoneId, taf_pa_therm_ThermalZoneInfo& zoneInfo)
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -60,7 +59,7 @@ pa_result_t PA_WEAK taf_pa_therm_GetThermalZoneByName(
     taf_pa_therm_ThermalZoneInfo& zoneInfo
 )
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -74,7 +73,7 @@ pa_result_t PA_WEAK taf_pa_therm_GetTripPoints(
     std::vector<taf_pa_therm_TripPointInfo>& tripPoints
 )
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -88,7 +87,7 @@ pa_result_t PA_WEAK taf_pa_therm_GetBoundCoolingDevices(
     std::vector<taf_pa_therm_BoundCoolingDevice>& boundDevices
 )
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -101,7 +100,7 @@ pa_result_t PA_WEAK taf_pa_therm_GetCoolingDevices(
     std::vector<taf_pa_therm_CoolingDeviceInfo>& coolingDevices
 )
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -115,7 +114,7 @@ pa_result_t PA_WEAK taf_pa_therm_GetCoolingDeviceById(
     taf_pa_therm_CoolingDeviceInfo& deviceInfo
 )
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -129,7 +128,7 @@ pa_result_t PA_WEAK taf_pa_therm_GetCoolingDeviceByName(
     taf_pa_therm_CoolingDeviceInfo& deviceInfo
 )
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -143,7 +142,7 @@ pa_result_t PA_WEAK taf_pa_therm_RegisterTripEventHandler(
     void* contextPtr
 )
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -154,7 +153,7 @@ pa_result_t PA_WEAK taf_pa_therm_RegisterTripEventHandler(
 //--------------------------------------------------------------------------------------------------
 pa_result_t PA_WEAK taf_pa_therm_DeregisterTripEventHandler(void)
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -168,7 +167,7 @@ pa_result_t PA_WEAK taf_pa_therm_RegisterCoolingLevelChangeHandler(
     void* contextPtr
 )
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -179,6 +178,6 @@ pa_result_t PA_WEAK taf_pa_therm_RegisterCoolingLevelChangeHandler(
 //--------------------------------------------------------------------------------------------------
 pa_result_t PA_WEAK taf_pa_therm_DeregisterCoolingLevelChangeHandler(void)
 {
-    PA_INFO("Default platform adapter PA_NOT_IMPLEMENTED");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

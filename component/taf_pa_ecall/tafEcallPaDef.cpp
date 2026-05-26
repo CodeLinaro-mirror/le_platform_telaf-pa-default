@@ -18,22 +18,22 @@ using namespace tafpa::ecall;
 
 pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Init()
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Deinit()
 {
-    PA_INFO("Default platform adapter deinitialization");
     // No managers to clean up in default implementation
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetConfig(
     const taf_pa_ecall_config_t& config)
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(config);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -41,8 +41,8 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetConfig(
     taf_pa_ecall_config_t& config
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(config);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -53,11 +53,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetOpMode(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(mode);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -67,10 +67,10 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetOpMode(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -78,7 +78,7 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetInProgressCalls(
     std::vector<std::shared_ptr<taf_pa_ecall_CallInfo_t>>* callListPtr
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -88,10 +88,10 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestNetworkDeregistration(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -104,13 +104,13 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(msdData);
     UNUSED(category);
     UNUSED(type);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -123,13 +123,13 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(msdPdu);
     UNUSED(category);
     UNUSED(type);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -142,13 +142,13 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(dialNumber);
     UNUSED(header);
     UNUSED(msdPdu);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -159,11 +159,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(msdData);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -174,11 +174,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(msdData);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -187,9 +187,9 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_EncodeMsd(
     std::vector<uint8_t>& msdPdu
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(msdData);
     UNUSED(msdPdu);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -199,10 +199,10 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimerStatus(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -213,11 +213,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimer(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(type);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -229,12 +229,12 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateHlapTimer(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(type);
     UNUSED(duration);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -244,10 +244,10 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetEcallRedial(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(timeGap);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -256,9 +256,9 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetEcallRedial(
     std::vector<int>& callDropTimeGap
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(callOrigTimeGap);
     UNUSED(callDropTimeGap);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -270,12 +270,12 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RestartHlapTimer(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(phoneId);
     UNUSED(id);
     UNUSED(duration);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -284,8 +284,8 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetPhoneIdFromSlotId(
     int8_t* phoneIdPtr
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(slotId);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -295,10 +295,10 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Hangup(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(callInfo);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -308,10 +308,10 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Reject(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(callInfo);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -321,10 +321,10 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Answer(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(callInfo);
     UNUSED(callback);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -333,8 +333,8 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RegisterListener(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
     UNUSED(eventListener);
     UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

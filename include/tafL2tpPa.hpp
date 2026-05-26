@@ -192,4 +192,3 @@ PA_SHARED pa_result_t taf_pa_net_SetL2tpConfigSync
 );
 
 #endif /* TAF_L2TP_PA_HPP */
-

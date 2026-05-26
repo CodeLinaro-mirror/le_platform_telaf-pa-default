@@ -18,8 +18,8 @@ pa_result_t PA_WEAK taf_pa_sim_RefreshRegister
     taf_pa_sim_RefreshFile_t* files
 )
 {
-    PA_INFO("Function is not implemented in stub PA.");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -33,8 +33,8 @@ pa_result_t PA_WEAK taf_pa_sim_RefreshOk
     bool* refreshAllow
 )
 {
-    PA_INFO("Function is not implemented in stub PA.");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -46,8 +46,8 @@ pa_result_t PA_WEAK taf_pa_sim_RefreshComplete
 (
     taf_pa_sim_SessionType_t sessionType
 )
-{   PA_INFO("Function is not implemented in stub PA.");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+{   PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -55,14 +55,15 @@ pa_result_t PA_WEAK taf_pa_sim_RefreshComplete
  * Add handler for SIM refresh
  */
 //--------------------------------------------------------------------------------------------------
-taf_pa_sim_RefreshChangeHandlerRef_t PA_WEAK taf_pa_sim_AddRefreshChangeHandler
+pa_result_t PA_WEAK taf_pa_sim_AddRefreshChangeHandler
 (
     taf_pa_sim_RefreshChangeHandlerFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_sim_RefreshChangeHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in stub PA.");
-    return NULL;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -75,7 +76,7 @@ pa_result_t PA_WEAK taf_pa_sim_RemoveRefreshChangeHandler
     taf_pa_sim_RefreshChangeHandlerRef_t handlerRef ///< [IN] Handler reference.
 )
 {
-    PA_INFO("Function is not implemented in stub PA.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 //--------------------------------------------------------------------------------------------------
@@ -88,7 +89,7 @@ pa_result_t PA_WEAK taf_pa_sim_Init
 
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -97,8 +98,8 @@ pa_result_t PA_WEAK taf_pa_sim_Deinit
     void
 )
 {
-    PA_INFO("Default platform adapter deinitialization");
     // No managers to clean up in default implementation
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -108,7 +109,7 @@ pa_result_t PA_WEAK taf_pa_sim_GetProfileNum
     uint8_t* profileNumPtr
 )
 {
-    PA_INFO("Function is not implemented in stub PA.");
+    PA_INFO_NOT_IMPLEMENTED();
     (void)slot;
     return PA_NOT_IMPLEMENTED;
 }
@@ -120,7 +121,7 @@ pa_result_t PA_WEAK taf_pa_sim_GetProfile
     taf_pa_sim_ProfileInfo_t* profileInfoPtr
 )
 {
-    PA_INFO("Function is not implemented in stub PA.");
+    PA_INFO_NOT_IMPLEMENTED();
     (void)slot;
     (void)index;
     return PA_NOT_IMPLEMENTED;
@@ -132,10 +133,10 @@ pa_result_t PA_WEAK taf_pa_sim_SetActiveProfile
     taf_pa_sim_ProfileId_t profileId
 )
 {
-    PA_INFO("Function is not implemented in stub PA.");
+    PA_INFO_NOT_IMPLEMENTED();
     (void)slot;
     (void)profileId;
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    return PA_NOT_IMPLEMENTED;
 }
 //--------------------------------------------------------------------------------------------------
 /**
@@ -146,8 +147,8 @@ pa_result_t PA_WEAK taf_pa_sim_RegisterListeners
 (
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -159,8 +160,8 @@ pa_result_t PA_WEAK taf_pa_sim_DeregisterListeners
 (
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 
@@ -177,8 +178,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetIccid
     std::string& iccIdStr
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -192,8 +193,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetSubscriberPhoneNumber
     std::string& phoneNumber
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -207,8 +208,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetImsi
     std::string& imsi
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -222,8 +223,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetCarrierName
     std::string& nameString
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -238,8 +239,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetHomeNetworkMccMnc
     int* mnc
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 
@@ -255,8 +256,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetHomeNetworkMccMncStr
     std::string& mnc
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -269,8 +270,8 @@ pa_result_t PA_WEAK taf_pa_sim_getSlotCount
     int* count
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -284,8 +285,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetState
     taf_pa_sim_States_t* state
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -299,8 +300,8 @@ pa_result_t PA_WEAK taf_pa_sim_SetPower
     taf_pa_sim_power_state_t powerState
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -313,8 +314,8 @@ pa_result_t PA_WEAK taf_pa_sim_IsSubsystemReady
     bool* isReady
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -328,8 +329,8 @@ pa_result_t PA_WEAK taf_pa_sim_selectSimSlot
     taf_pa_sim_Id_t simId
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -347,8 +348,8 @@ pa_result_t PA_WEAK taf_pa_sim_ChangeCardPin
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -365,8 +366,8 @@ pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPin
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -384,8 +385,8 @@ pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPuk
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -402,8 +403,8 @@ pa_result_t PA_WEAK taf_pa_sim_SetCardLock
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -420,8 +421,8 @@ pa_result_t PA_WEAK taf_pa_sim_SetCardUnLock
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -436,8 +437,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetAppTypes
     size_t* appTypeNumElementsPtr
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -454,8 +455,8 @@ pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannel
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -472,8 +473,8 @@ pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannelByAid
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -489,8 +490,8 @@ pa_result_t PA_WEAK taf_pa_sim_CloseLogicalChannel
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 
@@ -512,8 +513,8 @@ pa_result_t PA_WEAK taf_pa_sim_SendApduOnLogicalChannel
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -533,8 +534,8 @@ pa_result_t PA_WEAK taf_pa_sim_SendApdu
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -556,8 +557,8 @@ pa_result_t PA_WEAK taf_pa_sim_ExchangeSimIO
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -572,8 +573,8 @@ pa_result_t PA_WEAK taf_pa_sim_RegisterEventListener
     std::any context
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -588,8 +589,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetRemainingPINTries
     int32_t* retryCount
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -604,8 +605,8 @@ pa_result_t PA_WEAK taf_pa_sim_GetRemainingPukTries
     uint32_t* remainingPukTries
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //----------------------------------------------------------------------------------------------
@@ -619,6 +620,6 @@ pa_result_t taf_pa_sim_GetEID
     std::string&  eidStr
 )
 {
-    PA_INFO("Function is not implemented in stub PA");
-    return TAF_PA_SIM_RESULT_NOT_IMPLEMENTED;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }

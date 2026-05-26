@@ -15,19 +15,18 @@ using namespace tafpa::deviceinfo;
 
 pa_result_t PA_WEAK tafpa::deviceinfo::taf_pa_deviceinfo_Init()
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::deviceinfo::taf_pa_deviceinfo_Deinit()
 {
-    PA_INFO("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::deviceinfo::taf_pa_deviceinfo_GetIMEI(char* imeiPtr, size_t numElements)
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

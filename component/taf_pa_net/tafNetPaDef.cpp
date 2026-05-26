@@ -10,15 +10,14 @@
 
 pa_result_t PA_WEAK taf_pa_net_Init()
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_net_Deinit()
 {
-    PA_INFO("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -36,7 +35,7 @@ pa_result_t PA_WEAK taf_pa_net_GetPhoneIdFromSlotId
     uint8_t *phoneIdPtr  ///< [OUT] Phone ID
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -55,7 +54,7 @@ pa_result_t PA_WEAK taf_pa_net_GetSlotIdFromPhoneId
     uint8_t *slotIdPtr   ///< [OUT] Slot ID
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -73,6 +72,6 @@ pa_result_t PA_WEAK taf_pa_net_GetSupportedSlotIds
     std::vector<uint8_t> &slotIds   ///< [OUT] Slot IDs
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
