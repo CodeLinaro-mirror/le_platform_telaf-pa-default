@@ -639,3 +639,23 @@ pa_result_t taf_pa_sim_GetEID
     PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
+//--------------------------------------------------------------------------------------------------
+/**
+ * Check if NTN profile is active.
+ *
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf_pa_sim_IsNtnProfileActive
+(
+    taf_pa_sim_Id_t simId,
+    bool* isActive
+)
+{
+    PA_INFO("Function is not implemented in stub PA");
+    (void)simId;  // suppress unused warning
+    if (isActive)
+    {
+        *isActive = false;
+    }
+    return PA_NOT_IMPLEMENTED;
+}

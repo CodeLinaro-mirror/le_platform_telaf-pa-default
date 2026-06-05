@@ -641,6 +641,29 @@ pa_result_t PA_WEAK taf_pa_radio_AddNrIconChangeHandler
     return PA_NOT_IMPLEMENTED;
 }
 
+pa_result_t PA_WEAK taf_pa_radio_AddSmsCapabilityHandler
+(
+    uint32_t instance,
+    taf_pa_radio_SmsCapabilityHdlrFunc_t handlerFuncPtr,
+    void* contextPtr,
+    taf_pa_radio_SmsCapabilityHandlerRef_t* handlerRefPtr
+)
+{
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf_pa_radio_RemoveSmsCapabilityHandler
+(
+    uint32_t instance,
+    taf_pa_radio_SmsCapabilityHandlerRef_t handlerRefPtr
+)
+{
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
+
+
 pa_result_t PA_WEAK taf_pa_radio_RegisterIndication
 (
     uint32_t instance,
@@ -801,5 +824,15 @@ pa_result_t PA_WEAK taf_pa_radio_GetDataCurrRoamingStatus
 {
 
     PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
+pa_result_t PA_WEAK taf_pa_radio_GetSmsCapability
+(
+    uint32_t instance,
+    taf_pa_radio_SmsCapability_t* capabilityPtr
+)
+{
+    PA_INFO_NOT_IMPLEMENTED();
+
     return PA_NOT_IMPLEMENTED;
 }
