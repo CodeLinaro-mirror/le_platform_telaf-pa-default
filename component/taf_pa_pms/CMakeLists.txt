@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(taf_pa_pmsDef SHARED taf_pa_pms.cpp)
+add_library(taf_pa_pmsDef SHARED tafPmsPaDef.cpp)
 
 target_include_directories(
     taf_pa_pmsDef
@@ -25,9 +25,7 @@ target_compile_definitions(taf_pa_pmsDef PRIVATE TAF_PA_DEFAULT=1)
 # Add stub library: Component_taf_pa_pms.so
 # -------------------------------------------
 
-file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp "// empty stub source\n")
-
-add_library(taf_pa_pms SHARED ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp)
+add_library(taf_pa_pms SHARED tafPmsPaDef.cpp)
 
 set_target_properties(taf_pa_pms PROPERTIES OUTPUT_NAME Component_taf_pa_pms)
 

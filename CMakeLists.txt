@@ -25,9 +25,9 @@ set(MODULE_LIST
     component/taf_pa_mrc
     component/taf_pa_flash
     component/taf_pa_wlan
-    component/taf_pa_dataDef
+    component/taf_pa_data
     component/taf_pa_location
-    component/taf_pa_netDef
+    component/taf_pa_net
     component/taf_pa_sensor
     component/taf_pa_audio
     component/taf_pa_ecall

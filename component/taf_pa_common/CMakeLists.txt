@@ -10,7 +10,7 @@ set(OUTPUT_NAME Component_${TARGET_NAME})
 # common headers
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../include)
 
-add_library(${TARGET_NAME} SHARED taf_pa_common.cpp)
+add_library(${TARGET_NAME} SHARED tafCommonPaDef.cpp)
 
 set_target_properties(${TARGET_NAME} PROPERTIES
     VERSION ${LIBRARY_VERSION}
@@ -31,14 +31,12 @@ target_compile_definitions(${TARGET_NAME} PRIVATE TAF_PA_DEFAULT=1)
 set(STUB_TARGET_NAME taf_pa_common)
 set(STUB_OUTPUT_NAME Component_${STUB_TARGET_NAME})
 
-file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp "// empty stub source\n")
-
-add_library(${STUB_TARGET_NAME} SHARED ${CMAKE_CURRENT_BINARY_DIR}/empty.cpp)
+add_library(${STUB_TARGET_NAME} SHARED tafCommonPaDef.cpp)
 
 set_target_properties(${STUB_TARGET_NAME} PROPERTIES
     VERSION ${LIBRARY_VERSION}
     SOVERSION ${LIBRARY_SOVERSION}
-    STUB_OUTPUT_NAME ${STUB_TARGET_NAME}
+    OUTPUT_NAME ${STUB_OUTPUT_NAME}
 )
 
 install(TARGETS ${STUB_TARGET_NAME}
