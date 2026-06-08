@@ -1,0 +1,47 @@
+cmake_minimum_required(VERSION 3.16)
+project(taf_pa_sapDef LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(LIBRARY_VERSION "1.0.0")
+set(LIBRARY_SOVERSION "1")
+set(TARGET_NAME taf_pa_sapDef)
+set(OUTPUT_NAME Component_${TARGET_NAME})
+
+add_library(${TARGET_NAME} SHARED tafSapPaDef.cpp)
+
+set_target_properties(${TARGET_NAME} PROPERTIES
+    VERSION ${LIBRARY_VERSION}
+    SOVERSION ${LIBRARY_SOVERSION}
+    OUTPUT_NAME ${OUTPUT_NAME}
+)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../include)
+
+target_link_libraries(${TARGET_NAME} PRIVATE taf_pa_common)
+
+install(TARGETS ${TARGET_NAME}
+    LIBRARY DESTINATION lib
+)
+
+# Enable macro TAF_PA_DEFAULT for default PA
+target_compile_definitions(${TARGET_NAME} PRIVATE TAF_PA_DEFAULT=1)
+
+# -------------------------------------------
+# Add stub library: libtaf_pa_sap.so
+# -------------------------------------------
+set(STUB_TARGET_NAME taf_pa_sap)
+set(STUB_OUTPUT_NAME Component_${STUB_TARGET_NAME})
+
+add_library(${STUB_TARGET_NAME} SHARED tafSapPaDef.cpp)
+
+set_target_properties(${STUB_TARGET_NAME} PROPERTIES
+    VERSION ${LIBRARY_VERSION}
+    SOVERSION ${LIBRARY_SOVERSION}
+    OUTPUT_NAME ${STUB_OUTPUT_NAME}
+)
+
+install(TARGETS ${STUB_TARGET_NAME}
+    LIBRARY DESTINATION lib
+)
