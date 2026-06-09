@@ -644,10 +644,43 @@ pa_result_t PA_WEAK taf_pa_radio_AddNrIconChangeHandler
 pa_result_t PA_WEAK taf_pa_radio_RegisterIndication
 (
     uint32_t instance,
-    uint8_t registration
+    uint8_t registration,
+    taf_pa_radio_DisableIndicationMode_t mode
 )
 {
 
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf_pa_radio_SetSysInfoIndLimit
+(
+    uint32_t instance,
+    taf_pa_radio_SysInfoIndLimitMask_t limitMask
+)
+{
+
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf_pa_radio_GetServiceStatus
+(
+    uint32_t instance,
+    taf_pa_radio_Rat_t *servingRat,
+    taf_pa_radio_RatServiceStatus_t *status
+)
+{
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf_pa_radio_GetSysInfoIndLimit
+(
+    uint32_t instance,
+    taf_pa_radio_SysInfoIndLimitMask_t *limitMask
+)
+{
     PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
