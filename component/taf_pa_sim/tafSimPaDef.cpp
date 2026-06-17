@@ -24,6 +24,22 @@ pa_result_t PA_WEAK taf_pa_sim_RefreshRegister
 
 //--------------------------------------------------------------------------------------------------
 /**
+ *  SIM refresh unregister.
+ */
+//--------------------------------------------------------------------------------------------------
+pa_result_t PA_WEAK taf_pa_sim_RefreshUnregister
+(
+    taf_pa_sim_SessionType_t sessionType,
+    uint32_t filesLen,
+    taf_pa_sim_RefreshFile_t* files
+)
+{
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
+
+//--------------------------------------------------------------------------------------------------
+/**
  *  SIM refresh ok.
  */
 //--------------------------------------------------------------------------------------------------
