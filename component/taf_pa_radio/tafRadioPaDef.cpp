@@ -124,7 +124,7 @@ pa_result_t PA_WEAK taf_pa_radio_GetVoiceServiceInfo
     return PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_radio_GetDataServieState
+pa_result_t PA_WEAK taf_pa_radio_GetDataServiceState
 (
     uint32_t instance,
     taf_pa_radio_DataServiceState_t* statePtr
