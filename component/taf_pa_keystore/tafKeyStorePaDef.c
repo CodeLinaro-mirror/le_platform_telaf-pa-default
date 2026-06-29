@@ -10,30 +10,30 @@
  * PA initialization.
  *
  * @return
- *      LE_OK if successful.
- *      LE_FAULT if there was some other error.
+ *      TAF_PA_OK if successful.
+ *      TAF_PA_FAULT if there was some other error.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_Init
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_Init
 (
     void
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 //--------------------------------------------------------------------------------------------------
 /**
  * PA deinitialization.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_Deinit
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_Deinit
 (
     void
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ pa_result_t PA_WEAK taf_pa_ks_Deinit
  * The impData must be a PKCS#8 der bytes if provided.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_GenerateRsaEncKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_GenerateRsaEncKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
@@ -57,8 +57,8 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateRsaEncKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateRsaEncKey
  * The impData must be a PKCS#8 der bytes if provided.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_GenerateRsaSigKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_GenerateRsaSigKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
@@ -82,8 +82,8 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateRsaSigKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateRsaSigKey
  * The impData must be PKCS#8 der bytes if provided.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_GenerateEcdsaKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_GenerateEcdsaKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
@@ -107,8 +107,8 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateEcdsaKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateEcdsaKey
  * The impData must be raw key bytes if provided.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_GenerateAesKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_GenerateAesKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
@@ -132,8 +132,8 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateAesKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -143,7 +143,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateAesKey
  * Currently only digest DIGEST_SHA2_256 is supported. The impData must be raw key bytes if provided
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_GenerateHmacKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_GenerateHmacKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
@@ -157,8 +157,8 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateHmacKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -166,7 +166,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateHmacKey
  * Export a key into specified key data format.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_ExportKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_ExportKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
@@ -176,8 +176,8 @@ pa_result_t PA_WEAK taf_pa_ks_ExportKey
     size_t* expDataSizePtr                ///< [INOUT]
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -185,7 +185,7 @@ pa_result_t PA_WEAK taf_pa_ks_ExportKey
  * Share a key.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_ShareKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_ShareKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
@@ -194,8 +194,8 @@ pa_result_t PA_WEAK taf_pa_ks_ShareKey
     const char* appName                   ///< [IN] Shared application name
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -203,14 +203,14 @@ pa_result_t PA_WEAK taf_pa_ks_ShareKey
  * Delete a key file by key name.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_DeleteKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_DeleteKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef        ///< [IN] Key file reference
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -218,15 +218,15 @@ pa_result_t PA_WEAK taf_pa_ks_DeleteKey
  * Get a key file reference by key name.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_GetKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_GetKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference.
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -234,7 +234,7 @@ pa_result_t PA_WEAK taf_pa_ks_GetKey
  * Get a shared key file reference by key name and app name.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_GetSharedKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_GetSharedKey
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     const char* keyName,                  ///< [IN] Key Name
@@ -242,8 +242,8 @@ pa_result_t PA_WEAK taf_pa_ks_GetSharedKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference.
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -251,15 +251,15 @@ pa_result_t PA_WEAK taf_pa_ks_GetSharedKey
  * Cancel key sharing to an application.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_CancelKeySharing
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_CancelKeySharing
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
     const char* appName                   ///< [IN] Shared application name
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -267,15 +267,15 @@ pa_result_t PA_WEAK taf_pa_ks_CancelKeySharing
  * Get a shared app list for a shared key.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_GetSharedAppList
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_GetSharedAppList
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
     taf_pa_ks_sharedAppList_t* appListPtr ///< [OUT] Shared app list.
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -283,15 +283,15 @@ pa_result_t PA_WEAK taf_pa_ks_GetSharedAppList
  * Get key usage
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_GetKeyUsage
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_GetKeyUsage
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t keyFileRef,       ///< [IN] Key file reference
     taf_pa_ks_KeyUsage_t*    keyUsagePtr  ///< [OUT] Key usage
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -299,7 +299,7 @@ pa_result_t PA_WEAK taf_pa_ks_GetKeyUsage
  * Start the session for the given crypto operation.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_CryptoSessionStart
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_CryptoSessionStart
 (
     int clientSessionFd,                  ///< [IN] Client session fd
     KeyMgt_KeyFileRef_t     keyFileRef,   ///< [IN] Key file reference
@@ -309,8 +309,8 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionStart
     uint64_t*                 opHandlePtr ///< [OUT]Cyrpto operation handle
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -321,7 +321,7 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionStart
  * This API can be called for multiple times but must before CryptoSessionProcess API.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_CryptoSessionProcessAead
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_CryptoSessionProcessAead
 (
     uint64_t               opHandle,      ///< [IN] Cyrpto operation handle
     const uint8_t*     inputDataPtr,      ///< [IN] Data buffer to hold the AEAD data
@@ -329,8 +329,8 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionProcessAead
 
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -340,7 +340,7 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionProcessAead
  * CryptoEndSession API is called.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_CryptoSessionProcess
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_CryptoSessionProcess
 (
     uint64_t           opHandle,          ///< [IN] Cyrpto operation handle
     const uint8_t*     inputDataPtr,      ///< [IN] InputData can be one of below 4 cases:
@@ -356,8 +356,8 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionProcess
     size_t*        outputDataSizePtr      ///< [INOUT]
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -365,7 +365,7 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionProcess
  * Finalizes and stop a crypto operation session started with CryptoStartSession API.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_CryptoSessionEnd
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_CryptoSessionEnd
 (
     uint64_t               opHandle,      ///< [IN] Cyrpto operation handle
     const uint8_t*     inputDataPtr,      ///< [IN] Signature to verify for verification session
@@ -379,8 +379,8 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionEnd
     size_t*        outputDataSizePtr      ///< [INOUT]
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -388,13 +388,13 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionEnd
  * Abort crypto operation session started with CryptoStartSession API.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_CryptoSessionAbort
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_CryptoSessionAbort
 (
     uint64_t                opHandle      ///< [IN] Cyrpto operation handle
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -402,13 +402,13 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionAbort
  * Register Key creation handler in PA layer
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_RegKeyCreationHandler
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_RegKeyCreationHandler
 (
     taf_pa_ks_KeyCreationHandler_t handlerFunc
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -416,11 +416,11 @@ pa_result_t PA_WEAK taf_pa_ks_RegKeyCreationHandler
  * Register Key sharing state change handler in PA layer
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_ks_RegKeySharingHandler
+taf_pa_result_t TAF_PA_WEAK taf_pa_ks_RegKeySharingHandler
 (
     taf_pa_ks_KeySharingHandler_t handlerFunc
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }

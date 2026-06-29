@@ -24,18 +24,18 @@
  *  - PA_OK              PA completely initialized
  *  - PA_UNAVAILABLE     PA not completely initialized. A part of the PA maybe usable. Check state.
  *  - PA_FAULT           PA is not usable due to fatal failure.
- *  - PA_NOT_IMPLEMENTED API is not implemented.
+ *  - TAF_PA_NOT_IMPLEMENTED API is not implemented.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::Init
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::Init
 (
     SubsystemState_e &state
         ///< [OUT] The Telux data PA initialization state.
 )
 {
     PA_UNUSED(state);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -46,10 +46,10 @@ pa_result_t PA_WEAK taf::pa::data::Init
  *  - PA_OK              PA completely initialized
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::Deinit()
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::Deinit()
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -57,7 +57,7 @@ pa_result_t PA_WEAK taf::pa::data::Deinit()
  * Get the Telux data PA initialization state.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetSubsystemState
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetSubsystemState
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The phone ID.
@@ -70,8 +70,8 @@ pa_result_t PA_WEAK taf::pa::data::GetSubsystemState
     PA_UNUSED(phoneId);
     PA_UNUSED(subsystem);
     PA_UNUSED(state);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -79,15 +79,15 @@ pa_result_t PA_WEAK taf::pa::data::GetSubsystemState
  * Get the phone Ids.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetPhoneIds
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetPhoneIds
 (
     std::vector<taf::pa::data::PhoneId_e> &phoneIds
         ///< [OUT] The phone IDs.
 )
 {
     PA_UNUSED(phoneIds);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -95,15 +95,15 @@ pa_result_t PA_WEAK taf::pa::data::GetPhoneIds
  * Get the SIM slot count.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetSimSlotCount
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetSimSlotCount
 (
     taf::pa::data::SlotCount_e &slotCount
         ///< [OUT] The number of SIM slots.
 )
 {
     PA_UNUSED(slotCount);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -111,7 +111,7 @@ pa_result_t PA_WEAK taf::pa::data::GetSimSlotCount
  * Get the SIM slot count.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetPhoneIdFromSimSlotId
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetPhoneIdFromSimSlotId
 (
     taf::pa::data::SlotId_e slotID,
         ///< [IN] The SIM slot ID.
@@ -121,8 +121,8 @@ pa_result_t PA_WEAK taf::pa::data::GetPhoneIdFromSimSlotId
 {
     PA_UNUSED(slotID);
     PA_UNUSED(phoneID);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -130,7 +130,7 @@ pa_result_t PA_WEAK taf::pa::data::GetPhoneIdFromSimSlotId
  * Get the SIM slot count.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetSimSlotIdFromPhoneId
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetSimSlotIdFromPhoneId
 (
     taf::pa::data::PhoneId_e phoneID,
         ///< [IN] The phone ID.
@@ -140,8 +140,8 @@ pa_result_t PA_WEAK taf::pa::data::GetSimSlotIdFromPhoneId
 {
     PA_UNUSED(phoneID);
     PA_UNUSED(slotID);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -152,7 +152,7 @@ pa_result_t PA_WEAK taf::pa::data::GetSimSlotIdFromPhoneId
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetProfilesAsync
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetProfilesAsync
 (
     taf::pa::data::PhoneId_e phoneId,
     taf_pa_data_profile_GetAllAsyncCb callback,
@@ -162,8 +162,8 @@ pa_result_t PA_WEAK taf::pa::data::GetProfilesAsync
     PA_UNUSED(phoneId);
     PA_UNUSED(callback);
     PA_UNUSED(contextPtr);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -175,7 +175,7 @@ pa_result_t PA_WEAK taf::pa::data::GetProfilesAsync
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetProfileInfo
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetProfileInfo
 (
     PhoneId_e phoneId,
     ///< [IN] The phone id.
@@ -185,8 +185,8 @@ pa_result_t PA_WEAK taf::pa::data::GetProfileInfo
 {
     PA_UNUSED(phoneId);
     PA_UNUSED(profileInfo);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -197,7 +197,7 @@ pa_result_t PA_WEAK taf::pa::data::GetProfileInfo
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::CreateProfile
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::CreateProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The phone id.
@@ -210,8 +210,8 @@ pa_result_t PA_WEAK taf::pa::data::CreateProfile
     PA_UNUSED(phoneId);
     PA_UNUSED(profileInfo);
     PA_UNUSED(profileId);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -221,7 +221,7 @@ pa_result_t PA_WEAK taf::pa::data::CreateProfile
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::UpdateProfile
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::UpdateProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The phone id.
@@ -231,8 +231,8 @@ pa_result_t PA_WEAK taf::pa::data::UpdateProfile
 {
     PA_UNUSED(phoneId);
     PA_UNUSED(profileInfo);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -243,7 +243,7 @@ pa_result_t PA_WEAK taf::pa::data::UpdateProfile
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::DeleteProfile
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::DeleteProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The phone id.
@@ -253,8 +253,8 @@ pa_result_t PA_WEAK taf::pa::data::DeleteProfile
 {
     PA_UNUSED(phoneId);
     PA_UNUSED(profileInfo);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -263,7 +263,7 @@ pa_result_t PA_WEAK taf::pa::data::DeleteProfile
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetDefaultProfile
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetDefaultProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The profile information.
@@ -273,8 +273,8 @@ pa_result_t PA_WEAK taf::pa::data::GetDefaultProfile
 {
     PA_UNUSED(phoneId);
     PA_UNUSED(profileId);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -283,7 +283,7 @@ pa_result_t PA_WEAK taf::pa::data::GetDefaultProfile
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::SetDefaultProfile
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::SetDefaultProfile
 (
     taf::pa::data::PhoneId_e phoneId,
     ///< [IN] The profile information.
@@ -293,8 +293,8 @@ pa_result_t PA_WEAK taf::pa::data::SetDefaultProfile
 {
     PA_UNUSED(phoneId);
     PA_UNUSED(profileId);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -302,7 +302,7 @@ pa_result_t PA_WEAK taf::pa::data::SetDefaultProfile
  * Register for data call events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::AddDataCallEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::AddDataCallEventsCallback
 (
     taf_pa_data_CallEventsCb callBack,
         ///< [IN] The callback function.
@@ -315,8 +315,8 @@ pa_result_t PA_WEAK taf::pa::data::AddDataCallEventsCallback
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -324,15 +324,15 @@ pa_result_t PA_WEAK taf::pa::data::AddDataCallEventsCallback
  * Removed a previously registered data call events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RemoveDataCallEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RemoveDataCallEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -340,14 +340,14 @@ pa_result_t PA_WEAK taf::pa::data::RemoveDataCallEventsCallback
  * Start a data session
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::StartDataSessionAsync
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::StartDataSessionAsync
 (
     const taf::pa::data::DataCallStartStopParams_t& params ///< [IN] The IP type.
 )
 {
     PA_UNUSED(params);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -355,24 +355,24 @@ pa_result_t PA_WEAK taf::pa::data::StartDataSessionAsync
  * Stop a data session
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::StopDataSessionAsync
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::StopDataSessionAsync
 (
     const taf::pa::data::DataCallStartStopParams_t& params ///< [IN] The IP type.
 )
 {
     PA_UNUSED(params);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
 /**
  * Request list of all active data calls. Events will be provided via taf_pa_data_RequestCallListCb.
  *
- * @return LE_OK on success. Wait for callback for final status.
+ * @return TAF_PA_OK on success. Wait for callback for final status.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RequestDataCallsListAsync
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RequestDataCallsListAsync
 (
     PhoneId_e phoneId,
                 ///< [IN] The phone ID.
@@ -385,8 +385,8 @@ pa_result_t PA_WEAK taf::pa::data::RequestDataCallsListAsync
     PA_UNUSED(phoneId);
     PA_UNUSED(callBack);
     PA_UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -394,7 +394,7 @@ pa_result_t PA_WEAK taf::pa::data::RequestDataCallsListAsync
  * Register roaming events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::AddRoamingEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::AddRoamingEventsCallback
 (
     taf_pa_data_RoamingEventsCb callBack,
         ///< [IN] The callback function.
@@ -407,8 +407,8 @@ pa_result_t PA_WEAK taf::pa::data::AddRoamingEventsCallback
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -416,15 +416,15 @@ pa_result_t PA_WEAK taf::pa::data::AddRoamingEventsCallback
  * Removed a previously registered roaming events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RemoveRoamingEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RemoveRoamingEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -435,7 +435,7 @@ pa_result_t PA_WEAK taf::pa::data::RemoveRoamingEventsCallback
  * @return PA_OK on success. Wait for callback for final status.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetRoamingStatus
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetRoamingStatus
 (
     const taf::pa::data::PhoneId_e phoneId,
     RoamingStatus_t &roamingStatus
@@ -443,8 +443,8 @@ pa_result_t PA_WEAK taf::pa::data::GetRoamingStatus
 {
     PA_UNUSED(phoneId);
     PA_UNUSED(roamingStatus);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -452,7 +452,7 @@ pa_result_t PA_WEAK taf::pa::data::GetRoamingStatus
  * Register throttled APN events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::AddThrottledApnEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::AddThrottledApnEventsCallback
 (
     taf_pa_data_ThrottledApnEventsCb callBack,
         ///< [IN] The callback function.
@@ -465,8 +465,8 @@ pa_result_t PA_WEAK taf::pa::data::AddThrottledApnEventsCallback
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -474,15 +474,15 @@ pa_result_t PA_WEAK taf::pa::data::AddThrottledApnEventsCallback
  * Removed a previously registered throttled APN events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RemoveThrottledApnEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RemoveThrottledApnEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -490,7 +490,7 @@ pa_result_t PA_WEAK taf::pa::data::RemoveThrottledApnEventsCallback
  * Get throttled APNs information.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetThrottledApnInfo
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetThrottledApnInfo
 (
     const taf::pa::data::PhoneId_e phoneId,
         ///< [IN] The phone ID.
@@ -500,8 +500,8 @@ pa_result_t PA_WEAK taf::pa::data::GetThrottledApnInfo
 {
     PA_UNUSED(phoneId);
     PA_UNUSED(throttledApnEventInfoList);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -509,7 +509,7 @@ pa_result_t PA_WEAK taf::pa::data::GetThrottledApnInfo
  * Register QoS TFT events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::AddQosTftEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::AddQosTftEventsCallback
 (
     taf_pa_data_QosTftEventsCb callBack,
         ///< [IN] The callback function.
@@ -522,8 +522,8 @@ pa_result_t PA_WEAK taf::pa::data::AddQosTftEventsCallback
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -531,15 +531,15 @@ pa_result_t PA_WEAK taf::pa::data::AddQosTftEventsCallback
  * Removed a previously registered QoS TFT events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RemoveQosTftEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RemoveQosTftEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -547,7 +547,7 @@ pa_result_t PA_WEAK taf::pa::data::RemoveQosTftEventsCallback
  * Register HW acceleration change events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::AddHwAccelerationChangeEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::AddHwAccelerationChangeEventsCallback
 (
     taf_pa_data_HwAccelerationEventsCb callBack,
     ///< [IN] The callback function.
@@ -560,8 +560,8 @@ pa_result_t PA_WEAK taf::pa::data::AddHwAccelerationChangeEventsCallback
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -569,15 +569,15 @@ pa_result_t PA_WEAK taf::pa::data::AddHwAccelerationChangeEventsCallback
  * Removed a previously registered HW acceleration change events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RemoveHwAccelerationChangeEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RemoveHwAccelerationChangeEventsCallback
 (
     uint16_t id
     ///< [IN] The ID of the registered callback.
 )
 {
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -585,7 +585,7 @@ pa_result_t PA_WEAK taf::pa::data::RemoveHwAccelerationChangeEventsCallback
  * Register profile change events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::AddProfileEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::AddProfileEventsCallback
 (
     taf_pa_data_ProfileEventsCb callBack,
         ///< [IN] The callback function.
@@ -598,8 +598,8 @@ pa_result_t PA_WEAK taf::pa::data::AddProfileEventsCallback
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -607,15 +607,15 @@ pa_result_t PA_WEAK taf::pa::data::AddProfileEventsCallback
  * Removed a previously registered profile  events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RemoveProfileEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RemoveProfileEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -623,7 +623,7 @@ pa_result_t PA_WEAK taf::pa::data::RemoveProfileEventsCallback
  * Register roaming events callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::AddSubsystemStateChangeCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::AddSubsystemStateChangeCallback
 (
     taf_pa_data_SubsystemStateChangeCb callBack,
     ///< [IN] The callback function.
@@ -636,8 +636,8 @@ pa_result_t PA_WEAK taf::pa::data::AddSubsystemStateChangeCallback
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -645,15 +645,15 @@ pa_result_t PA_WEAK taf::pa::data::AddSubsystemStateChangeCallback
  * Removed a previously registered subsystem state change callback
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RemoveSubsystemStateChangeCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RemoveSubsystemStateChangeCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -662,10 +662,10 @@ pa_result_t PA_WEAK taf::pa::data::RemoveSubsystemStateChangeCallback
  * initialization.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RegisterSDKCallbacks()
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RegisterSDKCallbacks()
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -673,10 +673,10 @@ pa_result_t PA_WEAK taf::pa::data::RegisterSDKCallbacks()
  * Deregister SDK callbacks. This is to support the service manage suspend/resume scenarios.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::DeregisterSDKCallbacks()
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::DeregisterSDKCallbacks()
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -692,10 +692,10 @@ pa_result_t PA_WEAK taf::pa::data::DeregisterSDKCallbacks()
  *  - PA_BAD_PARAMETER   Invalid parameters
  *  - PA_FAULT           Failed to set the interval
  *  - PA_TIMEOUT         Operation timed out
- *  - PA_NOT_IMPLEMENTED API is not implemented
+ *  - TAF_PA_NOT_IMPLEMENTED API is not implemented
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::SetThroughputReportInterval
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::SetThroughputReportInterval
 (
     PhoneId_e phoneId,
         ///< [IN] The phone ID.
@@ -705,8 +705,8 @@ pa_result_t PA_WEAK taf::pa::data::SetThroughputReportInterval
 {
     PA_UNUSED(phoneId);
     PA_UNUSED(reportInterval);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -721,10 +721,10 @@ pa_result_t PA_WEAK taf::pa::data::SetThroughputReportInterval
  *  - PA_BAD_PARAMETER   Invalid parameters
  *  - PA_FAULT           Failed to retrieve throughput information
  *  - PA_TIMEOUT         Operation timed out
- *  - PA_NOT_IMPLEMENTED API is not implemented
+ *  - TAF_PA_NOT_IMPLEMENTED API is not implemented
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetLastThroughputInfo
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetLastThroughputInfo
 (
     PhoneId_e phoneId,
         ///< [IN] The phone ID.
@@ -734,8 +734,8 @@ pa_result_t PA_WEAK taf::pa::data::GetLastThroughputInfo
 {
     PA_UNUSED(phoneId);
     PA_UNUSED(throughputInfoList);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -749,10 +749,10 @@ pa_result_t PA_WEAK taf::pa::data::GetLastThroughputInfo
  *  - PA_OK              Successfully registered callback
  *  - PA_BAD_PARAMETER   Invalid parameters (e.g., null callback)
  *  - PA_FAULT           Failed to register with TelSDK
- *  - PA_NOT_IMPLEMENTED API is not implemented
+ *  - TAF_PA_NOT_IMPLEMENTED API is not implemented
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::AddThroughputEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::AddThroughputEventsCallback
 (
     taf_pa_data_ThroughputEventsCb callBack,
         ///< [IN] The callback function.
@@ -765,8 +765,8 @@ pa_result_t PA_WEAK taf::pa::data::AddThroughputEventsCallback
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -779,18 +779,18 @@ pa_result_t PA_WEAK taf::pa::data::AddThroughputEventsCallback
  *  - PA_OK              Successfully removed callback
  *  - PA_NOT_FOUND       Callback with specified ID not found
  *  - PA_FAULT           Failed to deregister from TelSDK
- *  - PA_NOT_IMPLEMENTED API is not implemented
+ *  - TAF_PA_NOT_IMPLEMENTED API is not implemented
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::RemoveThroughputEventsCallback
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::RemoveThroughputEventsCallback
 (
     uint16_t id
         ///< [IN] The ID of the registered callback.
 )
 {
     PA_UNUSED(id);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -801,10 +801,10 @@ pa_result_t PA_WEAK taf::pa::data::RemoveThroughputEventsCallback
  *  - PA_OK              Successfully retrieved MTU
  *  - PA_BAD_PARAMETER   Invalid parameters (e.g., empty interfaceName)
  *  - PA_FAULT           Failed to retrieve MTU
- *  - PA_NOT_IMPLEMENTED API is not implemented
+ *  - TAF_PA_NOT_IMPLEMENTED API is not implemented
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf::pa::data::GetMtu
+taf_pa_result_t TAF_PA_WEAK taf::pa::data::GetMtu
 (
     const std::string& interfaceName,
         ///< [IN] The network interface name.
@@ -814,6 +814,6 @@ pa_result_t PA_WEAK taf::pa::data::GetMtu
 {
     PA_UNUSED(interfaceName);
     PA_UNUSED(mtu);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }

@@ -5,93 +5,93 @@
 
 #include "tafFlashPa.hpp"
 
-pa_result_t PA_WEAK taf_pa_flash_Init
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_Init
 (
     void
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_Deinit
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_Deinit
 (
     void
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_OpenMtd
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_OpenMtd
 (
     const char* namePtr,
     taf_pa_flash_OpenModeBitMask_t mode,
     taf_pa_flash_MtdRef_t* mtdRefPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_CloseMtd
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_CloseMtd
 (
     taf_pa_flash_MtdRef_t mtdRef
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_GetMtdInfo
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_GetMtdInfo
 (
     taf_pa_flash_MtdRef_t mtdRef,
     taf_pa_flash_MtdInfo_t* infoPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_EraseMtdBlock
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_EraseMtdBlock
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t blockIndex
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_CheckMtdGoodBlock
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_CheckMtdGoodBlock
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t blockIndex,
 	bool* isGoodBlockPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_MarkMtdBadBlock
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_MarkMtdBadBlock
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t blockIndex
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_ReadMtdPage
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_ReadMtdPage
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t pageIndex,
@@ -99,12 +99,12 @@ pa_result_t PA_WEAK taf_pa_flash_ReadMtdPage
     size_t* dataSizePtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_WriteMtdPage
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_WriteMtdPage
 (
     taf_pa_flash_MtdRef_t mtdRef,
     uint32_t pageIndex,
@@ -112,57 +112,57 @@ pa_result_t PA_WEAK taf_pa_flash_WriteMtdPage
     size_t dataSize
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_CopyMtd
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_CopyMtd
 (
     const char* srcNamePtr,
     const char* dstNamePtr,
     size_t dataSize
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_OpenUbiVolume
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_OpenUbiVolume
 (
     const char* namePtr,
     taf_pa_flash_OpenModeBitMask_t mode,
     taf_pa_flash_UbiVolumeRef_t* ubiVolumeRefPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_CloseUbiVolume
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_CloseUbiVolume
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_SetUbiVolumeUpdateSize
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_SetUbiVolumeUpdateSize
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef,
     int64_t size
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_ReadUbiVolume
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_ReadUbiVolume
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef,
     off_t offset,
@@ -170,24 +170,24 @@ pa_result_t PA_WEAK taf_pa_flash_ReadUbiVolume
     size_t* dataSizePtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_UpdateUbiVolume
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_UpdateUbiVolume
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef,
     const unsigned char* dataPtr,
     size_t dataSize
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_CopyUbiVolume
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_CopyUbiVolume
 (
     const char* srcNamePtr,
     const char* dstNamePtr,
@@ -195,28 +195,28 @@ pa_result_t PA_WEAK taf_pa_flash_CopyUbiVolume
     size_t dataSize
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_EraseUbiVolume
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_EraseUbiVolume
 (
     const char* namePtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_flash_GetUbiVolumeInfo
+taf_pa_result_t TAF_PA_WEAK taf_pa_flash_GetUbiVolumeInfo
 (
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef,
     taf_pa_flash_UbiVolumeInfo_t* infoPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
 
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
