@@ -7,16 +7,16 @@
 
 /* Implementation */
 
-pa_result_t PA_WEAK taf_pa_nat_Init()
+taf_pa_result_t TAF_PA_WEAK taf_pa_nat_Init()
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_nat_Deinit()
+taf_pa_result_t TAF_PA_WEAK taf_pa_nat_Deinit()
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -28,14 +28,14 @@ pa_result_t PA_WEAK taf_pa_nat_Deinit()
  *      - PA_FAULT on failure
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_nat_AddDestNatEntry(
+taf_pa_result_t TAF_PA_WEAK taf_pa_nat_AddDestNatEntry(
     uint32_t profileId,
     uint8_t slotId,
     const taf_pa_net_NatConfig_t *natConfig
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 
@@ -48,14 +48,14 @@ pa_result_t PA_WEAK taf_pa_nat_AddDestNatEntry(
  *      - PA_FAULT on failure
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_nat_RemoveDestNatEntry(
+taf_pa_result_t TAF_PA_WEAK taf_pa_nat_RemoveDestNatEntry(
     uint32_t profileId,
     uint8_t slotId,
     const taf_pa_net_NatConfig_t *natConfig
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -68,12 +68,12 @@ pa_result_t PA_WEAK taf_pa_nat_RemoveDestNatEntry(
  *      - PA_TIMEOUT on timeout
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_nat_QueryDestNatEntryList(
+taf_pa_result_t TAF_PA_WEAK taf_pa_nat_QueryDestNatEntryList(
     uint32_t profileId,
     uint8_t slotId,
     std::vector<taf_pa_net_NatConfig_t> &natEntryInfo
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }

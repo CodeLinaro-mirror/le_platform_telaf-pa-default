@@ -13,20 +13,20 @@
 using namespace tafpa::deviceinfo;
 
 
-pa_result_t PA_WEAK tafpa::deviceinfo::taf_pa_deviceinfo_Init()
+taf_pa_result_t TAF_PA_WEAK tafpa::deviceinfo::taf_pa_deviceinfo_Init()
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::deviceinfo::taf_pa_deviceinfo_Deinit()
+taf_pa_result_t TAF_PA_WEAK tafpa::deviceinfo::taf_pa_deviceinfo_Deinit()
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::deviceinfo::taf_pa_deviceinfo_GetIMEI(char* imeiPtr, size_t numElements)
+taf_pa_result_t TAF_PA_WEAK tafpa::deviceinfo::taf_pa_deviceinfo_GetIMEI(char* imeiPtr, size_t numElements)
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }

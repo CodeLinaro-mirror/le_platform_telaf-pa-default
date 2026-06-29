@@ -11,15 +11,15 @@
  *  SIM refresh register.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_RefreshRegister
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_RefreshRegister
 (
     taf_pa_sim_SessionType_t sessionType,
     uint32_t filesLen,
     taf_pa_sim_RefreshFile_t* files
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -27,15 +27,15 @@ pa_result_t PA_WEAK taf_pa_sim_RefreshRegister
  *  SIM refresh unregister.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_RefreshUnregister
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_RefreshUnregister
 (
     taf_pa_sim_SessionType_t sessionType,
     uint32_t filesLen,
     taf_pa_sim_RefreshFile_t* files
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -43,14 +43,14 @@ pa_result_t PA_WEAK taf_pa_sim_RefreshUnregister
  *  SIM refresh ok.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_RefreshOk
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_RefreshOk
 (
     taf_pa_sim_SessionType_t sessionType,
     bool* refreshAllow
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -58,12 +58,12 @@ pa_result_t PA_WEAK taf_pa_sim_RefreshOk
  *  SIM refresh complete.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_RefreshComplete
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_RefreshComplete
 (
     taf_pa_sim_SessionType_t sessionType
 )
-{   PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+{   TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -71,15 +71,15 @@ pa_result_t PA_WEAK taf_pa_sim_RefreshComplete
  * Add handler for SIM refresh
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_AddRefreshChangeHandler
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_AddRefreshChangeHandler
 (
     taf_pa_sim_RefreshChangeHandlerFunc_t handlerFuncPtr,
     void* contextPtr,
     taf_pa_sim_RefreshChangeHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -87,84 +87,84 @@ pa_result_t PA_WEAK taf_pa_sim_AddRefreshChangeHandler
  * Remove handler for SIM refresh
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_RemoveRefreshChangeHandler
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_RemoveRefreshChangeHandler
 (
     taf_pa_sim_RefreshChangeHandlerRef_t handlerRef ///< [IN] Handler reference.
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 //--------------------------------------------------------------------------------------------------
 /**
  * Initialize PA SIM
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_Init
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_Init
 (
 
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_sim_Deinit
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_Deinit
 (
     void
 )
 {
     // No managers to clean up in default implementation
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_sim_GetProfileNum
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetProfileNum
 (
     taf_pa_sim_SlotId_t slot,
     uint8_t* profileNumPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
     (void)slot;
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_sim_GetProfile
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetProfile
 (
     taf_pa_sim_SlotId_t slot,
     uint8_t index,
     taf_pa_sim_ProfileInfo_t* profileInfoPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
     (void)slot;
     (void)index;
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK taf_pa_sim_SetActiveProfile
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_SetActiveProfile
 (
     taf_pa_sim_SlotId_t slot,
     taf_pa_sim_ProfileId_t profileId
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
+    TAF_PA_INFO_NOT_IMPLEMENTED();
     (void)slot;
     (void)profileId;
-    return PA_NOT_IMPLEMENTED;
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 //--------------------------------------------------------------------------------------------------
 /**
  * Register subscription, card and multi sim listeners
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_RegisterListeners
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_RegisterListeners
 (
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -172,12 +172,12 @@ pa_result_t PA_WEAK taf_pa_sim_RegisterListeners
  * Deregister subscription, card and multi sim listeners
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_DeregisterListeners
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_DeregisterListeners
 (
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 
@@ -188,14 +188,14 @@ pa_result_t PA_WEAK taf_pa_sim_DeregisterListeners
  * Get Iccid.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetIccid
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetIccid
 (
     taf_pa_sim_Id_t simId,
     std::string& iccIdStr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -203,14 +203,14 @@ pa_result_t PA_WEAK taf_pa_sim_GetIccid
  * Get subscriber phone number.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetSubscriberPhoneNumber
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetSubscriberPhoneNumber
 (
     taf_pa_sim_Id_t simId,
     std::string& phoneNumber
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -218,14 +218,14 @@ pa_result_t PA_WEAK taf_pa_sim_GetSubscriberPhoneNumber
  * Get IMSI.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetImsi
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetImsi
 (
     taf_pa_sim_Id_t simId,
     std::string& imsi
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -233,14 +233,14 @@ pa_result_t PA_WEAK taf_pa_sim_GetImsi
  * Get carrier name.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetCarrierName
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetCarrierName
 (
     taf_pa_sim_Id_t simId,
     std::string& nameString
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -248,15 +248,15 @@ pa_result_t PA_WEAK taf_pa_sim_GetCarrierName
  * Get home network MCC/MNC.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetHomeNetworkMccMnc
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetHomeNetworkMccMnc
 (
     taf_pa_sim_Id_t simId,
     int* mcc,
     int* mnc
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 
@@ -265,15 +265,15 @@ pa_result_t PA_WEAK taf_pa_sim_GetHomeNetworkMccMnc
  * Get home network MCC/MNC.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetHomeNetworkMccMncStr
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetHomeNetworkMccMncStr
 (
     taf_pa_sim_Id_t simId,
     std::string& mcc,
     std::string& mnc
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -281,13 +281,13 @@ pa_result_t PA_WEAK taf_pa_sim_GetHomeNetworkMccMncStr
  * Get sim slot count.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_getSlotCount
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_getSlotCount
 (
     int* count
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -295,14 +295,14 @@ pa_result_t PA_WEAK taf_pa_sim_getSlotCount
  * Get sim state.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetState
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetState
 (
     taf_pa_sim_Id_t simId,
     taf_pa_sim_States_t* state
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -310,14 +310,14 @@ pa_result_t PA_WEAK taf_pa_sim_GetState
  * set power state.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_SetPower
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_SetPower
 (
     taf_pa_sim_Id_t simId,
     taf_pa_sim_power_state_t powerState
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -325,13 +325,13 @@ pa_result_t PA_WEAK taf_pa_sim_SetPower
  * Check if multisim sub system is ready or not.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_IsSubsystemReady
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_IsSubsystemReady
 (
     bool* isReady
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -340,13 +340,13 @@ pa_result_t PA_WEAK taf_pa_sim_IsSubsystemReady
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_selectSimSlot
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_selectSimSlot
 (
     taf_pa_sim_Id_t simId
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -355,7 +355,7 @@ pa_result_t PA_WEAK taf_pa_sim_selectSimSlot
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_ChangeCardPin
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_ChangeCardPin
 (
     taf_pa_sim_LockType_t lockType,
     const char* oldpinPtr,
@@ -364,8 +364,8 @@ pa_result_t PA_WEAK taf_pa_sim_ChangeCardPin
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -374,7 +374,7 @@ pa_result_t PA_WEAK taf_pa_sim_ChangeCardPin
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPin
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_UnlockCardByPin
 (
     taf_pa_sim_LockType_t lockType,
     const char* pinPtr,
@@ -382,8 +382,8 @@ pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPin
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -392,7 +392,7 @@ pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPin
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPuk
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_UnlockCardByPuk
 (
     taf_pa_sim_LockType_t lockType,
     const char* pukPtr,
@@ -401,8 +401,8 @@ pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPuk
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -411,7 +411,7 @@ pa_result_t PA_WEAK taf_pa_sim_UnlockCardByPuk
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_SetCardLock
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_SetCardLock
 (
     taf_pa_sim_LockType_t lockType,
     const char* pinPtr,
@@ -419,8 +419,8 @@ pa_result_t PA_WEAK taf_pa_sim_SetCardLock
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -429,7 +429,7 @@ pa_result_t PA_WEAK taf_pa_sim_SetCardLock
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_SetCardUnLock
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_SetCardUnLock
 (
     taf_pa_sim_LockType_t lockType,
     const char* pinPtr,
@@ -437,8 +437,8 @@ pa_result_t PA_WEAK taf_pa_sim_SetCardUnLock
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -447,14 +447,14 @@ pa_result_t PA_WEAK taf_pa_sim_SetCardUnLock
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetAppTypes
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetAppTypes
 (
     taf_pa_sim_AppType_t* appTypePtr,
     size_t* appTypeNumElementsPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -463,7 +463,7 @@ pa_result_t PA_WEAK taf_pa_sim_GetAppTypes
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannel
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_OpenLogicalChannel
 (
     taf_pa_sim_AppType_t appType,
     uint8_t* channelPtr,
@@ -471,8 +471,8 @@ pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannel
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -481,7 +481,7 @@ pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannel
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannelByAid
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_OpenLogicalChannelByAid
 (
     const char* aid,
     uint8_t* channelIdPtr,
@@ -489,8 +489,8 @@ pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannelByAid
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -499,15 +499,15 @@ pa_result_t PA_WEAK taf_pa_sim_OpenLogicalChannelByAid
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_CloseLogicalChannel
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_CloseLogicalChannel
 (
     uint8_t channelId,
     taf_pa_sim_GeneralCb callback,
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 
@@ -517,7 +517,7 @@ pa_result_t PA_WEAK taf_pa_sim_CloseLogicalChannel
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_SendApduOnLogicalChannel
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_SendApduOnLogicalChannel
 (
     uint8_t channel,
     uint8_t* responseApduPtr,
@@ -529,8 +529,8 @@ pa_result_t PA_WEAK taf_pa_sim_SendApduOnLogicalChannel
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -539,7 +539,7 @@ pa_result_t PA_WEAK taf_pa_sim_SendApduOnLogicalChannel
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_SendApdu
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_SendApdu
 (
     uint8_t* responseApduPtr,
     size_t* responseApduNumElementsPtr,
@@ -550,8 +550,8 @@ pa_result_t PA_WEAK taf_pa_sim_SendApdu
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -560,7 +560,7 @@ pa_result_t PA_WEAK taf_pa_sim_SendApdu
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_ExchangeSimIO
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_ExchangeSimIO
 (
     taf_pa_sim_Command_t command,
     uint8_t *p1, uint8_t *p2,
@@ -573,8 +573,8 @@ pa_result_t PA_WEAK taf_pa_sim_ExchangeSimIO
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -583,14 +583,14 @@ pa_result_t PA_WEAK taf_pa_sim_ExchangeSimIO
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_RegisterEventListener
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_RegisterEventListener
 (
     taf_pa_sim_EventListener* eventListener,
     std::any context
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -599,14 +599,14 @@ pa_result_t PA_WEAK taf_pa_sim_RegisterEventListener
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetRemainingPINTries
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetRemainingPINTries
 (
     taf_pa_sim_Id_t simId,
     int32_t* retryCount
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -615,14 +615,14 @@ pa_result_t PA_WEAK taf_pa_sim_GetRemainingPINTries
  *
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_sim_GetRemainingPukTries
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetRemainingPukTries
 (
     taf_pa_sim_Id_t simId,
     uint32_t* remainingPukTries
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //----------------------------------------------------------------------------------------------
@@ -630,12 +630,12 @@ pa_result_t PA_WEAK taf_pa_sim_GetRemainingPukTries
  * Get EID string.
  */
 //----------------------------------------------------------------------------------------------
-pa_result_t taf_pa_sim_GetEID
+taf_pa_result_t taf_pa_sim_GetEID
 (
     taf_pa_sim_Id_t simId,
     std::string&  eidStr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }

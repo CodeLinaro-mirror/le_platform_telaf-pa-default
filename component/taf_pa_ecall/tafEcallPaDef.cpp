@@ -16,37 +16,37 @@ using namespace tafpa::ecall;
 #define UNUSED(x) (void)(x)
 #endif
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Init()
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_Init()
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Deinit()
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_Deinit()
 {
     // No managers to clean up in default implementation
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetConfig(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_SetConfig(
     const taf_pa_ecall_config_t& config)
 {
     UNUSED(config);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetConfig(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_GetConfig(
     taf_pa_ecall_config_t& config
 )
 {
     UNUSED(config);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetOpMode(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_SetOpMode(
     uint8_t phoneId,
     taf_pa_ecall_mode_t mode,
     taf_pa_ecall_CommandCb callback,
@@ -57,11 +57,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetOpMode(
     UNUSED(mode);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetOpMode(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_GetOpMode(
     uint8_t phoneId,
     taf_pa_ecall_GetModeCb callback,
     std::any context
@@ -70,19 +70,19 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetOpMode(
     UNUSED(phoneId);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetInProgressCalls(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_GetInProgressCalls(
     std::vector<std::shared_ptr<taf_pa_ecall_CallInfo_t>>* callListPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestNetworkDeregistration(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_RequestNetworkDeregistration(
     uint8_t phoneId,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -91,11 +91,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestNetworkDeregistration(
     UNUSED(phoneId);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     int phoneId,
     const taf_pa_ecall_msd_data_t& msdData,
     taf_pa_ecall_category_t category,
@@ -110,11 +110,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     UNUSED(type);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     int phoneId,
     const std::vector<uint8_t>& msdPdu,
     taf_pa_ecall_category_t category,
@@ -129,11 +129,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     UNUSED(type);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     int phoneId,
     std::string dialNumber,
     const taf_pa_ecall_custom_sip_header_t& header,
@@ -148,11 +148,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_MakeECall(
     UNUSED(msdPdu);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
     uint8_t phoneId,
     const taf_pa_ecall_msd_data_t& msdData,
     taf_pa_ecall_CommandCb callback,
@@ -163,11 +163,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
     UNUSED(msdData);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
     uint8_t phoneId,
     const std::vector<uint8_t>& msdData,
     taf_pa_ecall_CommandCb callback,
@@ -178,22 +178,22 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateMsd(
     UNUSED(msdData);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_EncodeMsd(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_EncodeMsd(
     const taf_pa_ecall_msd_data_t& msdData,
     std::vector<uint8_t>& msdPdu
 )
 {
     UNUSED(msdData);
     UNUSED(msdPdu);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimerStatus(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimerStatus(
     int phoneId,
     taf_pa_ecall_HlapTimerStatusCb callback,
     std::any context
@@ -202,11 +202,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimerStatus(
     UNUSED(phoneId);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimer(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimer(
     int phoneId,
     taf_pa_ecall_hlap_timer_type_t type,
     taf_pa_ecall_HlapTimerCb callback,
@@ -217,11 +217,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RequestHlapTimer(
     UNUSED(type);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateHlapTimer(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateHlapTimer(
     int phoneId,
     taf_pa_ecall_hlap_timer_type_t type,
     uint32_t duration,
@@ -234,11 +234,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_UpdateHlapTimer(
     UNUSED(duration);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetEcallRedial(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_SetEcallRedial(
     const std::vector<int>& timeGap,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -247,22 +247,22 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_SetEcallRedial(
     UNUSED(timeGap);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetEcallRedial(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_GetEcallRedial(
     std::vector<int>& callOrigTimeGap,
     std::vector<int>& callDropTimeGap
 )
 {
     UNUSED(callOrigTimeGap);
     UNUSED(callDropTimeGap);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RestartHlapTimer(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_RestartHlapTimer(
     int phoneId,
     taf_pa_ecall_hlap_timer_id_t id,
     uint32_t duration,
@@ -275,21 +275,21 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RestartHlapTimer(
     UNUSED(duration);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_GetPhoneIdFromSlotId(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_GetPhoneIdFromSlotId(
     int8_t slotId,
     int8_t* phoneIdPtr
 )
 {
     UNUSED(slotId);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Hangup(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_Hangup(
     const taf_pa_ecall_CallInfo_t& callInfo,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -298,11 +298,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Hangup(
     UNUSED(callInfo);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Reject(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_Reject(
     const taf_pa_ecall_CallInfo_t& callInfo,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -311,11 +311,11 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Reject(
     UNUSED(callInfo);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Answer(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_Answer(
     const taf_pa_ecall_CallInfo_t& callInfo,
     taf_pa_ecall_CommandCb callback,
     std::any context
@@ -324,17 +324,17 @@ pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_Answer(
     UNUSED(callInfo);
     UNUSED(callback);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::ecall::taf_pa_ecall_RegisterListener(
+taf_pa_result_t TAF_PA_WEAK tafpa::ecall::taf_pa_ecall_RegisterListener(
     const taf_pa_ecall_event_listener_t* eventListener,
     std::any context
 )
 {
     UNUSED(eventListener);
     UNUSED(context);
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }

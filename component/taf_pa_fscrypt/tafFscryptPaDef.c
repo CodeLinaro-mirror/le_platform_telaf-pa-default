@@ -10,13 +10,13 @@
  * PA initialization.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_fsc_Init
+taf_pa_result_t TAF_PA_WEAK taf_pa_fsc_Init
 (
     void* cryptoFunc
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -24,13 +24,13 @@ pa_result_t PA_WEAK taf_pa_fsc_Init
  * PA deinitialization.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_fsc_Deinit
+taf_pa_result_t TAF_PA_WEAK taf_pa_fsc_Deinit
 (
     void
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ pa_result_t PA_WEAK taf_pa_fsc_Deinit
  * Get a key file reference by directory name.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_fsc_GetKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_fsc_GetKey
 (
     int clientSessionFd,                    ///< [IN] Client session Fd
     const char* dirName,                    ///< [IN] dir Name
@@ -47,8 +47,8 @@ pa_result_t PA_WEAK taf_pa_fsc_GetKey
     size_t keyLen                           ///< [OUT] Length of raw key
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ pa_result_t PA_WEAK taf_pa_fsc_GetKey
  * Create AES key and return a key file reference.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_fsc_GenerateAesKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_fsc_GenerateAesKey
 (
     int clientSessionFd,                    ///< [IN] Client session Fd
     const char* dirName,                    ///< [IN] dir Name
@@ -65,8 +65,8 @@ pa_result_t PA_WEAK taf_pa_fsc_GenerateAesKey
     size_t keyLen                           ///< [OUT] Length of raw key
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -74,12 +74,12 @@ pa_result_t PA_WEAK taf_pa_fsc_GenerateAesKey
  * Delete a key file.
  */
 //--------------------------------------------------------------------------------------------------
-pa_result_t PA_WEAK taf_pa_fsc_DeleteKey
+taf_pa_result_t TAF_PA_WEAK taf_pa_fsc_DeleteKey
 (
     int clientSessionFd,                    ///< [IN] Client session Fd
     KeyMgt_KeyFileRef_t keyFileRef          ///< [IN] Key file reference
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }

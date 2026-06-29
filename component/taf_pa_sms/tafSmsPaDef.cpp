@@ -8,26 +8,26 @@
 
 using namespace tafpa::sms;
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_Init
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_Init
 (
     void
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_Deinit
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_Deinit
 (
     void
 )
 {
     // No managers to clean up in default implementation
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_ReadMessage
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_ReadMessage
 (
     uint32_t readAtIdx,
     uint32_t timeout,
@@ -37,29 +37,29 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_ReadMessage
     uint32_t* pduMsgIndex
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RegisterIncomingSmsCallback
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_RegisterIncomingSmsCallback
 (
     IncomingSmsCallback cb
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RegisterMemoryFullCallback
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_RegisterMemoryFullCallback
 (
     MemoryFullCallback cb
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SendRawSms
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_SendRawSms
 (
     uint8_t* pduData,
     uint32_t pduLength,
@@ -67,56 +67,44 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SendRawSms
     uint8_t phoneId
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SendPDUMessageAsync
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_SendPDUMessageAsync
 (
     uint8_t phoneId,
     const uint8_t* pduData,
     size_t pduLength,
-    std::function<void(pa_result_t)> cb
+    std::function<void(taf_pa_result_t)> cb
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SetActivationStatus
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_SetActivationStatus
 (
     uint8_t phoneId,
     bool activate,
     uint32_t timeout
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RequestMessageFilters
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_RequestMessageFilters
 (
     uint8_t phoneId,
     uint32_t timeout
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_AddCellBroadcastIds
-(
-    uint8_t phoneId,
-    uint16_t fromId,
-    uint16_t toId,
-    uint32_t timeout
-)
-{
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
-}
-
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RemoveCellBroadcastIds
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_AddCellBroadcastIds
 (
     uint8_t phoneId,
     uint16_t fromId,
@@ -124,11 +112,23 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RemoveCellBroadcastIds
     uint32_t timeout
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_GetSmsCenterAddress
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_RemoveCellBroadcastIds
+(
+    uint8_t phoneId,
+    uint16_t fromId,
+    uint16_t toId,
+    uint32_t timeout
+)
+{
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
+}
+
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_GetSmsCenterAddress
 (
     uint8_t phoneId,
     char* addr,
@@ -136,44 +136,44 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_GetSmsCenterAddress
     uint32_t timeout
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SetSmsCenterAddress
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_SetSmsCenterAddress
 (
     uint8_t phoneId,
     const char* addr,
     uint32_t timeout
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_GetPreferredStorage
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_GetPreferredStorage
 (
     taf_pa_sms_Storage* type,
     uint32_t timeout,
     uint8_t phoneId
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SetPreferredStorage
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_SetPreferredStorage
 (
     taf_pa_sms_Storage type,
     uint32_t timeout,
     uint8_t phoneId
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SetTag
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_SetTag
 (
     uint32_t msgIndex,
     taf_pa_sms_Tag tagType,
@@ -181,22 +181,22 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_SetTag
     uint8_t phoneId
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_DeleteMessage
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_DeleteMessage
 (
     uint32_t msgIndex,
     uint32_t timeout,
     uint8_t phoneId
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
 
-pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RequestSmsMessageList
+taf_pa_result_t TAF_PA_WEAK tafpa::sms::taf_pa_sms_RequestSmsMessageList
 (
     uint32_t* arr,
     size_t arrSize,
@@ -206,6 +206,6 @@ pa_result_t PA_WEAK tafpa::sms::taf_pa_sms_RequestSmsMessageList
     int32_t* msgCountPtr
 )
 {
-    PA_INFO_NOT_IMPLEMENTED();
-    return PA_NOT_IMPLEMENTED;
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
 }
