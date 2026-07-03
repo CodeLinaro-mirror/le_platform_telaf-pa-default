@@ -135,3 +135,13 @@ taf_pa_result_t TAF_PA_WEAK taf_pa_mrc_AckSlotToggle
 
     return TAF_PA_NOT_IMPLEMENTED;
 }
+
+taf_pa_result_t TAF_PA_WEAK taf_pa_mrc_GetEfsCorruptionStats
+(
+    taf_pa_mrc_EfsCorruptionStats_t* statsPtr
+)
+{
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    (void)statsPtr;
+    return TAF_PA_NOT_IMPLEMENTED;
+}
