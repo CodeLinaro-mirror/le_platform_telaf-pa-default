@@ -15,15 +15,14 @@ using namespace tafpa::voicecall;
 
 pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Init()
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Deinit()
 {
-    PA_INFO("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Make
@@ -33,7 +32,7 @@ pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Make
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -44,7 +43,7 @@ pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Stop
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -55,7 +54,7 @@ pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Hold
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -66,7 +65,7 @@ pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Resume
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -77,7 +76,7 @@ pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Answer
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -88,7 +87,7 @@ pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_Swap
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -97,7 +96,7 @@ pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_RegisterEventListener
     taf_pa_voicecall_EventListener listener, std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -107,7 +106,6 @@ pa_result_t PA_WEAK tafpa::voicecall::taf_pa_voicecall_GetCallTermination
     taf_pa_voicecall_termination_t *termination
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
-

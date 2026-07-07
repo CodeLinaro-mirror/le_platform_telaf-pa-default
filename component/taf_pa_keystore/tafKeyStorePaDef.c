@@ -19,7 +19,7 @@ pa_result_t PA_WEAK taf_pa_ks_Init
     void
 )
 {
-    PA_INFO("Telaf keyStore defalut PA initialized.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 //--------------------------------------------------------------------------------------------------
@@ -27,12 +27,13 @@ pa_result_t PA_WEAK taf_pa_ks_Init
  * PA deinitialization.
  */
 //--------------------------------------------------------------------------------------------------
-void PA_WEAK taf_pa_ks_Deinit
+pa_result_t PA_WEAK taf_pa_ks_Deinit
 (
     void
 )
 {
-    PA_INFO("Telaf keyStore default PA deinitialized.");
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -56,6 +57,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateRsaEncKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -80,6 +82,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateRsaSigKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -104,6 +107,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateEcdsaKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -128,6 +132,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateAesKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -152,6 +157,7 @@ pa_result_t PA_WEAK taf_pa_ks_GenerateHmacKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -170,6 +176,7 @@ pa_result_t PA_WEAK taf_pa_ks_ExportKey
     size_t* expDataSizePtr                ///< [INOUT]
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -187,6 +194,7 @@ pa_result_t PA_WEAK taf_pa_ks_ShareKey
     const char* appName                   ///< [IN] Shared application name
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -201,6 +209,7 @@ pa_result_t PA_WEAK taf_pa_ks_DeleteKey
     KeyMgt_KeyFileRef_t keyFileRef        ///< [IN] Key file reference
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -216,6 +225,7 @@ pa_result_t PA_WEAK taf_pa_ks_GetKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference.
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -232,6 +242,7 @@ pa_result_t PA_WEAK taf_pa_ks_GetSharedKey
     KeyMgt_KeyFileRef_t* keyFileRefPtr    ///< [OUT] Key file reference.
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -247,6 +258,7 @@ pa_result_t PA_WEAK taf_pa_ks_CancelKeySharing
     const char* appName                   ///< [IN] Shared application name
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -262,6 +274,7 @@ pa_result_t PA_WEAK taf_pa_ks_GetSharedAppList
     taf_pa_ks_sharedAppList_t* appListPtr ///< [OUT] Shared app list.
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -277,6 +290,7 @@ pa_result_t PA_WEAK taf_pa_ks_GetKeyUsage
     taf_pa_ks_KeyUsage_t*    keyUsagePtr  ///< [OUT] Key usage
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -295,6 +309,7 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionStart
     uint64_t*                 opHandlePtr ///< [OUT]Cyrpto operation handle
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -314,6 +329,7 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionProcessAead
 
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -340,6 +356,7 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionProcess
     size_t*        outputDataSizePtr      ///< [INOUT]
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -362,6 +379,7 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionEnd
     size_t*        outputDataSizePtr      ///< [INOUT]
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -375,6 +393,7 @@ pa_result_t PA_WEAK taf_pa_ks_CryptoSessionAbort
     uint64_t                opHandle      ///< [IN] Cyrpto operation handle
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -388,6 +407,7 @@ pa_result_t PA_WEAK taf_pa_ks_RegKeyCreationHandler
     taf_pa_ks_KeyCreationHandler_t handlerFunc
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -401,5 +421,6 @@ pa_result_t PA_WEAK taf_pa_ks_RegKeySharingHandler
     taf_pa_ks_KeySharingHandler_t handlerFunc
 )
 {
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

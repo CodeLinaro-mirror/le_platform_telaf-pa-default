@@ -33,8 +33,8 @@ pa_result_t PA_WEAK taf::pa::data::Init
         ///< [OUT] The Telux data PA initialization state.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(state);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -48,9 +48,8 @@ pa_result_t PA_WEAK taf::pa::data::Init
 //--------------------------------------------------------------------------------------------------
 pa_result_t PA_WEAK taf::pa::data::Deinit()
 {
-    PA_DEBUG("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -68,10 +67,10 @@ pa_result_t PA_WEAK taf::pa::data::GetSubsystemState
     ///< [OUT] The subsystem initialization state.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(subsystem);
     PA_UNUSED(state);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -86,8 +85,8 @@ pa_result_t PA_WEAK taf::pa::data::GetPhoneIds
         ///< [OUT] The phone IDs.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneIds);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -102,8 +101,8 @@ pa_result_t PA_WEAK taf::pa::data::GetSimSlotCount
         ///< [OUT] The number of SIM slots.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(slotCount);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -120,9 +119,9 @@ pa_result_t PA_WEAK taf::pa::data::GetPhoneIdFromSimSlotId
         ///< [OUT] The phone ID.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(slotID);
     PA_UNUSED(phoneID);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -139,9 +138,9 @@ pa_result_t PA_WEAK taf::pa::data::GetSimSlotIdFromPhoneId
         ///< [OUT] The SIM slot ID.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneID);
     PA_UNUSED(slotID);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -160,10 +159,10 @@ pa_result_t PA_WEAK taf::pa::data::GetProfilesAsync
     void* contextPtr
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(callback);
     PA_UNUSED(contextPtr);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -184,9 +183,9 @@ pa_result_t PA_WEAK taf::pa::data::GetProfileInfo
     ///< [IN/OUT] The profile information.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(profileInfo);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -208,10 +207,10 @@ pa_result_t PA_WEAK taf::pa::data::CreateProfile
     ///< [OUT] The profile id on success.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(profileInfo);
     PA_UNUSED(profileId);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -230,9 +229,9 @@ pa_result_t PA_WEAK taf::pa::data::UpdateProfile
     ///< [IN] The profile information.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(profileInfo);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -252,9 +251,9 @@ pa_result_t PA_WEAK taf::pa::data::DeleteProfile
     ///< [IN] The profile information.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(profileInfo);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -272,9 +271,9 @@ pa_result_t PA_WEAK taf::pa::data::GetDefaultProfile
     ///< [OUT] The default profile ID.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(profileId);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -292,9 +291,9 @@ pa_result_t PA_WEAK taf::pa::data::SetDefaultProfile
     ///< [IN] The default profile ID.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(profileId);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -313,10 +312,10 @@ pa_result_t PA_WEAK taf::pa::data::AddDataCallEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -331,8 +330,8 @@ pa_result_t PA_WEAK taf::pa::data::RemoveDataCallEventsCallback
         ///< [IN] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -346,8 +345,8 @@ pa_result_t PA_WEAK taf::pa::data::StartDataSessionAsync
     const taf::pa::data::DataCallStartStopParams_t& params ///< [IN] The IP type.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(params);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -361,8 +360,8 @@ pa_result_t PA_WEAK taf::pa::data::StopDataSessionAsync
     const taf::pa::data::DataCallStartStopParams_t& params ///< [IN] The IP type.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(params);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -383,10 +382,10 @@ pa_result_t PA_WEAK taf::pa::data::RequestDataCallsListAsync
                 ///< [IN] The context pointer.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(callBack);
     PA_UNUSED(context);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -405,10 +404,10 @@ pa_result_t PA_WEAK taf::pa::data::AddRoamingEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -423,8 +422,8 @@ pa_result_t PA_WEAK taf::pa::data::RemoveRoamingEventsCallback
         ///< [IN] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -442,9 +441,9 @@ pa_result_t PA_WEAK taf::pa::data::GetRoamingStatus
     RoamingStatus_t &roamingStatus
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(roamingStatus);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -463,10 +462,10 @@ pa_result_t PA_WEAK taf::pa::data::AddThrottledApnEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -481,8 +480,8 @@ pa_result_t PA_WEAK taf::pa::data::RemoveThrottledApnEventsCallback
         ///< [IN] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -499,9 +498,9 @@ pa_result_t PA_WEAK taf::pa::data::GetThrottledApnInfo
         ///< [OUT] The list of throttled APNs info.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(throttledApnEventInfoList);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -520,10 +519,10 @@ pa_result_t PA_WEAK taf::pa::data::AddQosTftEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -538,8 +537,8 @@ pa_result_t PA_WEAK taf::pa::data::RemoveQosTftEventsCallback
         ///< [IN] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -558,10 +557,10 @@ pa_result_t PA_WEAK taf::pa::data::AddHwAccelerationChangeEventsCallback
     ///< [OUT] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -576,8 +575,8 @@ pa_result_t PA_WEAK taf::pa::data::RemoveHwAccelerationChangeEventsCallback
     ///< [IN] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -596,10 +595,10 @@ pa_result_t PA_WEAK taf::pa::data::AddProfileEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -614,8 +613,8 @@ pa_result_t PA_WEAK taf::pa::data::RemoveProfileEventsCallback
         ///< [IN] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -634,10 +633,10 @@ pa_result_t PA_WEAK taf::pa::data::AddSubsystemStateChangeCallback
     ///< [OUT] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -652,8 +651,8 @@ pa_result_t PA_WEAK taf::pa::data::RemoveSubsystemStateChangeCallback
         ///< [IN] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -665,7 +664,7 @@ pa_result_t PA_WEAK taf::pa::data::RemoveSubsystemStateChangeCallback
 //--------------------------------------------------------------------------------------------------
 pa_result_t PA_WEAK taf::pa::data::RegisterSDKCallbacks()
 {
-    PA_DEBUG("Default PA implementation.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -676,7 +675,7 @@ pa_result_t PA_WEAK taf::pa::data::RegisterSDKCallbacks()
 //--------------------------------------------------------------------------------------------------
 pa_result_t PA_WEAK taf::pa::data::DeregisterSDKCallbacks()
 {
-    PA_DEBUG("Default PA implementation.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -704,9 +703,9 @@ pa_result_t PA_WEAK taf::pa::data::SetThroughputReportInterval
         ///< [IN] The throughput report interval in milliseconds (min 50ms, 0 to disable).
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(reportInterval);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -733,9 +732,9 @@ pa_result_t PA_WEAK taf::pa::data::GetLastThroughputInfo
         ///< [OUT] The list of throughput information for all active profiles.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(phoneId);
     PA_UNUSED(throughputInfoList);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -763,10 +762,10 @@ pa_result_t PA_WEAK taf::pa::data::AddThroughputEventsCallback
         ///< [OUT] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(callBack);
     PA_UNUSED(context);
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -789,8 +788,8 @@ pa_result_t PA_WEAK taf::pa::data::RemoveThroughputEventsCallback
         ///< [IN] The ID of the registered callback.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(id);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -813,8 +812,8 @@ pa_result_t PA_WEAK taf::pa::data::GetMtu
         ///< [OUT] The MTU value in bytes.
 )
 {
-    PA_DEBUG("Default PA implementation.");
     PA_UNUSED(interfaceName);
     PA_UNUSED(mtu);
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

@@ -3,8 +3,6 @@
  * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
-#include <errno.h>
-
 #include "tafFlashPa.hpp"
 
 pa_result_t PA_WEAK taf_pa_flash_Init
@@ -12,9 +10,9 @@ pa_result_t PA_WEAK taf_pa_flash_Init
     void
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_Deinit
@@ -22,9 +20,8 @@ pa_result_t PA_WEAK taf_pa_flash_Deinit
     void
 )
 {
-    PA_INFO("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_OpenMtd
@@ -34,9 +31,9 @@ pa_result_t PA_WEAK taf_pa_flash_OpenMtd
     taf_pa_flash_MtdRef_t* mtdRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_CloseMtd
@@ -44,9 +41,9 @@ pa_result_t PA_WEAK taf_pa_flash_CloseMtd
     taf_pa_flash_MtdRef_t mtdRef
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_GetMtdInfo
@@ -55,9 +52,9 @@ pa_result_t PA_WEAK taf_pa_flash_GetMtdInfo
     taf_pa_flash_MtdInfo_t* infoPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_EraseMtdBlock
@@ -66,9 +63,9 @@ pa_result_t PA_WEAK taf_pa_flash_EraseMtdBlock
     uint32_t blockIndex
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_CheckMtdGoodBlock
@@ -78,9 +75,9 @@ pa_result_t PA_WEAK taf_pa_flash_CheckMtdGoodBlock
 	bool* isGoodBlockPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_MarkMtdBadBlock
@@ -89,9 +86,9 @@ pa_result_t PA_WEAK taf_pa_flash_MarkMtdBadBlock
     uint32_t blockIndex
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_ReadMtdPage
@@ -102,9 +99,9 @@ pa_result_t PA_WEAK taf_pa_flash_ReadMtdPage
     size_t* dataSizePtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_WriteMtdPage
@@ -115,9 +112,9 @@ pa_result_t PA_WEAK taf_pa_flash_WriteMtdPage
     size_t dataSize
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_CopyMtd
@@ -127,9 +124,9 @@ pa_result_t PA_WEAK taf_pa_flash_CopyMtd
     size_t dataSize
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_OpenUbiVolume
@@ -139,9 +136,9 @@ pa_result_t PA_WEAK taf_pa_flash_OpenUbiVolume
     taf_pa_flash_UbiVolumeRef_t* ubiVolumeRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_CloseUbiVolume
@@ -149,9 +146,9 @@ pa_result_t PA_WEAK taf_pa_flash_CloseUbiVolume
     taf_pa_flash_UbiVolumeRef_t ubiVolumeRef
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_SetUbiVolumeUpdateSize
@@ -160,9 +157,9 @@ pa_result_t PA_WEAK taf_pa_flash_SetUbiVolumeUpdateSize
     int64_t size
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_ReadUbiVolume
@@ -173,9 +170,9 @@ pa_result_t PA_WEAK taf_pa_flash_ReadUbiVolume
     size_t* dataSizePtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_UpdateUbiVolume
@@ -185,9 +182,9 @@ pa_result_t PA_WEAK taf_pa_flash_UpdateUbiVolume
     size_t dataSize
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_CopyUbiVolume
@@ -198,9 +195,9 @@ pa_result_t PA_WEAK taf_pa_flash_CopyUbiVolume
     size_t dataSize
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_EraseUbiVolume
@@ -208,9 +205,9 @@ pa_result_t PA_WEAK taf_pa_flash_EraseUbiVolume
     const char* namePtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_flash_GetUbiVolumeInfo
@@ -219,7 +216,7 @@ pa_result_t PA_WEAK taf_pa_flash_GetUbiVolumeInfo
     taf_pa_flash_UbiVolumeInfo_t* infoPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }

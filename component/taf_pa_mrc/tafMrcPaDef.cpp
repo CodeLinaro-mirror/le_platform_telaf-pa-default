@@ -12,9 +12,9 @@ pa_result_t PA_WEAK taf_pa_mrc_Init
     void
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_mrc_Deinit
@@ -22,9 +22,8 @@ pa_result_t PA_WEAK taf_pa_mrc_Deinit
     void
 )
 {
-    PA_INFO("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_mrc_RegisterIndication
@@ -32,9 +31,9 @@ pa_result_t PA_WEAK taf_pa_mrc_RegisterIndication
     uint8_t registration
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_mrc_SetProcessStatus
@@ -43,20 +42,23 @@ pa_result_t PA_WEAK taf_pa_mrc_SetProcessStatus
     taf_pa_mrc_Status_t status
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_mrc_ProcessStatusHandlerRef_t PA_WEAK taf_pa_mrc_AddProcessStatusHandler
+pa_result_t PA_WEAK taf_pa_mrc_AddProcessStatusHandler
 (
     taf_pa_mrc_ProcessStatusHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_mrc_ProcessStatusHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
-
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    (void)handlerFuncPtr;
+    (void)contextPtr;
+    if (handlerRefPtr) *handlerRefPtr = nullptr;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_mrc_GetEfsPeStatus
@@ -64,9 +66,9 @@ pa_result_t PA_WEAK taf_pa_mrc_GetEfsPeStatus
     taf_pa_mrc_EfsPeStatus_t* statusPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_mrc_GetEfsBlockStatus
@@ -74,9 +76,9 @@ pa_result_t PA_WEAK taf_pa_mrc_GetEfsBlockStatus
     taf_pa_mrc_EfsBlockStatus_t* statusPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t taf_pa_mrc_GetEfsUsageStats
@@ -84,9 +86,9 @@ pa_result_t taf_pa_mrc_GetEfsUsageStats
     taf_pa_mrc_EfsUsageStats_t* statsPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_mrc_SetTimerPeriod
@@ -95,9 +97,9 @@ pa_result_t PA_WEAK taf_pa_mrc_SetTimerPeriod
     uint32_t period
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_mrc_PerformABSync
@@ -105,20 +107,23 @@ pa_result_t PA_WEAK taf_pa_mrc_PerformABSync
     void
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }
 
-taf_pa_mrc_ScrubStatusHandlerRef_t PA_WEAK taf_pa_mrc_AddScrubStatusHandler
+pa_result_t PA_WEAK taf_pa_mrc_AddScrubStatusHandler
 (
     taf_pa_mrc_ScrubStatusHdlrFunc_t handlerFuncPtr,
-    void* contextPtr
+    void* contextPtr,
+    taf_pa_mrc_ScrubStatusHandlerRef_t* handlerRefPtr
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
-
-    return nullptr;
+    PA_INFO_NOT_IMPLEMENTED();
+    (void)handlerFuncPtr;
+    (void)contextPtr;
+    if (handlerRefPtr) *handlerRefPtr = nullptr;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_mrc_AckSlotToggle
@@ -126,7 +131,7 @@ pa_result_t PA_WEAK taf_pa_mrc_AckSlotToggle
     int32_t success
 )
 {
-    PA_INFO("Function is not implemented in default PA.");
+    PA_INFO_NOT_IMPLEMENTED();
 
-    return -ENOSYS;
+    return PA_NOT_IMPLEMENTED;
 }

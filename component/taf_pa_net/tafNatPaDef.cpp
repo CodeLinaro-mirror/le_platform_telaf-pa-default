@@ -9,14 +9,14 @@
 
 pa_result_t PA_WEAK taf_pa_nat_Init()
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_nat_Deinit()
 {
-    PA_INFO("Default platform adapter deinitialization");
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ pa_result_t PA_WEAK taf_pa_nat_AddDestNatEntry(
     const taf_pa_net_NatConfig_t *natConfig
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -54,7 +54,7 @@ pa_result_t PA_WEAK taf_pa_nat_RemoveDestNatEntry(
     const taf_pa_net_NatConfig_t *natConfig
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -74,7 +74,6 @@ pa_result_t PA_WEAK taf_pa_nat_QueryDestNatEntryList(
     std::vector<taf_pa_net_NatConfig_t> &natEntryInfo
 )
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
-

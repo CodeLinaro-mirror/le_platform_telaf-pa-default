@@ -10,15 +10,14 @@ using namespace tafpa::audio;
 
 pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_Init()
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_Deinit()
 {
-    PA_INFO("Default platform adapter deinitialization");
-    // No managers to clean up in default implementation
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_CreateStream(
@@ -27,7 +26,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_CreateStream(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -37,7 +36,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_DeleteStream(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -47,7 +46,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StartAudio(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -57,7 +56,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StopAudio(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -68,7 +67,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_SetVolume(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -79,7 +78,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_GetVolume(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -90,7 +89,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_SetMute(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -101,7 +100,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_GetMute(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -111,7 +110,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StartPlayback(
     std::weak_ptr<IPaPlayListListener> pbStatusListener
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -119,16 +118,19 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StopPlayback(
     PaStreamConfig streamConfig
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
-std::shared_ptr<PaAudioCaptureStream> PA_WEAK tafpa::audio::taf_pa_audio_GetCaptureStream(
-    PaStreamDirection streamDir
+pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_GetCaptureStream(
+    PaStreamDirection streamDir,
+    std::shared_ptr<PaAudioCaptureStream>& captureStream
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
-    return NULL;
+    PA_INFO_NOT_IMPLEMENTED();
+    (void)streamDir;
+    captureStream = nullptr;
+    return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_PlaySignallingDtmfOnTx(
@@ -138,7 +140,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_PlaySignallingDtmfOnTx(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -148,7 +150,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StopSignallingDtmfOnTx(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -159,7 +161,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_PlayDtmf(
         std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -168,7 +170,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_StopDtmf(
     std::any context
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -176,7 +178,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_registerDtmfListener(
     std::weak_ptr<IPaDtmfListener> dtmfListener
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -184,7 +186,7 @@ pa_result_t PA_WEAK tafpa::audio::taf_pa_audio_deregisterDtmfListener(
     std::weak_ptr<IPaDtmfListener> dtmfListener
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -194,7 +196,7 @@ pa_result_t PA_WEAK tafpa::audio::AddSubsystemStateChangeListener(
     uint16_t &id
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -202,6 +204,6 @@ pa_result_t PA_WEAK tafpa::audio::RemoveSubsystemStateChangeListener(
     uint16_t id
 )
 {
-    PA_INFO("Using default PA. Feature unsupported.");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }

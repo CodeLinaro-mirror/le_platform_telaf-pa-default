@@ -9,14 +9,14 @@
 
 pa_result_t PA_WEAK taf_pa_socks_Init()
 {
-    PA_INFO("Default platform adatper implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
 pa_result_t PA_WEAK taf_pa_socks_Deinit()
 {
-    PA_INFO("Default platform adapter deinitialization");
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -34,8 +34,8 @@ pa_result_t PA_WEAK taf_pa_net_SetDeviceMode
     taf_pa_net_DeviceMode_t deviceMode  ///< [IN] Device mode
 )
 {
-    PA_INFO("Default platform adatper implementation taf_pa_net_SetDeviceMode");
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -46,11 +46,14 @@ pa_result_t PA_WEAK taf_pa_net_SetDeviceMode
  *
  */
 //--------------------------------------------------------------------------------------------------
-taf_pa_net_DeviceMode_t PA_WEAK taf_pa_net_GetDeviceMode
+pa_result_t PA_WEAK taf_pa_net_GetDeviceMode
 (
+    taf_pa_net_DeviceMode_t* deviceModePtr
 )
 {
-    return TAF_PA_NET_DEVICE_NONE;
+    PA_INFO_NOT_IMPLEMENTED();
+    if (deviceModePtr) *deviceModePtr = TAF_PA_NET_DEVICE_NONE;
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -63,8 +66,8 @@ pa_result_t PA_WEAK taf_pa_net_SetSocksAuthMethod
     taf_pa_net_AuthMethod_t authMethod
 )
 {
-    PA_INFO("Default platform adatper implementation taf_pa_net_SetSocksAuthMethod");
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -72,12 +75,14 @@ pa_result_t PA_WEAK taf_pa_net_SetSocksAuthMethod
  * Get SOCKS authentication method
  */
 //--------------------------------------------------------------------------------------------------
-taf_pa_net_AuthMethod_t PA_WEAK taf_pa_net_GetSocksAuthMethod
+pa_result_t PA_WEAK taf_pa_net_GetSocksAuthMethod
 (
+    taf_pa_net_AuthMethod_t* authMethodPtr
 )
 {
-    PA_INFO("Default platform adatper implementation taf_pa_net_GetSocksAuthMethod");
-    return TAF_PA_NET_SOCKS_UNKNOWN;
+    PA_INFO_NOT_IMPLEMENTED();
+    if (authMethodPtr) *authMethodPtr = TAF_PA_NET_SOCKS_UNKNOWN;
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -90,8 +95,8 @@ pa_result_t PA_WEAK taf_pa_net_SetSocksLanInterface
     const char* ifName
 )
 {
-    PA_INFO("Default platform adatper implementation taf_pa_net_SetSocksLanInterface");
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -105,8 +110,8 @@ pa_result_t PA_WEAK taf_pa_net_GetSocksLanInterface
     size_t ifNameSize
 )
 {
-    PA_INFO("Default platform adatper implementation taf_pa_net_GetSocksLanInterface");
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -120,8 +125,8 @@ pa_result_t PA_WEAK taf_pa_net_AddSocksAssociation
     uint32_t profileId
 )
 {
-    PA_INFO("Default platform adatper implementation taf_pa_net_AddSocksAssociation");
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -134,8 +139,8 @@ pa_result_t PA_WEAK taf_pa_net_RemoveSocksAssociation
     const char* userName
 )
 {
-    PA_INFO("Default platform adatper implementation taf_pa_net_RemoveSocksAssociation");
-    return PA_OK;
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
 }
 
 /*======================================================================
@@ -145,7 +150,7 @@ pa_result_t PA_WEAK taf_pa_net_RemoveSocksAssociation
 ======================================================================*/
 pa_result_t PA_WEAK taf_pa_net_EnableSocksCmdSync()
 {
-    PA_INFO("Default taf_pa_net_EnableSocksCmdSync implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -156,7 +161,7 @@ pa_result_t PA_WEAK taf_pa_net_EnableSocksCmdSync()
 ======================================================================*/
 pa_result_t PA_WEAK taf_pa_net_DisableSocksCmdSync()
 {
-    PA_INFO("Default taf_pa_net_DisableSocksCmdSync implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 /*======================================================================
@@ -166,7 +171,7 @@ pa_result_t PA_WEAK taf_pa_net_DisableSocksCmdSync()
 ======================================================================*/
 pa_result_t PA_WEAK taf_pa_net_EnableSocksCmdASync(taf_pa_socks_CallCb callback,void *contextPtr)
 {
-    PA_INFO("Default taf_pa_net_EnableSocksCmdASync implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
 
@@ -179,10 +184,6 @@ pa_result_t PA_WEAK taf_pa_net_EnableSocksCmdASync(taf_pa_socks_CallCb callback,
 ======================================================================*/
 pa_result_t PA_WEAK taf_pa_net_DisableSocksCmdASync(taf_pa_socks_CallCb callback,void *contextPtr)
 {
-    PA_INFO("Default taf_pa_net_DisableSocksCmdASync implementation");
+    PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
-
-
-
-
