@@ -844,6 +844,23 @@ TAF_PA_SHARED TAF_PA_WEAK taf_pa_result_t taf_pa_sim_GetEID
     taf_pa_sim_Id_t simId,
     std::string&  eidStr
 );
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Get physical slot count.
+ *
+ * @param [out] count  Number of physical SIM slots available on the device.
+ *
+ * @return
+ *  - TAF_PA_OK  on success
+ *  - TAF_PA_FAULT on failure
+ */
+//--------------------------------------------------------------------------------------------------
+TAF_PA_SHARED  TAF_PA_WEAK taf_pa_result_t taf_pa_sim_GetPhysicalSlotCount
+(
+    int* count
+);
+
 #ifdef __cplusplus
 }
 #endif
