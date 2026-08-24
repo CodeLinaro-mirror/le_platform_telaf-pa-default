@@ -803,3 +803,36 @@ pa_result_t PA_WEAK taf_pa_radio_GetDataCurrRoamingStatus
     PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
+
+pa_result_t PA_WEAK taf_pa_radio_SetNr5gBandPreferences
+(
+    uint32_t instance,
+    taf_pa_radio_RatBitMask_t ratMask,
+    const taf_pa_radio_Nr5gBand_t* bandPtr
+)
+{
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf_pa_radio_GetNr5gBandPreferences
+(
+    uint32_t instance,
+    taf_pa_radio_RatBitMask_t ratMask,
+    taf_pa_radio_Nr5gBand_t* bandPtr
+)
+{
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf_pa_radio_GetNr5gBandCapabilities
+(
+    uint32_t instance,
+    taf_pa_radio_RatBitMask_t ratMask,
+    taf_pa_radio_Nr5gBand_t*  bandPtr
+)
+{
+    PA_INFO_NOT_IMPLEMENTED();
+    return PA_NOT_IMPLEMENTED;
+}
