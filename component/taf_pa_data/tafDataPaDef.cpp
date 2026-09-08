@@ -817,3 +817,102 @@ pa_result_t PA_WEAK taf::pa::data::GetMtu
     PA_INFO_NOT_IMPLEMENTED();
     return PA_NOT_IMPLEMENTED;
 }
+
+pa_result_t PA_WEAK taf::pa::data::EnableTCPMonitor
+(
+    SlotId_e slotID,
+    const TcpKeepAliveParams_t &tcpKaParams,
+    TcpMonitorHandle_t &monHandle
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(tcpKaParams);
+    PA_UNUSED(slotID);
+    monHandle = INVALID_TCP_MONITOR_HANDLE;
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf::pa::data::DisableTCPMonitor
+(
+    SlotId_e slotID,
+    TcpMonitorHandle_t monHandle
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(monHandle);
+    PA_UNUSED(slotID);
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf::pa::data::StartTCPKeepAliveOffload
+(
+    SlotId_e slotID,
+    TcpMonitorHandle_t monHandle,
+    uint32_t interval,
+    TcpKeepAliveOffloadHandle_t &handle
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(monHandle);
+    PA_UNUSED(interval);
+    PA_UNUSED(slotID);
+    handle = INVALID_TCP_KEEP_ALIVE_OFFLOAD_HANDLE;
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf::pa::data::StopTCPKeepAliveOffload
+(
+    SlotId_e slotID,
+    TcpKeepAliveOffloadHandle_t handle
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(handle);
+    PA_UNUSED(slotID);
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf::pa::data::SetDataRestrictMode
+(
+    SlotId_e slotID,
+    FilterModeInfo_t mode
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(mode);
+    PA_UNUSED(slotID);
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf::pa::data::RequestDataRestrictMode
+(
+    SlotId_e slotID,
+    FilterModeInfo_t &mode
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(slotID);
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf::pa::data::AddDataRestrictFilter
+(
+    SlotId_e slotID,
+    const IpFilter_t &filter
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(filter);
+    PA_UNUSED(slotID);
+    return PA_NOT_IMPLEMENTED;
+}
+
+pa_result_t PA_WEAK taf::pa::data::RemoveAllDataRestrictFilters
+(
+    SlotId_e slotID
+)
+{
+    PA_DEBUG("Default PA implementation.");
+    PA_UNUSED(slotID);
+    return PA_NOT_IMPLEMENTED;
+}
