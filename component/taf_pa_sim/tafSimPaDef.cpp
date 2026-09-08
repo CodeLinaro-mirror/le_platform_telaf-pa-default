@@ -639,3 +639,17 @@ taf_pa_result_t taf_pa_sim_GetEID
     TAF_PA_INFO_NOT_IMPLEMENTED();
     return TAF_PA_NOT_IMPLEMENTED;
 }
+
+//--------------------------------------------------------------------------------------------------
+/**
+ * Get physical slot count.
+ */
+//--------------------------------------------------------------------------------------------------
+taf_pa_result_t TAF_PA_WEAK taf_pa_sim_GetPhysicalSlotCount
+(
+    int* count
+)
+{
+    TAF_PA_INFO_NOT_IMPLEMENTED();
+    return TAF_PA_NOT_IMPLEMENTED;
+}
